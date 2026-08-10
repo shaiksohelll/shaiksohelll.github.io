@@ -5,208 +5,363 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Shaik Sohel — Software Engineer</title>
 <meta name="description" content="Shaik Sohel — Full-stack software engineer, B.Tech CSE Class of 2027, Hyderabad. Builder of Klar, Pakka, and Hyderabad Metro Go.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
   :root {
-    --bg: #0d1117;
-    --card: #161b22;
-    --border: #30363d;
-    --text: #e6edf3;
-    --muted: #8b949e;
-    --accent: #58a6ff;
-    --green: #3fb950;
+    --bg: #070b14;
+    --card: rgba(255,255,255,0.03);
+    --border: rgba(255,255,255,0.09);
+    --text: #eef2f8;
+    --muted: #93a1b5;
+    --accent1: #6366f1;
+    --accent2: #22d3ee;
+    --green: #34d399;
   }
   body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     background: var(--bg);
     color: var(--text);
-    line-height: 1.6;
+    line-height: 1.65;
+    overflow-x: hidden;
   }
-  .wrap { max-width: 880px; margin: 0 auto; padding: 0 20px; }
 
-  header {
-    border-bottom: 1px solid var(--border);
-    padding: 56px 0 32px;
+  /* ---- breathing background orbs ---- */
+  .orb {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(90px);
+    opacity: 0.35;
+    pointer-events: none;
+    z-index: 0;
+    animation: breathe 9s ease-in-out infinite;
   }
-  .tag {
-    display: inline-block;
-    font-size: 13px;
-    color: var(--green);
-    border: 1px solid var(--green);
-    border-radius: 999px;
-    padding: 2px 12px;
+  .orb1 { width: 480px; height: 480px; background: #4f46e5; top: -160px; left: -120px; }
+  .orb2 { width: 420px; height: 420px; background: #0e7490; top: 30%; right: -160px; animation-delay: -3s; }
+  .orb3 { width: 380px; height: 380px; background: #7c3aed; bottom: -140px; left: 30%; animation-delay: -6s; }
+  @keyframes breathe {
+    0%, 100% { transform: scale(1) translateY(0); opacity: 0.28; }
+    50% { transform: scale(1.18) translateY(-24px); opacity: 0.42; }
+  }
+
+  .wrap { max-width: 920px; margin: 0 auto; padding: 0 22px; position: relative; z-index: 1; }
+
+  /* ---- nav ---- */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 10;
+    backdrop-filter: blur(14px);
+    background: rgba(7,11,20,0.72);
+    border-bottom: 1px solid var(--border);
+  }
+  nav .wrap { display: flex; justify-content: space-between; align-items: center; height: 58px; }
+  nav .logo { font-family: 'JetBrains Mono', monospace; font-weight: 600; font-size: 15px; color: var(--text); text-decoration: none; }
+  nav .logo span { color: var(--accent2); }
+  nav ul { display: flex; gap: 26px; list-style: none; }
+  nav ul a { color: var(--muted); text-decoration: none; font-size: 14px; font-weight: 500; transition: color .2s; }
+  nav ul a:hover { color: var(--text); }
+
+  /* ---- hero ---- */
+  header { padding: 150px 0 60px; }
+  .status {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 13px; font-weight: 500; color: var(--green);
+    border: 1px solid rgba(52,211,153,0.35);
+    background: rgba(52,211,153,0.08);
+    border-radius: 999px; padding: 5px 14px; margin-bottom: 22px;
+  }
+  .status::before {
+    content: ''; width: 7px; height: 7px; border-radius: 50%;
+    background: var(--green);
+    animation: pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.35; } }
+  h1 {
+    font-size: clamp(38px, 7vw, 62px);
+    font-weight: 800; letter-spacing: -1.5px; line-height: 1.05;
+    background: linear-gradient(100deg, #fff 20%, var(--accent1) 55%, var(--accent2) 85%);
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent;
     margin-bottom: 16px;
   }
-  h1 { font-size: 40px; letter-spacing: -0.5px; margin-bottom: 8px; }
-  .role { font-size: 18px; color: var(--text); margin-bottom: 4px; }
-  .meta { color: var(--muted); font-size: 15px; margin-bottom: 20px; }
-  .links { display: flex; flex-wrap: wrap; gap: 10px; }
-  .links a {
-    color: var(--accent);
-    text-decoration: none;
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    padding: 6px 14px;
-    font-size: 14px;
-    background: var(--card);
+  .role { font-size: clamp(16px, 2.5vw, 20px); color: var(--text); font-weight: 500; margin-bottom: 6px; }
+  .meta { color: var(--muted); font-size: 15px; margin-bottom: 28px; }
+  .cta { display: flex; flex-wrap: wrap; gap: 12px; }
+  .btn {
+    text-decoration: none; font-size: 14px; font-weight: 600;
+    padding: 11px 22px; border-radius: 10px;
+    transition: transform .2s, box-shadow .2s;
   }
-  .links a:hover { border-color: var(--accent); }
+  .btn:hover { transform: translateY(-2px); }
+  .btn-primary {
+    color: #0a0e1a;
+    background: linear-gradient(100deg, var(--accent2), var(--accent1));
+    box-shadow: 0 4px 24px rgba(99,102,241,0.35);
+  }
+  .btn-ghost { color: var(--text); border: 1px solid var(--border); background: var(--card); }
+  .btn-ghost:hover { border-color: var(--accent2); }
 
-  section { padding: 36px 0 8px; }
+  /* ---- stats ---- */
+  .stats {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 14px; margin: 46px 0 10px;
+  }
+  .stat {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 14px; padding: 18px 16px; text-align: center;
+    transition: border-color .25s, transform .25s;
+  }
+  .stat:hover { border-color: var(--accent1); transform: translateY(-3px); }
+  .stat b {
+    display: block; font-size: 24px; font-weight: 800;
+    background: linear-gradient(100deg, var(--accent2), var(--accent1));
+    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  .stat span { font-size: 12.5px; color: var(--muted); }
+
+  /* ---- sections ---- */
+  section { padding: 44px 0 8px; }
   h2 {
-    font-size: 22px;
-    margin-bottom: 20px;
-    padding-bottom: 8px;
-    border-bottom: 1px solid var(--border);
+    font-size: 26px; font-weight: 700; letter-spacing: -0.5px;
+    margin-bottom: 26px; display: flex; align-items: center; gap: 12px;
   }
+  h2::after { content: ''; flex: 1; height: 1px; background: var(--border); }
 
+  /* ---- project cards ---- */
   .card {
     background: var(--card);
     border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 22px;
-    margin-bottom: 18px;
+    border-radius: 18px;
+    margin-bottom: 22px;
+    overflow: hidden;
+    backdrop-filter: blur(8px);
+    transition: transform .3s, border-color .3s, box-shadow .3s;
   }
-  .card h3 { font-size: 18px; margin-bottom: 2px; }
+  .card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(99,102,241,0.5);
+    box-shadow: 0 18px 44px rgba(2,6,23,0.6), 0 0 0 1px rgba(99,102,241,0.15);
+  }
+  .band {
+    height: 110px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 44px; font-weight: 600; color: rgba(255,255,255,0.9);
+    letter-spacing: -1px;
+    position: relative; overflow: hidden;
+  }
+  .band::after {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(circle at 30% 20%, rgba(255,255,255,0.22), transparent 55%);
+  }
+  .band.klar { background: linear-gradient(120deg, #312e81, #0e7490); }
+  .band.pakka { background: linear-gradient(120deg, #065f46, #1d4ed8); }
+  .band.metro { background: linear-gradient(120deg, #7c2d12, #b45309); }
+  .card-body { padding: 24px; }
+  .card h3 { font-size: 19px; font-weight: 700; margin-bottom: 3px; }
   .card h3 a { color: var(--text); text-decoration: none; }
-  .card h3 a:hover { color: var(--accent); }
-  .card .sub { color: var(--muted); font-size: 14px; margin-bottom: 10px; }
-  .card p { font-size: 15px; color: #c9d1d9; margin-bottom: 12px; }
-  .stack { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+  .card h3 a:hover { color: var(--accent2); }
+  .card .sub { color: var(--accent2); font-size: 13px; font-weight: 500; margin-bottom: 12px; }
+  .card p { font-size: 14.5px; color: #c3cede; margin-bottom: 16px; }
+  .stack { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
   .stack span {
-    font-size: 12px;
-    color: var(--muted);
-    border: 1px solid var(--border);
-    border-radius: 999px;
-    padding: 1px 10px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11.5px; color: var(--muted);
+    border: 1px solid var(--border); border-radius: 999px; padding: 2px 11px;
   }
-  .cardlinks { font-size: 14px; }
-  .cardlinks a { color: var(--accent); text-decoration: none; margin-right: 16px; }
+  .cardlinks a {
+    color: var(--accent2); text-decoration: none;
+    font-size: 14px; font-weight: 600; margin-right: 20px;
+  }
   .cardlinks a:hover { text-decoration: underline; }
 
-  .exp { margin-bottom: 18px; }
-  .exp .role-line { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 4px; }
-  .exp .role-line b { font-size: 16px; }
-  .exp .date { color: var(--muted); font-size: 14px; }
-  .exp p { color: #c9d1d9; font-size: 15px; margin-top: 4px; }
-
-  .skills { display: flex; flex-wrap: wrap; gap: 8px; }
-  .skills span {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    padding: 5px 12px;
-    font-size: 14px;
-    color: #c9d1d9;
+  /* ---- experience timeline ---- */
+  .exp {
+    position: relative; padding-left: 28px; margin-bottom: 26px;
+    border-left: 1px solid var(--border);
   }
+  .exp::before {
+    content: ''; position: absolute; left: -5px; top: 6px;
+    width: 9px; height: 9px; border-radius: 50%;
+    background: linear-gradient(120deg, var(--accent2), var(--accent1));
+    box-shadow: 0 0 12px rgba(34,211,238,0.7);
+  }
+  .exp .role-line { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 4px; }
+  .exp b { font-size: 16.5px; }
+  .exp .date { color: var(--muted); font-size: 13.5px; font-family: 'JetBrains Mono', monospace; }
+  .exp p { color: #c3cede; font-size: 14.5px; margin-top: 6px; }
+
+  /* ---- skills ---- */
+  .skills { display: flex; flex-wrap: wrap; gap: 9px; }
+  .skills span {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 9px; padding: 7px 15px;
+    font-size: 13.5px; font-weight: 500; color: #d5deeb;
+    transition: border-color .2s, color .2s, transform .2s;
+  }
+  .skills span:hover { border-color: var(--accent2); color: var(--accent2); transform: translateY(-2px); }
+
+  /* ---- reveal on scroll ---- */
+  .reveal { opacity: 0; transform: translateY(26px); transition: opacity .7s ease, transform .7s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
 
   footer {
     border-top: 1px solid var(--border);
-    margin-top: 40px;
-    padding: 28px 0 48px;
-    color: var(--muted);
-    font-size: 14px;
+    margin-top: 52px; padding: 30px 0 54px;
+    color: var(--muted); font-size: 14px;
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px;
   }
-  footer a { color: var(--accent); text-decoration: none; }
+  footer a { color: var(--accent2); text-decoration: none; }
   footer a:hover { text-decoration: underline; }
 
-  @media (max-width: 600px) {
-    h1 { font-size: 30px; }
+  @media (max-width: 640px) {
+    nav ul { gap: 15px; }
+    nav ul a { font-size: 12.5px; }
+    header { padding-top: 120px; }
   }
 </style>
 </head>
 <body>
+
+<div class="orb orb1"></div>
+<div class="orb orb2"></div>
+<div class="orb orb3"></div>
+
+<nav>
+  <div class="wrap">
+    <a class="logo" href="#">sohel<span>.dev</span></a>
+    <ul>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="mailto:shaiksohelll05@gmail.com">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
 <div class="wrap">
 
   <header>
-    <span class="tag">Open to internships &amp; 2027 graduate roles</span>
+    <span class="status">Open to internships &amp; 2027 graduate roles</span>
     <h1>Shaik Sohel</h1>
-    <div class="role">Software Engineer — Full-Stack (TypeScript · React · Node.js · PostgreSQL)</div>
+    <div class="role">Software Engineer — Full-Stack · TypeScript, React, Node.js, PostgreSQL</div>
     <div class="meta">B.Tech Computer Science, Class of 2027 · Hyderabad, India</div>
-    <div class="links">
-      <a href="mailto:shaiksohelll05@gmail.com">shaiksohelll05@gmail.com</a>
-      <a href="https://github.com/shaiksohelll">GitHub</a>
-      <a href="https://www.linkedin.com/in/shaiksohellll">LinkedIn</a>
-      <a href="tel:+918639673777">+91 8639673777</a>
+    <div class="cta">
+      <a class="btn btn-primary" href="#projects">View my work</a>
+      <a class="btn btn-ghost" href="https://github.com/shaiksohelll">GitHub ↗</a>
+      <a class="btn btn-ghost" href="https://www.linkedin.com/in/shaiksohellll">LinkedIn ↗</a>
+      <a class="btn btn-ghost" href="mailto:shaiksohelll05@gmail.com">Email me</a>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><b>550+</b><span>job postings ingested daily</span></div>
+      <div class="stat"><b>37</b><span>versioned DB migrations</span></div>
+      <div class="stat"><b>13+</b><span>RLS security policies</span></div>
+      <div class="stat"><b>59</b><span>stations, graph route planner</span></div>
     </div>
   </header>
 
-  <section>
+  <section id="projects">
     <h2>Projects</h2>
 
-    <div class="card">
-      <h3><a href="https://klar-dev.onrender.com">Klar — Real-Time Job-Market Intelligence Platform</a></h3>
-      <div class="sub">Open source · Live in production</div>
-      <p>Full-stack analytics platform ingesting 550+ job postings per daily cycle from two independent APIs, with a cross-source de-duplication pipeline and a skill-taxonomy extractor tracking daily demand for 45 skills across 4,200+ time-series snapshots. MongoDB aggregation queries behind a 6-hour cache with quota-aware scheduled ingestion; hardened API (Clerk auth, Helmet, CORS allow-listing, per-route rate limiting); Sentry error tracking; CI/CD with 4 Vitest suites and 8 Playwright E2E specs on every push.</p>
-      <div class="stack">
-        <span>React</span><span>Node.js</span><span>Express</span><span>MongoDB</span><span>Tailwind CSS</span><span>Vitest</span><span>Playwright</span><span>Sentry</span><span>GitHub Actions</span>
-      </div>
-      <div class="cardlinks">
-        <a href="https://klar-dev.onrender.com">Live app ↗</a>
-        <a href="https://github.com/shaiksohelll/Klar">Source code ↗</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <h3><a href="https://mypakka.vercel.app">Pakka — Milestone Escrow Reference Implementation</a></h3>
-      <div class="sub">Open source (MIT) · Live in production</div>
-      <p>Atomic escrow state machine enforced in PostgreSQL using SECURITY DEFINER functions and SELECT FOR UPDATE row locking — every money-state transition is server-enforced. Append-only ledger where every wallet movement sums to zero, milestone auto-release via pg_cron, 13+ Row-Level Security policies across 8 tables as the primary authorization layer, schema evolved across 37 versioned migrations with paired rollback scripts. Shipped as an installable PWA with realtime client/worker sync, Sentry + PostHog, and 8 Architecture Decision Records.</p>
-      <div class="stack">
-        <span>Next.js 15</span><span>TypeScript (strict)</span><span>Supabase</span><span>PostgreSQL</span><span>RLS</span><span>pg_cron</span><span>PWA</span><span>Playwright</span>
-      </div>
-      <div class="cardlinks">
-        <a href="https://mypakka.vercel.app">Live app ↗</a>
-        <a href="https://github.com/shaiksohelll/Pakka">Source code ↗</a>
+    <div class="card reveal">
+      <div class="band klar">K_</div>
+      <div class="card-body">
+        <h3><a href="https://klar-dev.onrender.com">Klar — Real-Time Job-Market Intelligence Platform</a></h3>
+        <div class="sub">Open source · Live in production</div>
+        <p>Full-stack analytics platform ingesting 550+ job postings per daily cycle from two independent APIs, with a cross-source de-duplication pipeline and a skill-taxonomy extractor tracking daily demand for 45 skills across 4,200+ time-series snapshots. MongoDB aggregation queries behind a 6-hour cache with quota-aware scheduled ingestion; hardened API (Clerk auth, Helmet, CORS allow-listing, per-route rate limiting); Sentry error tracking; CI/CD with 4 Vitest suites and 8 Playwright E2E specs on every push.</p>
+        <div class="stack">
+          <span>React</span><span>Node.js</span><span>Express</span><span>MongoDB</span><span>Tailwind CSS</span><span>Vitest</span><span>Playwright</span><span>Sentry</span><span>GitHub Actions</span>
+        </div>
+        <div class="cardlinks">
+          <a href="https://klar-dev.onrender.com">Live app ↗</a>
+          <a href="https://github.com/shaiksohelll/Klar">Source code ↗</a>
+        </div>
       </div>
     </div>
 
-    <div class="card">
-      <h3><a href="https://shaiksohelll.github.io/Hyderabad-Metro-Go/">Hyderabad Metro Go — Route Planner</a></h3>
-      <div class="sub">Open source · Zero-dependency front end</div>
-      <p>All 59 stations across 3 metro lines modeled as a weighted directed graph; 0-1 BFS (ride edges cost 1, interchange edges cost 0) computes the fewest-stop path and detects line changes entirely client-side. Includes a fare calculator (10 official slabs), travel-time estimator, and recent-trip persistence — written in vanilla JavaScript with no framework and no build step.</p>
-      <div class="stack">
-        <span>JavaScript</span><span>HTML5</span><span>CSS3</span><span>Bootstrap 5</span><span>Graph algorithms</span>
+    <div class="card reveal">
+      <div class="band pakka">P_</div>
+      <div class="card-body">
+        <h3><a href="https://mypakka.vercel.app">Pakka — Milestone Escrow Reference Implementation</a></h3>
+        <div class="sub">Open source (MIT) · Live in production</div>
+        <p>Atomic escrow state machine enforced in PostgreSQL using SECURITY DEFINER functions and SELECT FOR UPDATE row locking — every money-state transition is server-enforced. Append-only ledger where every wallet movement sums to zero, milestone auto-release via pg_cron, 13+ Row-Level Security policies across 8 tables as the primary authorization layer, schema evolved across 37 versioned migrations with paired rollback scripts. Shipped as an installable PWA with realtime client/worker sync, Sentry + PostHog, and 8 Architecture Decision Records.</p>
+        <div class="stack">
+          <span>Next.js 15</span><span>TypeScript (strict)</span><span>Supabase</span><span>PostgreSQL</span><span>RLS</span><span>pg_cron</span><span>PWA</span><span>Playwright</span>
+        </div>
+        <div class="cardlinks">
+          <a href="https://mypakka.vercel.app">Live app ↗</a>
+          <a href="https://github.com/shaiksohelll/Pakka">Source code ↗</a>
+        </div>
       </div>
-      <div class="cardlinks">
-        <a href="https://shaiksohelll.github.io/Hyderabad-Metro-Go/">Live app ↗</a>
-        <a href="https://github.com/shaiksohelll/Hyderabad-Metro-Go">Source code ↗</a>
+    </div>
+
+    <div class="card reveal">
+      <div class="band metro">M_</div>
+      <div class="card-body">
+        <h3><a href="https://shaiksohelll.github.io/Hyderabad-Metro-Go/">Hyderabad Metro Go — Route Planner</a></h3>
+        <div class="sub">Open source · Zero-dependency front end</div>
+        <p>All 59 stations across 3 metro lines modeled as a weighted directed graph; 0-1 BFS (ride edges cost 1, interchange edges cost 0) computes the fewest-stop path and detects line changes entirely client-side. Includes a fare calculator (10 official slabs), travel-time estimator, and recent-trip persistence — written in vanilla JavaScript with no framework and no build step.</p>
+        <div class="stack">
+          <span>JavaScript</span><span>HTML5</span><span>CSS3</span><span>Bootstrap 5</span><span>Graph algorithms</span>
+        </div>
+        <div class="cardlinks">
+          <a href="https://shaiksohelll.github.io/Hyderabad-Metro-Go/">Live app ↗</a>
+          <a href="https://github.com/shaiksohelll/Hyderabad-Metro-Go">Source code ↗</a>
+        </div>
       </div>
     </div>
   </section>
 
-  <section>
+  <section id="experience">
     <h2>Experience</h2>
 
-    <div class="exp">
+    <div class="exp reveal">
       <div class="role-line"><b>Full Stack Developer Intern — Student Tribe</b><span class="date">Aug 2025 – Jan 2026 · Hyderabad</span></div>
       <p>Shipped a MERN-stack service-request management platform with Role-Based Access Control end to end (schema design to production deployment) in a 4-person team; migrated core frontend modules from JavaScript to TypeScript strict mode with Next.js App Router; built real-time admin dashboards in React and Tailwind CSS.</p>
     </div>
 
-    <div class="exp">
+    <div class="exp reveal">
       <div class="role-line"><b>AI Developer Intern — Swecha Telangana (VISWAM.AI)</b><span class="date">May 2025 – Jul 2025 · Hyderabad</span></div>
       <p>Co-built Bhasha Seva, a multilingual voice-corpus collection tool (Python, Streamlit, WebRTC) with AI speech-to-text transcription review across 4 Indian languages; integrated local LLM runtimes (Ollama, PocketPal) for fully offline AI inference; delivered sprint-committed features in a 4-person Agile team.</p>
     </div>
   </section>
 
-  <section>
+  <section id="skills">
     <h2>Skills</h2>
-    <div class="skills">
+    <div class="skills reveal">
       <span>TypeScript</span><span>JavaScript</span><span>React</span><span>Next.js</span><span>Node.js</span><span>Express</span><span>PostgreSQL</span><span>MongoDB</span><span>Supabase</span><span>Tailwind CSS</span><span>Python</span><span>REST APIs</span><span>Vitest</span><span>Playwright</span><span>GitHub Actions</span><span>Sentry</span><span>Git</span><span>Linux</span>
     </div>
   </section>
 
   <section>
     <h2>Recognition</h2>
-    <div class="exp">
+    <div class="exp reveal">
       <div class="role-line"><b>MoE's Innovation Cell (IIC) — Government of India</b><span class="date">2024–25</span></div>
       <p>Team lead (5-person team) — Integrated Student Data Management System, selected for the Yukti National Innovation Repository, TRL 4.</p>
     </div>
   </section>
 
   <footer>
-    Built and deployed by Shaik Sohel · <a href="mailto:shaiksohelll05@gmail.com">shaiksohelll05@gmail.com</a> · <a href="https://github.com/shaiksohelll">github.com/shaiksohelll</a>
+    <span>© 2026 Shaik Sohel · Hyderabad, India</span>
+    <span><a href="mailto:shaiksohelll05@gmail.com">shaiksohelll05@gmail.com</a> · <a href="https://github.com/shaiksohelll">github.com/shaiksohelll</a></span>
   </footer>
 
 </div>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+</script>
+
 </body>
 </html>
