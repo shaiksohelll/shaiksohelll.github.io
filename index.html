@@ -6,6 +6,7 @@
   <title>Shaik Sohel — Full-Stack Developer</title>
   <meta name="description" content="Shaik Sohel is a full-stack developer in Hyderabad building deployed, secure, data-intensive systems.">
   <meta name="theme-color" content="#eee9df">
+  <script>document.documentElement.classList.add('js');</script>
   <meta property="og:title" content="Shaik Sohel — Full-Stack Developer">
   <meta property="og:description" content="I build real products and ship them.">
   <meta property="og:type" content="website">
@@ -136,7 +137,8 @@
     .contact-grid a:hover { color: #ff705d; }
     .footer-meta { display: flex; justify-content: space-between; gap: 1rem; margin-top: clamp(5rem, 10vw, 10rem); padding-top: .9rem; border-top: 1px solid rgba(238,233,223,.28); color: rgba(238,233,223,.6); font: 600 .66rem var(--sans); letter-spacing: .1em; text-transform: uppercase; }
 
-    .reveal { opacity: 0; clip-path: inset(0 0 100% 0); transform: translateY(1.2rem); transition: opacity .8s var(--ease), clip-path .9s var(--ease), transform .9s var(--ease); }
+    .reveal { opacity: 1; clip-path: none; transform: none; transition: opacity .8s var(--ease), clip-path .9s var(--ease), transform .9s var(--ease); }
+    .js .reveal { opacity: 0; clip-path: inset(0 0 100% 0); transform: translateY(1.2rem); }
     .reveal.visible { opacity: 1; clip-path: inset(0); transform: translateY(0); }
     .delay-1 { transition-delay: .1s; }
     .delay-2 { transition-delay: .2s; }
@@ -177,7 +179,7 @@
     }
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; }
-      .reveal, .rule-draw { opacity: 1; clip-path: none; transform: none; }
+      .js .reveal, .reveal, .rule-draw { opacity: 1; clip-path: none; transform: none; }
     }
   </style>
 </head>
@@ -270,6 +272,9 @@
     } else {
       items.forEach((item) => item.classList.add('visible'));
     }
+    window.setTimeout(() => {
+      document.querySelectorAll('.reveal').forEach((item) => item.classList.add('visible'));
+    }, 1500);
   </script>
 </body>
 </html>
