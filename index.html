@@ -5,24 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Shaik Sohel — Full-Stack Developer</title>
   <meta name="description" content="Shaik Sohel is a full-stack developer in Hyderabad building deployed, secure, data-intensive systems.">
-  <meta name="theme-color" content="#111111">
+  <meta name="theme-color" content="#0c0f12">
   <meta property="og:title" content="Shaik Sohel — Full-Stack Developer">
   <meta property="og:description" content="I build real products and ship them.">
   <meta property="og:type" content="website">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --black: #111111;
-      --black-2: #191919;
-      --white: #f7f7f2;
-      --yellow: #eaff3f;
-      --grey: #a8aaa3;
-      --line: rgba(247,247,242,.24);
-      --line-dark: rgba(17,17,17,.24);
-      --max: 1440px;
-      --gutter: clamp(1.1rem, 3.5vw, 4rem);
+      --bg: #0c0f12;
+      --surface: #13181d;
+      --surface-2: #182026;
+      --surface-3: #202a31;
+      --ink: #edf3f1;
+      --muted: #8b979b;
+      --line: rgba(237,243,241,.14);
+      --line-strong: rgba(237,243,241,.28);
+      --lime: #d7ff48;
+      --cobalt: #5b7cfa;
+      --warning: #ffcf5a;
+      --max: 1480px;
+      --gutter: clamp(1rem, 3vw, 3.5rem);
       --ease: cubic-bezier(.23, 1, .32, 1);
     }
 
@@ -30,10 +34,10 @@
     html { scroll-behavior: smooth; }
     body {
       margin: 0;
-      background: var(--black);
-      color: var(--white);
-      font-family: "Manrope", Arial, sans-serif;
-      line-height: 1.5;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Space Grotesk", Arial, sans-serif;
+      line-height: 1.45;
       overflow-x: hidden;
     }
     body::after {
@@ -42,111 +46,118 @@
       inset: 0;
       pointer-events: none;
       z-index: 30;
-      opacity: .08;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='.35'/%3E%3C/svg%3E");
+      opacity: .05;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='.5'/%3E%3C/svg%3E");
       mix-blend-mode: screen;
     }
     a { color: inherit; }
-    a:focus-visible, button:focus-visible { outline: 3px solid var(--yellow); outline-offset: 4px; }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--lime); outline-offset: 4px; }
     button { font: inherit; }
     .wrap { width: min(100%, var(--max)); margin-inline: auto; padding-inline: var(--gutter); }
-    .mono { font-family: "DM Mono", monospace; font-size: .68rem; line-height: 1.35; letter-spacing: .08em; text-transform: uppercase; }
-    .condensed { font-family: "Barlow Condensed", Impact, sans-serif; letter-spacing: -.04em; text-transform: uppercase; }
-    .muted { color: var(--grey); }
-    .yellow { color: var(--yellow); }
-    .skip-link { position: fixed; left: 1rem; top: 1rem; z-index: 50; padding: .7rem .9rem; background: var(--yellow); color: var(--black); transform: translateY(-150%); transition: transform .2s var(--ease); }
+    .mono { font-family: "DM Mono", monospace; font-size: .67rem; line-height: 1.4; letter-spacing: .08em; text-transform: uppercase; }
+    .muted { color: var(--muted); }
+    .lime { color: var(--lime); }
+    .cobalt { color: #9eb1ff; }
+    .skip-link { position: fixed; left: 1rem; top: 1rem; z-index: 50; padding: .7rem .9rem; background: var(--lime); color: var(--bg); transform: translateY(-150%); transition: transform .2s var(--ease); }
     .skip-link:focus { transform: translateY(0); }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
 
-    .site-header { position: fixed; inset: 0 0 auto; z-index: 20; background: rgba(17,17,17,.94); border-bottom: 1px solid var(--line); backdrop-filter: blur(12px); }
+    .site-header { position: fixed; inset: 0 0 auto; z-index: 20; background: rgba(12,15,18,.92); border-bottom: 1px solid var(--line); backdrop-filter: blur(14px); }
     .nav { min-height: 4.4rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
-    .brand { display: inline-flex; align-items: center; gap: .7rem; text-decoration: none; font-weight: 700; }
-    .brand-bolt { width: 1.1rem; height: 1.1rem; display: inline-block; background: var(--yellow); clip-path: polygon(42% 0, 100% 0, 67% 42%, 98% 42%, 33% 100%, 49% 56%, 18% 56%); }
-    .nav-links { display: flex; align-items: center; gap: clamp(1rem, 2.6vw, 2.75rem); }
-    .nav-links a { color: var(--grey); text-decoration: none; transition: color .18s ease; }
-    .nav-links a:hover { color: var(--white); }
-    .resume-link { color: var(--black) !important; background: var(--yellow); padding: .72rem .9rem; font-weight: 700; transition: background .18s ease, color .18s ease !important; }
-    .resume-link:hover { background: var(--white); color: var(--black) !important; }
-    .menu-toggle { display: none; border: 0; background: transparent; color: var(--white); padding: .35rem 0; }
+    .brand { display: inline-flex; align-items: center; gap: .65rem; font-weight: 700; text-decoration: none; }
+    .brand-led { width: .58rem; height: .58rem; border-radius: 50%; background: var(--lime); box-shadow: 0 0 1rem rgba(215,255,72,.7); }
+    .nav-links { display: flex; align-items: center; gap: clamp(1rem, 2.4vw, 2.4rem); }
+    .nav-links a { color: var(--muted); text-decoration: none; transition: color .18s ease; }
+    .nav-links a:hover { color: var(--ink); }
+    .resume-link { color: var(--bg) !important; background: var(--lime); padding: .7rem .9rem; font-weight: 600; transition: background .18s ease, color .18s ease !important; }
+    .resume-link:hover { color: var(--bg) !important; background: var(--ink); }
+    .menu-toggle { display: none; border: 0; background: transparent; color: var(--ink); padding: .35rem 0; }
 
-    .hero { min-height: 100svh; padding-top: 8.5rem; padding-bottom: 2rem; display: flex; flex-direction: column; justify-content: space-between; gap: 4rem; }
-    .hero-grid { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(15rem, .8fr); gap: clamp(2rem, 7vw, 8rem); align-items: start; }
-    .hero-kicker { display: flex; align-items: center; gap: .7rem; margin-bottom: 2.2rem; }
-    .hero-kicker::before { content: ""; width: 2.5rem; height: .2rem; background: var(--yellow); }
-    .hero h1 { margin: 0; max-width: 8ch; font-family: "Barlow Condensed", Impact, sans-serif; font-size: clamp(5rem, 15vw, 14rem); font-weight: 600; line-height: .79; letter-spacing: -.07em; text-transform: uppercase; }
-    .hero h1 span { color: var(--yellow); }
-    .hero-side { border: 1px solid var(--line); background: var(--black-2); }
-    .hero-side-head { display: flex; justify-content: space-between; gap: 1rem; padding: .85rem 1rem; border-bottom: 1px solid var(--line); }
-    .hero-side-main { padding: 1.2rem 1rem 1rem; }
-    .hero-side-main p { margin: 0 0 1.4rem; font-size: 1rem; }
-    .hero-facts { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--line); }
-    .hero-fact { padding: .9rem 1rem; border-right: 1px solid var(--line); }
-    .hero-fact:last-child { border-right: 0; }
-    .hero-fact strong { display: block; margin-top: .45rem; font-size: 1.1rem; }
-    .hero-footer { display: flex; justify-content: space-between; align-items: end; gap: 2rem; border-top: 1px solid var(--line); padding-top: 1rem; }
-    .hero-footer p { max-width: 35rem; margin: 0; font-size: clamp(1.2rem, 2.2vw, 1.8rem); font-weight: 600; letter-spacing: -.04em; }
-    .hero-footer .mono { text-align: right; }
-    .status-dot { display: inline-block; width: .55rem; height: .55rem; margin-right: .45rem; background: var(--yellow); border-radius: 50%; }
+    .hero { min-height: 100svh; padding-top: 8.5rem; padding-bottom: 2rem; display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(18rem, .7fr); gap: clamp(2rem, 6vw, 7rem); align-items: end; }
+    .hero-main { align-self: center; }
+    .eyebrow { display: inline-flex; align-items: center; gap: .65rem; color: var(--muted); }
+    .eyebrow::before { content: ""; width: 2rem; height: 1px; background: var(--lime); }
+    .hero h1 { max-width: 10ch; margin: 2rem 0; font-size: clamp(4.2rem, 11vw, 11rem); font-weight: 600; line-height: .88; letter-spacing: -.085em; }
+    .hero h1 span { color: var(--lime); }
+    .hero-copy { max-width: 38rem; margin: 0; color: var(--muted); font-size: clamp(1.05rem, 1.6vw, 1.3rem); }
+    .console { align-self: end; border: 1px solid var(--line-strong); background: var(--surface); }
+    .console-head { display: flex; justify-content: space-between; gap: 1rem; padding: .8rem 1rem; border-bottom: 1px solid var(--line); }
+    .console-status { color: var(--lime); }
+    .console-body { padding: 1rem; }
+    .console-row { display: grid; grid-template-columns: 6rem 1fr; gap: 1rem; align-items: baseline; padding: .7rem 0; border-bottom: 1px solid var(--line); }
+    .console-row:last-child { border-bottom: 0; }
+    .console-row strong { font-size: .95rem; font-weight: 500; }
+    .console-meter { height: .35rem; margin-top: .5rem; background: var(--surface-3); }
+    .console-meter span { display: block; height: 100%; background: var(--lime); }
+    .console-footer { display: flex; justify-content: space-between; gap: 1rem; padding: .8rem 1rem; background: var(--surface-2); border-top: 1px solid var(--line); }
+    .hero-bottom { grid-column: 1 / -1; display: flex; justify-content: space-between; align-items: end; gap: 2rem; padding-top: 1rem; border-top: 1px solid var(--line); }
+    .hero-bottom p { max-width: 40rem; margin: 0; font-size: clamp(1.15rem, 2vw, 1.6rem); letter-spacing: -.04em; }
+    .hero-bottom .mono { text-align: right; }
 
-    .section { padding: clamp(5rem, 12vw, 12rem) 0; }
-    .section-bar { display: flex; justify-content: space-between; gap: 1rem; align-items: center; padding-bottom: .85rem; border-bottom: 1px solid var(--line); }
-    .section-bar .label { color: var(--yellow); }
-    .section-title { margin: 1.5rem 0 clamp(2.5rem, 5vw, 5rem); max-width: 10ch; font-family: "Barlow Condensed", Impact, sans-serif; font-size: clamp(4rem, 10vw, 9rem); line-height: .8; letter-spacing: -.06em; text-transform: uppercase; }
-    .section-intro { max-width: 44rem; margin: -2rem 0 3rem; color: var(--grey); font-size: clamp(1rem, 1.5vw, 1.25rem); }
+    .section { padding: clamp(5rem, 11vw, 11rem) 0; }
+    .section-head { display: flex; justify-content: space-between; align-items: end; gap: 2rem; margin-bottom: clamp(2rem, 5vw, 5rem); }
+    .section-head h2 { max-width: 8ch; margin: 0; font-size: clamp(3.5rem, 8vw, 8rem); line-height: .86; letter-spacing: -.085em; }
+    .section-head p { max-width: 25rem; margin: 0; color: var(--muted); }
+    .section-id { color: var(--lime); }
+    .section-line { height: 1px; background: var(--line-strong); margin-bottom: 1rem; }
 
-    .project-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
-    .project-card { display: flex; flex-direction: column; min-height: 29rem; border: 1px solid var(--line); background: var(--black-2); transition: transform .25s var(--ease), border-color .2s ease; }
-    .project-card:hover { transform: translateY(-.5rem); border-color: var(--yellow); }
-    .project-card.primary { grid-column: span 2; min-height: 34rem; background: var(--yellow); color: var(--black); border-color: var(--yellow); }
-    .project-top { display: flex; justify-content: space-between; gap: 1rem; padding: .9rem 1rem; border-bottom: 1px solid currentColor; }
-    .project-main { display: flex; flex: 1; flex-direction: column; justify-content: space-between; padding: clamp(1.2rem, 3vw, 2.6rem); }
-    .project-name { margin: 0 0 1.5rem; max-width: 8ch; font-family: "Barlow Condensed", Impact, sans-serif; font-size: clamp(4.2rem, 9vw, 9rem); font-weight: 600; line-height: .75; letter-spacing: -.07em; text-transform: uppercase; }
-    .project-card:not(.primary) .project-name { font-size: clamp(3.7rem, 7vw, 7rem); }
-    .project-description { max-width: 41rem; margin: 0; font-size: clamp(1rem, 1.35vw, 1.2rem); font-weight: 600; letter-spacing: -.025em; }
-    .project-evidence { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .5rem; margin-top: 2rem; }
-    .evidence { padding: .8rem; border: 1px solid currentColor; }
-    .evidence strong { display: block; margin-top: .5rem; font-size: clamp(1rem, 1.7vw, 1.45rem); }
-    .project-bottom { display: flex; justify-content: space-between; align-items: end; gap: 1rem; margin-top: 2rem; }
-    .project-stack { max-width: 32rem; color: inherit; opacity: .75; }
-    .project-link { display: inline-flex; align-items: center; gap: .5rem; padding: .75rem .9rem; border: 1px solid currentColor; text-decoration: none; font-weight: 800; white-space: nowrap; transition: background .18s ease, color .18s ease; }
-    .project-link:hover { background: var(--black); color: var(--white); }
-    .primary .project-link:hover { background: var(--white); color: var(--black); }
-    .project-note { margin: 1rem 0 0; font-size: .82rem; color: inherit; opacity: .7; }
+    .project-grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: .8rem; }
+    .project-card { position: relative; display: flex; min-height: 26rem; flex-direction: column; grid-column: span 6; background: var(--surface); border: 1px solid var(--line); transition: transform .22s var(--ease), border-color .22s ease, background .22s ease; }
+    .project-card:hover { transform: translateY(-.35rem); border-color: var(--lime); background: var(--surface-2); }
+    .project-card.primary { grid-column: span 12; min-height: 31rem; background: var(--surface-2); border-color: var(--cobalt); }
+    .project-card.primary:hover { border-color: var(--lime); }
+    .card-head { display: flex; justify-content: space-between; gap: 1rem; align-items: center; padding: .8rem 1rem; border-bottom: 1px solid var(--line); }
+    .card-id { color: var(--lime); }
+    .card-state { color: var(--muted); }
+    .card-main { display: flex; flex: 1; flex-direction: column; justify-content: space-between; padding: clamp(1.2rem, 3vw, 2.8rem); }
+    .project-name { margin: 0 0 1.1rem; font-size: clamp(3.8rem, 8vw, 8rem); font-weight: 600; line-height: .82; letter-spacing: -.09em; }
+    .project-card:not(.primary) .project-name { font-size: clamp(3rem, 6vw, 6rem); }
+    .project-description { max-width: 43rem; margin: 0; font-size: clamp(1rem, 1.35vw, 1.2rem); font-weight: 500; letter-spacing: -.025em; }
+    .project-foot { display: flex; justify-content: space-between; align-items: end; gap: 1rem; margin-top: 2.4rem; }
+    .stack { max-width: 36rem; color: var(--muted); }
+    .launch { display: inline-flex; align-items: center; gap: .55rem; padding: .7rem .8rem; color: var(--bg); background: var(--lime); text-decoration: none; white-space: nowrap; font-weight: 600; transition: background .18s ease, color .18s ease; }
+    .launch:hover { background: var(--ink); color: var(--bg); }
+    .note { margin: .65rem 0 0; max-width: 30rem; color: var(--muted); font-size: .8rem; }
+    .telemetry { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .5rem; margin-top: 2.2rem; }
+    .telemetry-item { padding: .8rem; border: 1px solid var(--line); background: rgba(12,15,18,.24); }
+    .telemetry-item strong { display: block; margin-top: .45rem; color: var(--ink); font-size: clamp(1rem, 1.7vw, 1.35rem); }
+    .telemetry-item span { color: var(--muted); }
+    .signal-mark { position: absolute; right: 1rem; bottom: 1rem; width: .55rem; height: .55rem; background: var(--lime); box-shadow: 0 0 1rem rgba(215,255,72,.5); }
 
-    .system-break { display: grid; grid-template-columns: .75fr 1.25fr; gap: clamp(2rem, 10vw, 10rem); padding: clamp(4rem, 10vw, 10rem) 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-    .system-break h2 { margin: 0; max-width: 8ch; font-family: "Barlow Condensed", Impact, sans-serif; font-size: clamp(4rem, 10vw, 10rem); line-height: .77; letter-spacing: -.07em; text-transform: uppercase; }
-    .system-break p { max-width: 38rem; margin: 0; font-size: clamp(1.2rem, 2.2vw, 1.8rem); font-weight: 700; letter-spacing: -.04em; }
-    .system-break p + p { margin-top: 1.5rem; color: var(--grey); font-size: 1rem; font-weight: 400; letter-spacing: 0; }
+    .statement { display: grid; grid-template-columns: .75fr 1.25fr; gap: clamp(2rem, 8vw, 8rem); align-items: start; padding: clamp(4rem, 9vw, 9rem) 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .statement h2 { margin: 0; max-width: 9ch; font-size: clamp(3.5rem, 8vw, 8rem); line-height: .84; letter-spacing: -.09em; }
+    .statement p { max-width: 39rem; margin: 0; font-size: clamp(1.2rem, 2vw, 1.7rem); letter-spacing: -.04em; }
+    .statement p + p { margin-top: 1.5rem; color: var(--muted); font-size: 1rem; letter-spacing: 0; }
 
     .experience-layout { display: grid; grid-template-columns: .75fr 1.25fr; gap: clamp(2rem, 8vw, 8rem); }
-    .experience-intro p { max-width: 26rem; margin: 0; font-size: clamp(1.2rem, 2vw, 1.7rem); font-weight: 700; letter-spacing: -.04em; }
-    .experience-intro .muted { margin-top: 1.2rem; font-size: 1rem; font-weight: 400; letter-spacing: 0; }
-    .timeline { border-left: 2px solid var(--yellow); }
-    .role { position: relative; padding: 0 0 3rem 2rem; }
-    .role::before { content: ""; position: absolute; left: -.42rem; top: .22rem; width: .75rem; height: .75rem; background: var(--yellow); border: .15rem solid var(--black); }
-    .role + .role { padding-top: .35rem; border-top: 1px solid var(--line); }
-    .role-meta { display: flex; justify-content: space-between; gap: 1rem; color: var(--grey); }
-    .role h3 { margin: .8rem 0 .8rem; font-size: clamp(1.4rem, 2.5vw, 2.25rem); line-height: 1; letter-spacing: -.06em; }
-    .role p { max-width: 42rem; margin: 0; color: var(--grey); }
+    .experience-intro p { max-width: 25rem; margin: 0; font-size: clamp(1.2rem, 2vw, 1.6rem); letter-spacing: -.04em; }
+    .experience-intro p + p { margin-top: 1.2rem; color: var(--muted); font-size: 1rem; letter-spacing: 0; }
+    .timeline { border-top: 1px solid var(--line-strong); }
+    .role { padding: 1.4rem 0 2rem; border-bottom: 1px solid var(--line); }
+    .role-meta { display: flex; justify-content: space-between; gap: 1rem; color: var(--muted); }
+    .role h3 { margin: .8rem 0; font-size: clamp(1.4rem, 2.4vw, 2.2rem); line-height: 1; letter-spacing: -.065em; }
+    .role p { max-width: 44rem; margin: 0; color: var(--muted); }
 
     .skills { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
-    .skill-group { min-height: 12rem; padding: 1rem; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-    .skill-group h3 { margin: 0 0 1rem; color: var(--yellow); font-size: .9rem; }
-    .skill-group p { margin: 0; color: var(--grey); font-size: .95rem; line-height: 1.7; }
+    .skill { min-height: 10rem; padding: 1rem; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .skill h3 { margin: 0 0 1rem; color: var(--lime); font-size: .9rem; font-weight: 600; }
+    .skill p { margin: 0; color: var(--muted); font-size: .94rem; line-height: 1.7; }
 
-    .contact { padding: clamp(5rem, 12vw, 12rem) 0 1.5rem; background: var(--yellow); color: var(--black); }
-    .contact .section-bar { border-color: var(--black); }
-    .contact-title { margin: 3rem 0 clamp(4rem, 9vw, 8rem); max-width: 8ch; font-family: "Barlow Condensed", Impact, sans-serif; font-size: clamp(5rem, 15vw, 14rem); line-height: .75; letter-spacing: -.08em; text-transform: uppercase; }
-    .contact-title a { text-decoration: none; }
-    .contact-title a:hover { text-decoration: underline; text-decoration-thickness: .08em; text-underline-offset: .08em; }
-    .contact-grid { display: grid; grid-template-columns: .75fr 1.25fr; gap: 1rem; padding-top: 1rem; border-top: 1px solid var(--black); }
+    .contact { padding: clamp(5rem, 11vw, 11rem) 0 1.5rem; background: var(--surface-2); border-top: 1px solid var(--cobalt); }
+    .contact-top { display: flex; justify-content: space-between; gap: 1rem; padding-bottom: .9rem; border-bottom: 1px solid var(--line); }
+    .contact h2 { max-width: 9ch; margin: 3rem 0 clamp(4rem, 8vw, 8rem); font-size: clamp(4rem, 10vw, 10rem); line-height: .84; letter-spacing: -.09em; }
+    .contact h2 a { text-decoration: none; }
+    .contact h2 a:hover { color: var(--lime); }
+    .contact-grid { display: grid; grid-template-columns: .75fr 1.25fr; gap: 1rem; padding-top: 1rem; border-top: 1px solid var(--line); }
     .contact-grid p { margin: 0; }
-    .contact-grid a { font-weight: 800; text-decoration-thickness: .08em; text-underline-offset: .18em; }
-    .contact-actions { display: flex; flex-wrap: wrap; gap: .7rem; }
-    .contact-actions a { display: inline-block; padding: .8rem 1rem; border: 1px solid var(--black); text-decoration: none; }
-    .contact-actions a:hover { background: var(--black); color: var(--yellow); }
-    .footer-meta { display: flex; justify-content: space-between; gap: 1rem; margin-top: clamp(5rem, 12vw, 11rem); padding-top: 1rem; border-top: 1px solid var(--black); }
+    .contact-grid a { color: var(--ink); text-decoration-thickness: .08em; text-underline-offset: .18em; }
+    .contact-grid a:hover { color: var(--lime); }
+    .contact-actions { display: flex; flex-wrap: wrap; gap: .65rem; }
+    .contact-actions a { display: inline-block; padding: .7rem .8rem; border: 1px solid var(--line-strong); text-decoration: none; transition: border-color .18s ease, background .18s ease; }
+    .contact-actions a:hover { border-color: var(--lime); background: var(--bg); }
+    .footer-meta { display: flex; justify-content: space-between; gap: 1rem; margin-top: clamp(5rem, 11vw, 10rem); padding-top: 1rem; border-top: 1px solid var(--line); color: var(--muted); }
 
-    .reveal { opacity: 0; transform: translateY(1.2rem); transition: opacity .65s var(--ease), transform .65s var(--ease); }
+    .reveal { opacity: 0; transform: translateY(1rem); transition: opacity .65s var(--ease), transform .65s var(--ease); }
     .reveal.visible { opacity: 1; transform: translateY(0); }
     .delay-1 { transition-delay: .08s; }
     .delay-2 { transition-delay: .16s; }
@@ -154,27 +165,24 @@
 
     @media (max-width: 820px) {
       .nav { min-height: 3.9rem; }
-      .nav-links { position: absolute; top: 100%; left: 0; right: 0; display: grid; gap: 0; padding: 0 var(--gutter); background: var(--black); border-bottom: 1px solid var(--line); opacity: 0; pointer-events: none; transform: translateY(-.7rem); transition: opacity .2s ease, transform .2s var(--ease); }
+      .nav-links { position: absolute; top: 100%; left: 0; right: 0; display: grid; gap: 0; padding: 0 var(--gutter); background: var(--bg); border-bottom: 1px solid var(--line); opacity: 0; pointer-events: none; transform: translateY(-.7rem); transition: opacity .2s ease, transform .2s var(--ease); }
       .nav-links.open { opacity: 1; pointer-events: auto; transform: translateY(0); }
       .nav-links a { padding: 1rem 0; border-bottom: 1px solid var(--line); }
-      .nav-links .resume-link { margin: 1rem 0; padding: .9rem; text-align: center; border: 0; }
+      .nav-links .resume-link { margin: 1rem 0; padding: .9rem; border: 0; text-align: center; }
       .menu-toggle { display: block; }
-      .hero { padding-top: 7rem; }
-      .hero-grid, .system-break, .experience-layout, .contact-grid { grid-template-columns: 1fr; }
-      .hero h1 { max-width: 7ch; font-size: clamp(4.8rem, 22vw, 9rem); }
-      .hero-side { max-width: 30rem; }
-      .hero-footer { display: block; }
-      .hero-footer .mono { display: block; margin-top: 1.5rem; text-align: left; }
-      .project-grid { grid-template-columns: 1fr; }
-      .project-card.primary { grid-column: auto; min-height: 31rem; }
-      .project-card { min-height: 27rem; }
+      .hero { grid-template-columns: 1fr; padding-top: 7rem; align-items: start; }
+      .hero h1 { max-width: 8ch; font-size: clamp(4.4rem, 19vw, 8rem); }
+      .console { max-width: 34rem; }
+      .hero-bottom { display: block; }
+      .hero-bottom .mono { display: block; margin-top: 1.4rem; text-align: left; }
+      .project-card, .project-card.primary { grid-column: span 12; min-height: 26rem; }
+      .statement, .experience-layout, .contact-grid { grid-template-columns: 1fr; }
       .skills { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
     @media (max-width: 520px) {
-      .project-main { padding: 1.2rem; }
-      .project-evidence { grid-template-columns: 1fr; }
-      .project-bottom { display: block; }
-      .project-link { margin-top: 1rem; }
+      .project-foot { display: block; }
+      .launch { margin-top: 1rem; }
+      .telemetry { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .role-meta { display: block; }
       .role-meta .mono + .mono { display: block; margin-top: .4rem; }
       .skills { grid-template-columns: 1fr; }
@@ -191,7 +199,7 @@
   <a class="skip-link mono" href="#main">Skip to content</a>
   <header class="site-header">
     <nav class="nav wrap" aria-label="Primary navigation">
-      <a class="brand" href="#top" aria-label="Shaik Sohel home"><span class="brand-bolt" aria-hidden="true"></span><span>SHAIK SOHEL</span></a>
+      <a class="brand" href="#top" aria-label="Shaik Sohel home"><span class="brand-led" aria-hidden="true"></span><span>SHAIK SOHEL</span></a>
       <div class="nav-links" id="nav-links">
         <a class="mono" href="#systems">Systems</a>
         <a class="mono" href="#experience">Experience</a>
@@ -204,148 +212,95 @@
 
   <main id="main">
     <section class="hero wrap" id="top" aria-labelledby="hero-title">
-      <div class="hero-grid">
-        <div>
-          <div class="hero-kicker mono yellow">Full-stack developer / build log</div>
-          <h1 id="hero-title" class="reveal">I build <span>real products</span> and ship them.</h1>
-        </div>
-        <aside class="hero-side reveal delay-1" aria-label="Current profile">
-          <div class="hero-side-head mono"><span>Profile / 2026</span><span class="yellow">SYS: READY</span></div>
-          <div class="hero-side-main">
-            <p>Software Engineer — final-year B.Tech CSE student and full-stack developer building deployed, secure, data-intensive systems.</p>
-            <div class="hero-facts">
-              <div class="hero-fact"><span class="mono muted">Based</span><strong>Hyderabad, IN</strong></div>
-              <div class="hero-fact"><span class="mono muted">Batch</span><strong>2027</strong></div>
-            </div>
-          </div>
-        </aside>
+      <div class="hero-main">
+        <span class="eyebrow mono lime">Full-stack developer / system online</span>
+        <h1 id="hero-title" class="reveal">I build <span>real products</span> and ship them.</h1>
+        <p class="hero-copy reveal delay-1">Software Engineer — final-year B.Tech CSE student and full-stack developer building deployed, secure, data-intensive systems.</p>
       </div>
-      <div class="hero-footer">
-        <p class="reveal delay-2">From schema design and SQL queries to automated testing, CI/CD pipelines, and production observability.</p>
-        <span class="mono muted reveal delay-3"><span class="status-dot" aria-hidden="true"></span>Hyderabad / India</span>
+      <aside class="console reveal delay-2" aria-label="Profile telemetry">
+        <div class="console-head mono"><span>PROFILE / 2026</span><span class="console-status">● ONLINE</span></div>
+        <div class="console-body">
+          <div class="console-row"><span class="mono muted">Location</span><strong>Hyderabad, India</strong></div>
+          <div class="console-row"><span class="mono muted">Batch</span><strong>Final-year CS · 2027</strong></div>
+          <div class="console-row"><span class="mono muted">Current</span><div><strong>Product systems</strong><div class="console-meter" aria-hidden="true"><span style="width: 88%"></span></div></div></div>
+          <div class="console-row"><span class="mono muted">Focus</span><strong>TypeScript · React · Node.js · PostgreSQL</strong></div>
+        </div>
+        <div class="console-footer mono"><span class="muted">Telemetry</span><span class="lime">Nominal</span></div>
+      </aside>
+      <div class="hero-bottom">
+        <p class="reveal delay-1">From schema design and SQL queries to automated testing, CI/CD pipelines, and production observability.</p>
+        <span class="mono muted reveal delay-2">Hyderabad / India</span>
       </div>
     </section>
 
     <section class="section wrap" id="systems" aria-labelledby="systems-title">
-      <div class="section-bar mono"><span class="label">Selected systems</span><span class="muted">Products / systems / field work</span></div>
-      <h2 id="systems-title" class="section-title reveal">Built to hold up.</h2>
-      <p class="section-intro reveal delay-1">The project work is the proof: real data, real state transitions, real failure modes, and systems that stay legible under pressure.</p>
-
+      <div class="section-line"></div>
+      <div class="section-head"><div><span class="section-id mono">SYS / 01</span><h2 id="systems-title" class="reveal">Built to hold up.</h2></div><p class="reveal delay-1">Products, systems, and field work grounded in real data, explicit state transitions, and readable failure modes.</p></div>
       <div class="project-grid">
         <article class="project-card primary reveal">
-          <div class="project-top mono"><span>SYS / 01</span><span>REAL-TIME JOB-MARKET INTELLIGENCE</span></div>
-          <div class="project-main">
-            <div>
-              <h3 class="project-name">Klar</h3>
-              <p class="project-description">A full-stack analytics platform ingesting job data from two independent APIs and surfacing skill-demand rankings, salary insights, and hiring trends.</p>
-              <div class="project-evidence">
-                <div class="evidence"><span class="mono">Daily ingest</span><strong>550+</strong></div>
-                <div class="evidence"><span class="mono">Active corpus</span><strong>1,300+</strong></div>
-                <div class="evidence"><span class="mono">Skill history</span><strong>4,200+</strong></div>
-              </div>
-            </div>
-            <div class="project-bottom">
-              <div><div class="project-stack mono">React · Node.js · Express · MongoDB · Tailwind CSS</div><p class="project-note">The first load may take up to a minute on the free-tier service.</p></div>
-              <a class="project-link mono" href="https://klar-dev.onrender.com/" target="_blank" rel="noopener noreferrer">Open system ↗</a>
-            </div>
-          </div>
+          <div class="card-head mono"><span class="card-id">KLAR / 01</span><span class="card-state">LIVE SYSTEM · OPEN SOURCE</span></div>
+          <div class="card-main">
+            <div><h3 class="project-name">Klar</h3><p class="project-description">A full-stack analytics platform ingesting job data from two independent APIs and surfacing skill-demand rankings, salary insights, and hiring trends.</p><div class="telemetry"><div class="telemetry-item"><span class="mono">Daily ingest</span><strong>550+</strong></div><div class="telemetry-item"><span class="mono">Active corpus</span><strong>1,300+</strong></div><div class="telemetry-item"><span class="mono">Skills</span><strong>45</strong></div><div class="telemetry-item"><span class="mono">Time-series</span><strong>4,200+</strong></div></div></div>
+            <div class="project-foot"><div><div class="stack mono">React · Node.js · Express · MongoDB · Tailwind CSS</div><p class="note">First load may take up to a minute on the free-tier service.</p></div><a class="launch mono" href="https://klar-dev.onrender.com/" target="_blank" rel="noopener noreferrer">Launch system ↗</a></div>
+          </div><span class="signal-mark" aria-hidden="true"></span>
         </article>
 
         <article class="project-card reveal delay-1">
-          <div class="project-top mono"><span>SYS / 02</span><span>OPEN SOURCE · MIT</span></div>
-          <div class="project-main">
-            <div>
-              <h3 class="project-name">Pakka</h3>
-              <p class="project-description">A milestone escrow reference implementation where money-state transitions are server-enforced in PostgreSQL.</p>
-              <div class="project-evidence">
-                <div class="evidence"><span class="mono">Migrations</span><strong>37</strong></div>
-                <div class="evidence"><span class="mono">RLS policies</span><strong>13+</strong></div>
-                <div class="evidence"><span class="mono">ADRs</span><strong>8</strong></div>
-              </div>
-            </div>
-            <div class="project-bottom">
-              <div class="project-stack mono">Next.js 15 · TypeScript strict · Supabase · PostgreSQL</div>
-              <a class="project-link mono" href="https://mypakka.vercel.app/login" target="_blank" rel="noopener noreferrer">Open system ↗</a>
-            </div>
-          </div>
+          <div class="card-head mono"><span class="card-id">PAKKA / 02</span><span class="card-state">LIVE SYSTEM · MIT</span></div>
+          <div class="card-main">
+            <div><h3 class="project-name">Pakka</h3><p class="project-description">A milestone escrow reference implementation where money-state transitions are server-enforced in PostgreSQL.</p><div class="telemetry"><div class="telemetry-item"><span class="mono">Migrations</span><strong>37</strong></div><div class="telemetry-item"><span class="mono">RLS policies</span><strong>13+</strong></div><div class="telemetry-item"><span class="mono">ADRs</span><strong>8</strong></div><div class="telemetry-item"><span class="mono">Ledger</span><strong>0-sum</strong></div></div></div>
+            <div class="project-foot"><div class="stack mono">Next.js 15 · TypeScript strict · Supabase · PostgreSQL</div><a class="launch mono" href="https://mypakka.vercel.app/login" target="_blank" rel="noopener noreferrer">Launch system ↗</a></div>
+          </div><span class="signal-mark" aria-hidden="true"></span>
         </article>
 
         <article class="project-card reveal delay-2">
-          <div class="project-top mono"><span>SYS / 03</span><span>TEAM LEAD · TRL 4</span></div>
-          <div class="project-main">
-            <div>
-              <h3 class="project-name">Bhasha Seva</h3>
-              <p class="project-description">A multilingual voice-corpus collection tool with AI speech-to-text transcription review across four Indian languages.</p>
-            </div>
-            <div class="project-bottom">
-              <div class="project-stack mono">Python · Streamlit · WebRTC · Ollama · PocketPal</div>
-              <span class="project-link mono">Yukti repository · TRL 4</span>
-            </div>
-          </div>
+          <div class="card-head mono"><span class="card-id">BHASHA SEVA / 03</span><span class="card-state">TEAM LEAD · TRL 4</span></div>
+          <div class="card-main">
+            <div><h3 class="project-name">Bhasha Seva</h3><p class="project-description">A multilingual voice-corpus collection tool with AI speech-to-text transcription review across four Indian languages.</p></div>
+            <div class="project-foot"><div class="stack mono">Python · Streamlit · WebRTC · Ollama · PocketPal</div><span class="launch mono">Yukti repository · TRL 4</span></div>
+          </div><span class="signal-mark" aria-hidden="true"></span>
         </article>
-
       </div>
     </section>
 
-    <section class="system-break wrap" aria-label="Engineering statement">
-      <h2 class="reveal">No black boxes.</h2>
-      <div>
-        <p class="reveal delay-1">I like systems you can inspect: a state machine with explicit transitions, an ingest job that fails safely, a test suite that catches the regression.</p>
-        <p class="reveal delay-2">The work lives at the seam between product behavior and infrastructure detail.</p>
-      </div>
+    <section class="statement wrap" aria-label="Engineering statement">
+      <div><span class="section-id mono">READOUT / 02</span><h2 class="reveal">No black boxes.</h2></div>
+      <div><p class="reveal delay-1">I like systems you can inspect: a state machine with explicit transitions, an ingest job that fails safely, a test suite that catches the regression.</p><p class="reveal delay-2">The work lives at the seam between product behavior and infrastructure detail.</p></div>
     </section>
 
     <section class="section wrap" id="experience" aria-labelledby="experience-title">
-      <div class="section-bar mono"><span class="label">Field record</span><span class="muted">Experience / Hyderabad, India</span></div>
-      <h2 id="experience-title" class="section-title reveal">Teams I shipped with.</h2>
+      <div class="section-line"></div>
+      <div class="section-head"><div><span class="section-id mono">SYS / 03</span><h2 id="experience-title" class="reveal">Teams I shipped with.</h2></div><p class="reveal delay-1">Production modules, strict-mode migrations, voice-corpus tooling, and the discipline of a four-person Agile team.</p></div>
       <div class="experience-layout">
-        <div class="experience-intro reveal">
-          <p>Two internships. Production modules, strict-mode migrations, voice-corpus tooling, and the discipline of a four-person Agile team.</p>
-        </div>
+        <div class="experience-intro reveal"><p>Two internships across edtech and open-source AI work.</p><p>Scope, dates, and employers are recorded below.</p></div>
         <div class="timeline">
-          <article class="role reveal delay-1">
-            <div class="role-meta mono"><span>Full Stack Developer Intern</span><span>Aug 2025 — Jan 2026</span></div>
-            <h3>Student Tribe <span class="muted">/ edtech / Hyderabad</span></h3>
-            <p>Shipped a MERN-stack service request management platform with Role-Based Access Control end to end, from schema design to production deployment, as part of a 4-person team. Migrated core frontend modules from JavaScript to TypeScript strict mode with Next.js App Router, and delivered real-time React and Tailwind CSS admin dashboards for live service metrics and request analytics.</p>
-          </article>
-          <article class="role reveal delay-2">
-            <div class="role-meta mono"><span>AI Developer Intern</span><span>May 2025 — Jul 2025</span></div>
-            <h3>Swecha Telangana <span class="muted">/ VISWAM.AI / Hyderabad</span></h3>
-            <p>Co-built Bhasha Seva, a multilingual voice-corpus collection tool using Python, Streamlit, and WebRTC, with AI speech-to-text transcription review across 4 Indian languages. Curated and cleaned datasets for model fine-tuning, integrated Ollama and PocketPal for fully offline AI inference, and delivered sprint-committed features in a 4-person Agile team.</p>
-          </article>
+          <article class="role reveal delay-1"><div class="role-meta mono"><span>Full Stack Developer Intern</span><span>Aug 2025 — Jan 2026</span></div><h3>Student Tribe <span class="muted">/ edtech / Hyderabad</span></h3><p>Shipped a MERN-stack service request management platform with Role-Based Access Control end to end, from schema design to production deployment, as part of a 4-person team. Migrated core frontend modules from JavaScript to TypeScript strict mode with Next.js App Router, and delivered real-time React and Tailwind CSS admin dashboards for live service metrics and request analytics.</p></article>
+          <article class="role reveal delay-2"><div class="role-meta mono"><span>AI Developer Intern</span><span>May 2025 — Jul 2025</span></div><h3>Swecha Telangana <span class="muted">/ VISWAM.AI / Hyderabad</span></h3><p>Co-built Bhasha Seva, a multilingual voice-corpus collection tool using Python, Streamlit, and WebRTC, with AI speech-to-text transcription review across 4 Indian languages. Curated and cleaned datasets for model fine-tuning, integrated Ollama and PocketPal for fully offline AI inference, and delivered sprint-committed features in a 4-person Agile team.</p></article>
         </div>
       </div>
     </section>
 
     <section class="section wrap" aria-labelledby="stack-title">
-      <div class="section-bar mono"><span class="label">Toolchain</span><span class="muted">Selected from resume</span></div>
-      <h2 id="stack-title" class="section-title reveal">The parts I use.</h2>
+      <div class="section-line"></div>
+      <div class="section-head"><div><span class="section-id mono">STACK / 04</span><h2 id="stack-title" class="reveal">The parts I use.</h2></div><p class="reveal delay-1">A working toolchain for building, testing, shipping, and observing full-stack systems.</p></div>
       <div class="skills">
-        <div class="skill-group reveal"><h3>Languages</h3><p>Python<br>JavaScript (ES6+)<br>TypeScript (strict mode)<br>SQL (PL/pgSQL)<br>HTML5 · CSS3</p></div>
-        <div class="skill-group reveal delay-1"><h3>Backend</h3><p>Node.js · Express.js<br>RESTful API Design<br>JWT & OAuth Authentication<br>Rate Limiting · Helmet · CORS</p></div>
-        <div class="skill-group reveal delay-2"><h3>Frontend</h3><p>React.js · Next.js App Router<br>Vite · Tailwind CSS<br>Framer Motion · Zustand<br>TanStack Query</p></div>
-        <div class="skill-group reveal"><h3>Data</h3><p>PostgreSQL<br>Row-Level Security · triggers · functions<br>MongoDB · Mongoose<br>MySQL</p></div>
-        <div class="skill-group reveal delay-1"><h3>Cloud</h3><p>Render web services + cron jobs<br>Vercel · MongoDB Atlas<br>Supabase Auth · Realtime · Edge Functions</p></div>
-        <div class="skill-group reveal delay-2"><h3>Quality</h3><p>Vitest · Playwright<br>ESLint · GitHub Actions<br>CodeQL · Gitleaks<br>Sentry · PostHog</p></div>
+        <div class="skill reveal"><h3>Languages</h3><p>Python<br>JavaScript (ES6+)<br>TypeScript (strict mode)<br>SQL (PL/pgSQL)<br>HTML5 · CSS3</p></div>
+        <div class="skill reveal delay-1"><h3>Backend</h3><p>Node.js · Express.js<br>RESTful API Design<br>JWT & OAuth Authentication<br>Rate Limiting · Helmet · CORS</p></div>
+        <div class="skill reveal delay-2"><h3>Frontend</h3><p>React.js · Next.js App Router<br>Vite · Tailwind CSS<br>Framer Motion · Zustand<br>TanStack Query</p></div>
+        <div class="skill reveal"><h3>Data</h3><p>PostgreSQL<br>Row-Level Security · triggers · functions<br>MongoDB · Mongoose<br>MySQL</p></div>
+        <div class="skill reveal delay-1"><h3>Cloud</h3><p>Render web services + cron jobs<br>Vercel · MongoDB Atlas<br>Supabase Auth · Realtime · Edge Functions</p></div>
+        <div class="skill reveal delay-2"><h3>Quality</h3><p>Vitest · Playwright<br>ESLint · GitHub Actions<br>CodeQL · Gitleaks<br>Sentry · PostHog</p></div>
       </div>
     </section>
 
     <section class="section wrap" aria-labelledby="education-title">
-      <div class="section-bar mono"><span class="label">Base layer</span><span class="muted">Education / recognition</span></div>
-      <h2 id="education-title" class="section-title reveal">Still in the lab.</h2>
+      <div class="section-line"></div>
+      <div class="section-head"><div><span class="section-id mono">BASE / 05</span><h2 id="education-title" class="reveal">Still in the lab.</h2></div><p class="reveal delay-1">Computer science foundations, applied product work, and one national innovation recognition.</p></div>
       <div class="experience-layout">
-        <div class="experience-intro reveal"><p>Bachelor of Technology in Computer Science & Engineering.</p><p class="muted">Malla Reddy Institute of Technology & Science, Hyderabad · 2023 — 2027 · Expected May 2027</p></div>
+        <div class="experience-intro reveal"><p>Bachelor of Technology in Computer Science & Engineering.</p><p>Malla Reddy Institute of Technology & Science, Hyderabad · 2023 — 2027 · Expected May 2027</p></div>
         <div class="timeline">
-          <article class="role reveal delay-1">
-            <div class="role-meta mono"><span>Relevant coursework</span><span>2023 — 2027</span></div>
-            <h3>Data Structures & Algorithms / DBMS / Operating Systems</h3>
-            <p>Coursework listed on the resume.</p>
-          </article>
-          <article class="role reveal delay-2">
-            <div class="role-meta mono"><span>Government of India recognition</span><span>2024 — 2025</span></div>
-            <h3>MoE’s Innovation Cell <span class="muted">/ IIC</span></h3>
-            <p>Team Lead of a 5-person team for an Integrated Student Data Management System selected for the Yukti National Innovation Repository at TRL 4.</p>
-          </article>
+          <article class="role reveal delay-1"><div class="role-meta mono"><span>Relevant coursework</span><span>2023 — 2027</span></div><h3>Data Structures & Algorithms / DBMS / Operating Systems</h3><p>Coursework listed on the resume.</p></article>
+          <article class="role reveal delay-2"><div class="role-meta mono"><span>Government of India recognition</span><span>2024 — 2025</span></div><h3>MoE’s Innovation Cell <span class="muted">/ IIC</span></h3><p>Team Lead of a 5-person team for an Integrated Student Data Management System selected for the Yukti National Innovation Repository at TRL 4.</p></article>
         </div>
       </div>
     </section>
@@ -353,12 +308,12 @@
 
   <footer class="contact" id="contact" aria-labelledby="contact-title">
     <div class="wrap">
-      <div class="section-bar mono"><span>Contact / open channel</span><span>Hyderabad, India — 500081</span></div>
-      <h2 id="contact-title" class="contact-title reveal"><a href="mailto:shaiksohelll05@gmail.com">Let’s build<br>the next one.</a></h2>
+      <div class="contact-top mono"><span class="lime">CONTACT / OPEN CHANNEL</span><span class="muted">Hyderabad, India — 500081</span></div>
+      <h2 id="contact-title" class="reveal"><a href="mailto:shaiksohelll05@gmail.com">Let’s build<br>the next one.</a></h2>
       <div class="contact-grid reveal delay-1">
-        <p class="mono">Direct line</p>
+        <p class="mono muted">Direct line</p>
         <p><a href="mailto:shaiksohelll05@gmail.com">shaiksohelll05@gmail.com</a><br><a href="tel:+918639673777">+91 8639673777</a></p>
-        <p class="mono">Links</p>
+        <p class="mono muted">Links</p>
         <div class="contact-actions"><a href="https://github.com/shaiksohelll" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="https://www.linkedin.com/in/shaiksohellll" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="shaik-sohel-resume.pdf" download>Download résumé ↓</a></div>
       </div>
       <div class="footer-meta mono"><span>Shaik Sohel / Full-Stack Developer</span><span>© 2026 / Built on GitHub Pages</span></div>
@@ -378,7 +333,6 @@
       toggle?.setAttribute('aria-expanded', 'false');
       if (toggle) toggle.textContent = 'Menu';
     }));
-
     const items = document.querySelectorAll('.reveal');
     if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       const observer = new IntersectionObserver((entries) => {
