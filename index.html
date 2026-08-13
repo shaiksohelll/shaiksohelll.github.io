@@ -6,7 +6,6 @@
   <title>Shaik Sohel — Full-Stack Developer</title>
   <meta name="description" content="Shaik Sohel is a full-stack developer in Hyderabad building deployed, secure, data-intensive systems.">
   <meta name="theme-color" content="#eee9df">
-  <link rel="icon" href="avatar.png" type="image/png">
   <script>document.documentElement.classList.add('js');</script>
   <meta property="og:title" content="Shaik Sohel — Full-Stack Developer">
   <meta property="og:description" content="I build real products and ship them.">
@@ -30,7 +29,7 @@
       --line-soft: rgba(24,24,26,.14);
       --signal: #ee4c35;
       --blue: #2147d9;
-      --gutter: clamp(1.4rem, 5.5vw, 6rem);
+      --gutter: clamp(1.5rem, 6.5vw, 8rem);
       --max: 1320px;
       --serif: "Bodoni Moda", Georgia, serif;
       --sans: "DM Sans", Arial, sans-serif;
@@ -38,7 +37,7 @@
     }
 
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; overflow-x: clip; }
     body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); line-height: 1.45; overflow-x: hidden; }
     body::before { content: ""; position: fixed; inset: 0; z-index: 20; pointer-events: none; opacity: .05; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23grain)' opacity='.5'/%3E%3C/svg%3E"); mix-blend-mode: multiply; }
     a { color: inherit; }
@@ -51,8 +50,6 @@
     .quiet { color: var(--quiet); }
     .signal { color: var(--signal); }
     .blue { color: var(--blue); }
-    .skip-link { position: fixed; top: var(--gutter); left: var(--gutter); z-index: 40; padding: .7rem .85rem; color: var(--paper); background: var(--ink); transform: translateY(-150%); transition: transform .2s var(--ease); }
-    .skip-link:focus { transform: translateY(0); }
 
     .site-header { position: fixed; top: 0; left: 0; right: 0; z-index: 15; background: rgba(238,233,223,.92); border-bottom: 1px solid var(--line-soft); backdrop-filter: blur(12px); }
     .nav { min-height: 4.8rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
@@ -81,25 +78,25 @@
     .hero-bottom .page-mark { font: 400 clamp(2.4rem, 5vw, 5rem)/.84 var(--serif); letter-spacing: -.08em; }
 
     .section { padding: clamp(6rem, 12vw, 13rem) 0; }
-    .section-head { display: grid; grid-template-columns: .6fr 1.4fr; gap: 2rem; align-items: start; padding-bottom: 1.1rem; border-bottom: 1px solid var(--line); }
+    .section-head { display: grid; grid-template-columns: minmax(0, .6fr) minmax(0, 1.4fr); gap: 2rem; align-items: start; padding-bottom: 1.1rem; border-bottom: 1px solid var(--line); }
     .section-title { margin: 0; font: 500 clamp(3rem, 7vw, 7.5rem)/.88 var(--serif); letter-spacing: -.08em; }
     .section-note { max-width: 28rem; margin: .35rem 0 0; font-size: .98rem; }
     .section-note strong { font-weight: 600; }
     .section-number { margin-bottom: .7rem; color: var(--signal); }
 
     .projects { border-bottom: 1px solid var(--line); }
-    .project-entry { display: grid; grid-template-columns: .6fr 1fr 1fr; gap: clamp(1.2rem, 3vw, 3.6rem); padding: clamp(2.8rem, 6vw, 6.8rem) 0; border-bottom: 1px solid var(--line-soft); }
+    .project-entry { display: grid; grid-template-columns: minmax(0, .6fr) minmax(0, 1fr) minmax(0, 1fr); gap: clamp(1.2rem, 3vw, 3.6rem); padding: clamp(2.8rem, 6vw, 6.8rem) 0; border-bottom: 1px solid var(--line-soft); }
     .project-entry:last-child { border-bottom: 0; }
     .project-index { align-self: start; font: 500 clamp(2.5rem, 5vw, 5rem)/.88 var(--serif); letter-spacing: -.08em; }
     .project-index span { display: block; margin-top: .7rem; font: 600 .66rem/1.2 var(--sans); letter-spacing: .12em; text-transform: uppercase; }
     .project-copy h3 { margin: 0; font: 500 clamp(3.3rem, 7vw, 8rem)/.84 var(--serif); letter-spacing: -.095em; }
     .project-copy h3 em { color: var(--signal); font-style: italic; }
     .project-description { max-width: 29rem; margin: 1.7rem 0 0; font-size: clamp(1rem, 1.4vw, 1.18rem); letter-spacing: -.025em; }
-    .project-evidence { align-self: end; }
+    .project-evidence { align-self: end; min-width: 0; }
     .evidence-list { margin: 0; padding: .65rem 0 0; border-top: 1px solid var(--line); list-style: none; }
     .evidence-list li { display: flex; justify-content: space-between; gap: 1rem; padding: .45rem 0; border-bottom: 1px solid var(--line-soft); font-size: .78rem; }
     .evidence-list li strong { font-weight: 700; }
-    .project-meta { margin-top: 1.5rem; font: 600 .67rem/1.4 var(--sans); letter-spacing: .09em; text-transform: uppercase; }
+    .project-meta { margin-top: 1.5rem; font: 600 .67rem/1.4 var(--sans); letter-spacing: .09em; text-transform: uppercase; overflow-wrap: anywhere; }
     .project-meta span + span::before { content: " · "; color: var(--signal); }
     .project-link { display: inline-block; margin-top: 1.5rem; color: var(--ink); font: 700 .7rem var(--sans); letter-spacing: .12em; text-decoration: none; text-transform: uppercase; }
     .project-link span { display: inline-block; margin-left: .35rem; color: var(--signal); transition: transform .35s var(--ease); }
@@ -107,24 +104,24 @@
     .project-link:hover span { transform: translateX(.35rem); }
     .project-note { max-width: 22rem; margin: .7rem 0 0; color: var(--quiet); font-size: .76rem; }
 
-    .statement { display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(2rem, 8vw, 9rem); align-items: start; }
+    .statement { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: clamp(2rem, 8vw, 9rem); align-items: start; }
     .statement h2 { max-width: 8ch; margin: 0; font: 500 clamp(3.5rem, 8vw, 9rem)/.84 var(--serif); letter-spacing: -.09em; }
     .statement-copy p { max-width: 38rem; margin: 0; font: 500 clamp(1.35rem, 2.4vw, 2rem)/1.05 var(--serif); letter-spacing: -.045em; }
     .statement-copy p + p { margin-top: 2rem; color: var(--quiet); font: 400 1rem/1.5 var(--sans); letter-spacing: 0; }
 
     .experience { border-top: 1px solid var(--line); }
-    .experience-row { display: grid; grid-template-columns: .6fr 1.4fr; gap: clamp(2rem, 7vw, 8rem); padding: clamp(2.5rem, 5vw, 5rem) 0; border-bottom: 1px solid var(--line-soft); }
+    .experience-row { display: grid; grid-template-columns: minmax(0, .6fr) minmax(0, 1.4fr); gap: clamp(2rem, 7vw, 8rem); padding: clamp(2.5rem, 5vw, 5rem) 0; border-bottom: 1px solid var(--line-soft); }
     .role-date { font: 600 .68rem/1.4 var(--sans); letter-spacing: .1em; text-transform: uppercase; }
     .role h3 { max-width: 25rem; margin: 0; font: 500 clamp(2rem, 4vw, 4.5rem)/.92 var(--serif); letter-spacing: -.08em; }
     .role h3 span { color: var(--quiet); font-size: .52em; letter-spacing: -.04em; }
     .role p { max-width: 44rem; margin: 1.4rem 0 0; color: var(--quiet); }
 
-    .skills { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+    .skills { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
     .skill { min-height: 11rem; padding: 1rem; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
     .skill h3 { margin: 0 0 1.4rem; font: 600 .68rem var(--sans); letter-spacing: .12em; text-transform: uppercase; }
     .skill p { margin: 0; color: var(--quiet); font-size: .92rem; line-height: 1.75; }
 
-    .education { display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(2rem, 8vw, 9rem); }
+    .education { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: clamp(2rem, 8vw, 9rem); }
     .education-lead { max-width: 20rem; margin: 0; font: 500 clamp(1.5rem, 2.6vw, 2.3rem)/1.02 var(--serif); letter-spacing: -.05em; }
     .education-lead small { display: block; margin-top: 1.4rem; color: var(--quiet); font: 400 .87rem/1.5 var(--sans); letter-spacing: 0; }
     .education-item { padding: 1.2rem 0; border-top: 1px solid var(--line); }
@@ -138,7 +135,7 @@
     .contact h2 { max-width: 10ch; margin: 4rem 0 clamp(5rem, 10vw, 10rem); font: 500 clamp(4rem, 11vw, 12rem)/.84 var(--serif); letter-spacing: -.09em; }
     .contact h2 a { text-decoration: none; }
     .contact h2 a:hover { color: #ff705d; }
-    .contact-grid { display: grid; grid-template-columns: .6fr 1.4fr; gap: 1rem; padding-top: 1rem; border-top: 1px solid rgba(238,233,223,.28); }
+    .contact-grid { display: grid; grid-template-columns: minmax(0, .6fr) minmax(0, 1.4fr); gap: 1rem; padding-top: 1rem; border-top: 1px solid rgba(238,233,223,.28); }
     .contact-grid p { margin: 0; }
     .contact-grid a { text-decoration-thickness: 1px; text-underline-offset: .25em; }
     .contact-grid a:hover { color: #ff705d; }
@@ -160,26 +157,26 @@
       .nav-links a { padding: 1rem 0; border-bottom: 1px solid var(--line-soft); }
       .nav-links .resume-link { margin: 1rem 0; padding: .5rem 0; text-align: left; }
       .menu-toggle { display: block; }
-      .hero { grid-template-columns: 1fr; padding-top: 7.4rem; align-items: start; }
+      .hero { grid-template-columns: minmax(0, 1fr); padding-top: 7.4rem; align-items: start; }
       .hero h1 { max-width: 8ch; font-size: clamp(4.5rem, 20vw, 9rem); }
       .hero-side { max-width: 24rem; }
       .hero-bottom { display: block; }
       .hero-bottom .page-mark { display: block; margin-top: 1.5rem; }
-      .section-head, .statement, .experience-row, .education, .contact-grid { grid-template-columns: 1fr; }
-      .project-entry { grid-template-columns: 5rem 1fr; gap: 1.2rem; }
+      .section-head, .statement, .experience-row, .education, .contact-grid { grid-template-columns: minmax(0, 1fr); }
+      .project-entry { grid-template-columns: minmax(0, 5rem) minmax(0, 1fr); gap: 1.2rem; }
       .project-index { font-size: 3rem; }
       .project-copy { grid-column: 2; }
       .project-evidence { grid-column: 2; }
-      .skills { grid-template-columns: repeat(2, 1fr); }
+      .skills { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
     @media (max-width: 520px) {
       .avatar { width: 1.8rem; height: 1.8rem; }
       .brand { font-size: .7rem; }
-      .project-entry { grid-template-columns: 1fr; gap: 1.3rem; }
+      .project-entry { grid-template-columns: minmax(0, 1fr); gap: 1.3rem; }
       .project-copy, .project-evidence { grid-column: 1; }
       .project-index { display: flex; justify-content: space-between; align-items: baseline; font-size: 2.6rem; }
       .project-index span { margin: 0; }
-      .skills { grid-template-columns: 1fr; }
+      .skills { grid-template-columns: minmax(0, 1fr); }
       .role-date { margin-bottom: 1rem; }
       .footer-meta { display: block; }
       .footer-meta span + span { display: block; margin-top: .5rem; }
@@ -191,7 +188,6 @@
   </style>
 </head>
 <body>
-  <a class="skip-link eyebrow" href="#main">Skip to content</a>
   <header class="site-header">
     <nav class="nav wrap" aria-label="Primary navigation">
       <a class="brand" href="#top" aria-label="Shaik Sohel home"><img class="avatar" src="avatar.png" alt="Shaik Sohel"><span>SHAIK SOHEL</span></a>
