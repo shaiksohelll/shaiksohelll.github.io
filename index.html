@@ -6,7 +6,6 @@
   <title>Shaik Sohel — Full-Stack Developer</title>
   <meta name="description" content="Shaik Sohel is a full-stack developer in Hyderabad building deployed, secure, data-intensive systems.">
   <meta name="theme-color" content="#eee9df">
-  <link rel="icon" href="avatar.png" type="image/png">
   <script>document.documentElement.classList.add('js');</script>
   <meta property="og:title" content="Shaik Sohel — Full-Stack Developer">
   <meta property="og:description" content="I build real products and ship them.">
@@ -39,6 +38,8 @@
 
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; overflow-x: clip; }
+    html.lenis, html.lenis body { height: auto; }
+    .lenis.lenis-smooth { scroll-behavior: auto !important; }
     body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); line-height: 1.45; overflow-x: hidden; }
     body::before { content: ""; position: fixed; inset: 0; z-index: 20; pointer-events: none; opacity: .05; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23grain)' opacity='.5'/%3E%3C/svg%3E"); mix-blend-mode: multiply; }
     a { color: inherit; }
@@ -52,12 +53,17 @@
     .signal { color: var(--signal); }
     .blue { color: var(--blue); }
 
+    .intro-curtain { position: fixed; inset: 0; z-index: 60; background: var(--paper); pointer-events: none; animation: curtain-lift .8s var(--ease) .12s forwards; }
+    @keyframes curtain-lift { to { transform: translateY(-101%); visibility: hidden; } }
+    .scroll-rule { position: fixed; top: 0; left: 0; right: 0; height: 2px; z-index: 25; pointer-events: none; }
+    .scroll-rule span { display: block; height: 100%; background: var(--signal); transform: scaleX(0); transform-origin: left; }
+
     .site-header { position: fixed; top: 0; left: 0; right: 0; z-index: 15; background: rgba(238,233,223,.92); border-bottom: 1px solid var(--line-soft); backdrop-filter: blur(12px); }
     .nav { min-height: 4.8rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
     .brand { display: inline-flex; align-items: center; gap: .65rem; font: 700 .78rem var(--sans); letter-spacing: .06em; text-decoration: none; }
     .avatar { width: 2rem; height: 2rem; object-fit: cover; border-radius: 50%; filter: grayscale(1) contrast(1.15); }
     .nav-links { display: flex; align-items: center; gap: clamp(1rem, 3vw, 3rem); }
-    .nav-links a { font: 600 .68rem var(--sans); letter-spacing: .12em; text-transform: uppercase; text-decoration: none; }
+    .nav-links a { font: 600 .68rem var(--sans); letter-spacing: .12em; text-transform: uppercase; text-decoration: none; transition: color .2s ease, transform .3s var(--ease); }
     .nav-links a:not(.resume-link) { position: relative; }
     .nav-links a:not(.resume-link)::after { content: ""; position: absolute; right: 0; bottom: -.35rem; left: 0; height: 1px; background: var(--signal); transform: scaleX(0); transform-origin: right; transition: transform .4s var(--ease); }
     .nav-links a:not(.resume-link):hover::after { transform: scaleX(1); transform-origin: left; }
@@ -86,7 +92,8 @@
     .section-number { margin-bottom: .7rem; color: var(--signal); }
 
     .projects { border-bottom: 1px solid var(--line); }
-    .project-entry { display: grid; grid-template-columns: minmax(0, .6fr) minmax(0, 1fr) minmax(0, 1fr); gap: clamp(1.2rem, 3vw, 3.6rem); padding: clamp(2.8rem, 6vw, 6.8rem) 0; border-bottom: 1px solid var(--line-soft); }
+    .project-entry { position: relative; display: grid; grid-template-columns: minmax(0, .6fr) minmax(0, 1fr) minmax(0, 1fr); gap: clamp(1.2rem, 3vw, 3.6rem); padding: clamp(2.8rem, 6vw, 6.8rem) 0; border-bottom: 1px solid var(--line-soft); transition: box-shadow .45s ease; }
+    .project-entry:hover { box-shadow: inset 0 0 0 999px rgba(226,219,207,.45); }
     .project-entry:last-child { border-bottom: 0; }
     .project-index { align-self: start; font: 500 clamp(2.5rem, 5vw, 5rem)/.88 var(--serif); letter-spacing: -.08em; }
     .project-index span { display: block; margin-top: .7rem; font: 600 .66rem/1.2 var(--sans); letter-spacing: .12em; text-transform: uppercase; }
@@ -99,7 +106,7 @@
     .evidence-list li strong { font-weight: 700; }
     .project-meta { margin-top: 1.5rem; font: 600 .67rem/1.4 var(--sans); letter-spacing: .09em; text-transform: uppercase; overflow-wrap: anywhere; }
     .project-meta span + span::before { content: " · "; color: var(--signal); }
-    .project-link { display: inline-block; margin-top: 1.5rem; color: var(--ink); font: 700 .7rem var(--sans); letter-spacing: .12em; text-decoration: none; text-transform: uppercase; }
+    .project-link { display: inline-block; margin-top: 1.5rem; color: var(--ink); font: 700 .7rem var(--sans); letter-spacing: .12em; text-decoration: none; text-transform: uppercase; transition: color .2s ease, transform .3s var(--ease); }
     .project-link span { display: inline-block; margin-left: .35rem; color: var(--signal); transition: transform .35s var(--ease); }
     .project-link:hover { color: var(--signal); }
     .project-link:hover span { transform: translateX(.35rem); }
@@ -185,10 +192,13 @@
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; }
       .js .reveal, .reveal, .rule-draw { opacity: 1; clip-path: none; transform: none; }
+      .intro-curtain { display: none; }
     }
   </style>
 </head>
 <body>
+  <div class="intro-curtain" aria-hidden="true"></div>
+  <div class="scroll-rule" aria-hidden="true"><span></span></div>
   <header class="site-header">
     <nav class="nav wrap" aria-label="Primary navigation">
       <a class="brand" href="#top" aria-label="Shaik Sohel home"><img class="avatar" src="avatar.png" alt="Shaik Sohel"><span>SHAIK SOHEL</span></a>
@@ -249,6 +259,7 @@
 
   <footer class="contact" id="contact" aria-labelledby="contact-title"><div class="wrap"><div class="contact-top"><span class="eyebrow signal">Contact / open channel</span><span class="eyebrow" style="color:rgba(238,233,223,.6)">Hyderabad, India — 500081</span></div><h2 id="contact-title" class="reveal"><a href="mailto:shaiksohelll05@gmail.com">Let’s build<br>the next one.</a></h2><div class="contact-grid reveal delay-1"><p class="eyebrow" style="color:rgba(238,233,223,.6)">Direct line</p><p><a href="mailto:shaiksohelll05@gmail.com">shaiksohelll05@gmail.com</a><br><a href="tel:+918639673777">+91 8639673777</a></p><p class="eyebrow" style="color:rgba(238,233,223,.6)">Links</p><p><a href="https://github.com/shaiksohelll" target="_blank" rel="noopener noreferrer">GitHub ↗</a><br><a href="https://www.linkedin.com/in/shaiksohellll" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><br><a href="shaik-sohel-resume.pdf" download>Download resume ↓</a></p></div><div class="footer-meta"><span>Shaik Sohel / Full-Stack Developer</span><span>© 2026 / Built on GitHub Pages</span></div></div></footer>
 
+  <script defer src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>
   <script>
     const toggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
@@ -263,7 +274,9 @@
       if (toggle) toggle.textContent = 'Menu';
     }));
     const items = document.querySelectorAll('.reveal');
-    if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const finePointer = window.matchMedia('(pointer: fine)');
+    if ('IntersectionObserver' in window && !reduceMotion.matches) {
       const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
@@ -279,6 +292,53 @@
     window.setTimeout(() => {
       document.querySelectorAll('.reveal').forEach((item) => item.classList.add('visible'));
     }, 1500);
+
+    let lenis = null;
+    function initLenis() {
+      if (lenis || !window.Lenis || reduceMotion.matches) return;
+      lenis = new Lenis({ lerp: .11, smoothWheel: true });
+      const raf = (t) => { lenis.raf(t); requestAnimationFrame(raf); };
+      requestAnimationFrame(raf);
+    }
+    initLenis();
+    window.addEventListener('load', initLenis);
+
+    const ruleBar = document.querySelector('.scroll-rule span');
+    const parallaxItems = document.querySelectorAll('.project-index');
+    const allowParallax = finePointer.matches && window.matchMedia('(min-width: 821px)').matches;
+    let ticking = false;
+    function onScroll() {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        const doc = document.documentElement;
+        const max = doc.scrollHeight - window.innerHeight;
+        if (ruleBar) ruleBar.style.transform = 'scaleX(' + (max > 0 ? Math.min(1, window.scrollY / max) : 0) + ')';
+        if (allowParallax && !reduceMotion.matches) {
+          const vh = window.innerHeight;
+          parallaxItems.forEach((el) => {
+            const r = el.getBoundingClientRect();
+            const delta = (r.top + r.height / 2 - vh / 2) * -0.06;
+            el.style.transform = 'translateY(' + delta.toFixed(1) + 'px)';
+          });
+        }
+        ticking = false;
+      });
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    if (finePointer.matches && !reduceMotion.matches) {
+      document.querySelectorAll('.project-link, .nav-links a, .resume-link').forEach((el) => {
+        el.addEventListener('mousemove', (e) => {
+          const r = el.getBoundingClientRect();
+          const x = (e.clientX - r.left - r.width / 2) / (r.width / 2);
+          const y = (e.clientY - r.top - r.height / 2) / (r.height / 2);
+          el.style.transform = 'translate(' + (x * 6).toFixed(1) + 'px,' + (y * 4).toFixed(1) + 'px)';
+        });
+        el.addEventListener('mouseleave', () => { el.style.transform = ''; });
+      });
+    }
   </script>
 </body>
 </html>
