@@ -5,277 +5,243 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Shaik Sohel — Full-Stack Developer</title>
   <meta name="description" content="Shaik Sohel is a full-stack developer in Hyderabad building deployed, secure, data-intensive systems.">
-  <meta name="theme-color" content="#101317">
+  <meta name="theme-color" content="#eee9df">
   <meta property="og:title" content="Shaik Sohel — Full-Stack Developer">
   <meta property="og:description" content="I build real products and ship them.">
   <meta property="og:type" content="website">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600;6..96,700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --night: #101317;
-      --night-2: #151a20;
-      --card: #1b2229;
-      --card-hi: #222c35;
-      --ink: #f2f6f3;
-      --muted: #9aa6aa;
-      --dim: #657177;
-      --line: rgba(242,246,243,.12);
-      --lime: #d8ff3f;
-      --cobalt: #7892ff;
-      --cobalt-soft: #1c294b;
+      --paper: #eee9df;
+      --paper-deep: #e2dbcf;
+      --ink: #18181a;
+      --quiet: #6c6964;
+      --line: rgba(24,24,26,.25);
+      --line-soft: rgba(24,24,26,.14);
+      --signal: #ee4c35;
+      --blue: #2147d9;
+      --gutter: clamp(1rem, 4.8vw, 5rem);
       --max: 1500px;
-      --gutter: clamp(1rem, 3.6vw, 4.5rem);
-      --ease: cubic-bezier(.18, .9, .22, 1);
-      --radius-lg: 2rem;
-      --radius-md: 1.35rem;
+      --serif: "Bodoni Moda", Georgia, serif;
+      --sans: "DM Sans", Arial, sans-serif;
+      --ease: cubic-bezier(.16, 1, .3, 1);
     }
 
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      background: var(--night);
-      color: var(--ink);
-      font-family: "IBM Plex Sans", Arial, sans-serif;
-      line-height: 1.45;
-      overflow-x: hidden;
-    }
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: 30;
-      opacity: .045;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.7' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23grain)' opacity='.45'/%3E%3C/svg%3E");
-      mix-blend-mode: screen;
-    }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); line-height: 1.45; overflow-x: hidden; }
+    body::before { content: ""; position: fixed; inset: 0; z-index: 20; pointer-events: none; opacity: .05; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23grain)' opacity='.5'/%3E%3C/svg%3E"); mix-blend-mode: multiply; }
     a { color: inherit; }
-    a:focus-visible, button:focus-visible { outline: 2px solid var(--lime); outline-offset: 4px; }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--signal); outline-offset: 4px; }
     button { font: inherit; }
     .wrap { width: min(100%, var(--max)); margin-inline: auto; padding-inline: var(--gutter); }
-    .display { font-family: "Syne", Arial, sans-serif; letter-spacing: -.075em; line-height: .92; }
-    .label { color: var(--muted); font-size: .77rem; letter-spacing: .02em; }
-    .pill { display: inline-flex; align-items: center; gap: .45rem; width: fit-content; padding: .42rem .72rem; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); font-size: .73rem; line-height: 1; }
-    .pill::before { content: ""; width: .4rem; height: .4rem; border-radius: 50%; background: var(--cobalt); }
-    .pill.live { color: var(--lime); border-color: rgba(216,255,63,.32); }
-    .pill.live::before { background: var(--lime); box-shadow: 0 0 .9rem rgba(216,255,63,.8); }
-    .pill.blue { color: #b2c0ff; border-color: rgba(120,146,255,.35); }
-    .pill.blue::before { background: var(--cobalt); }
-    .muted { color: var(--muted); }
-    .lime { color: var(--lime); }
-    .skip-link { position: fixed; left: 1rem; top: 1rem; z-index: 50; padding: .7rem .9rem; background: var(--lime); color: var(--night); transform: translateY(-150%); transition: transform .2s var(--ease); }
+    .sans { font-family: var(--sans); }
+    .serif { font-family: var(--serif); }
+    .eyebrow { font: 600 .68rem/1.2 var(--sans); letter-spacing: .13em; text-transform: uppercase; }
+    .quiet { color: var(--quiet); }
+    .signal { color: var(--signal); }
+    .blue { color: var(--blue); }
+    .skip-link { position: fixed; top: 1rem; left: 1rem; z-index: 40; padding: .7rem .85rem; color: var(--paper); background: var(--ink); transform: translateY(-150%); transition: transform .2s var(--ease); }
     .skip-link:focus { transform: translateY(0); }
 
-    .site-header { position: fixed; inset: 0 0 auto; z-index: 20; background: rgba(16,19,23,.78); backdrop-filter: blur(18px); }
-    .nav { min-height: 4.5rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
-    .brand { display: inline-flex; align-items: center; gap: .7rem; color: var(--ink); text-decoration: none; font-weight: 700; }
-    .brand-orbit { position: relative; width: 1.05rem; height: 1.05rem; border: 2px solid var(--lime); border-radius: 50%; }
-    .brand-orbit::after { content: ""; position: absolute; width: .32rem; height: .32rem; top: 50%; left: 50%; border-radius: 50%; background: var(--lime); transform: translate(-50%, -50%); }
-    .nav-links { display: flex; align-items: center; gap: clamp(1rem, 2.5vw, 2.6rem); }
-    .nav-links a { color: var(--muted); text-decoration: none; transition: color .2s ease; }
-    .nav-links a:hover { color: var(--ink); }
-    .resume-link { padding: .74rem 1rem; border-radius: 999px; color: var(--night) !important; background: var(--lime); font-weight: 700; transition: background .2s ease, transform .2s var(--ease) !important; }
-    .resume-link:hover { background: var(--ink); color: var(--night) !important; transform: translateY(-2px); }
-    .menu-toggle { display: none; border: 0; background: transparent; color: var(--ink); padding: .35rem 0; }
+    .site-header { position: fixed; top: 0; left: 0; right: 0; z-index: 15; background: rgba(238,233,223,.92); border-bottom: 1px solid var(--line-soft); backdrop-filter: blur(12px); }
+    .nav { min-height: 4.8rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+    .brand { display: inline-flex; align-items: center; gap: .65rem; font: 700 .78rem var(--sans); letter-spacing: .06em; text-decoration: none; }
+    .avatar { width: 2rem; height: 2rem; object-fit: cover; border-radius: 50%; filter: grayscale(1) contrast(1.15); }
+    .nav-links { display: flex; align-items: center; gap: clamp(1rem, 3vw, 3rem); }
+    .nav-links a { font: 600 .68rem var(--sans); letter-spacing: .12em; text-transform: uppercase; text-decoration: none; }
+    .nav-links a:not(.resume-link) { position: relative; }
+    .nav-links a:not(.resume-link)::after { content: ""; position: absolute; right: 0; bottom: -.35rem; left: 0; height: 1px; background: var(--signal); transform: scaleX(0); transform-origin: right; transition: transform .4s var(--ease); }
+    .nav-links a:not(.resume-link):hover::after { transform: scaleX(1); transform-origin: left; }
+    .resume-link { padding-bottom: .2rem; border-bottom: 1px solid var(--ink); }
+    .resume-link:hover { color: var(--signal); border-color: var(--signal); }
+    .menu-toggle { display: none; border: 0; padding: .35rem 0; background: transparent; font: 600 .68rem var(--sans); letter-spacing: .12em; text-transform: uppercase; }
 
-    .hero { min-height: 100svh; padding-top: 9rem; padding-bottom: 2rem; display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(18rem, .7fr); gap: clamp(2rem, 7vw, 8rem); align-items: center; }
-    .hero-main { align-self: center; }
-    .hero-intro { display: flex; flex-wrap: wrap; align-items: center; gap: .65rem; margin-bottom: 2rem; }
-    .hero h1 { max-width: 10ch; margin: 0; font-size: clamp(4.4rem, 11.5vw, 12rem); font-weight: 700; }
-    .hero h1 span { color: var(--lime); }
-    .hero-copy { max-width: 36rem; margin: 2.2rem 0 0; color: var(--muted); font-size: clamp(1.05rem, 1.6vw, 1.35rem); }
-    .signal-stack { position: relative; align-self: end; padding: 1.5rem; border-radius: var(--radius-lg); background: var(--card); overflow: hidden; }
-    .signal-stack::before { content: ""; position: absolute; width: 17rem; height: 17rem; right: -6rem; top: -7rem; border-radius: 50%; background: var(--cobalt); opacity: .17; filter: blur(10px); }
-    .signal-stack::after { content: ""; position: absolute; left: -40%; right: -40%; top: 48%; height: 1px; background: rgba(216,255,63,.28); transform: rotate(-18deg); animation: scan 8s var(--ease) infinite; }
-    @keyframes scan { 0%, 100% { transform: translateY(-5rem) rotate(-18deg); opacity: .15; } 50% { transform: translateY(5rem) rotate(-18deg); opacity: .65; } }
-    .stack-top, .stack-bottom { position: relative; z-index: 1; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
-    .stack-top { padding-bottom: 1.2rem; border-bottom: 1px solid var(--line); }
-    .stack-top strong { font-size: .86rem; font-weight: 600; }
-    .stack-list { position: relative; z-index: 1; display: grid; gap: .9rem; padding: 1.2rem 0; }
-    .stack-item { display: grid; grid-template-columns: 5.5rem 1fr; gap: 1rem; align-items: center; }
-    .stack-item .label { font-size: .7rem; }
-    .stack-item strong { font-size: 1rem; font-weight: 600; }
-    .meter { height: .35rem; margin-top: .45rem; overflow: hidden; border-radius: 999px; background: var(--night); }
-    .meter span { display: block; height: 100%; border-radius: inherit; background: var(--lime); }
-    .stack-bottom { padding-top: 1rem; border-top: 1px solid var(--line); }
-    .stack-bottom strong { color: var(--lime); font-size: .85rem; }
+    .hero { min-height: 100svh; padding-top: 9rem; padding-bottom: 2rem; display: grid; grid-template-columns: minmax(0, 1.65fr) minmax(15rem, .55fr); gap: clamp(2rem, 7vw, 8rem); align-items: end; }
+    .hero-kicker { display: flex; align-items: center; gap: .7rem; margin-bottom: 2.4rem; }
+    .hero-kicker::before { content: ""; display: block; width: 2.8rem; height: 1px; background: var(--signal); }
+    .hero h1 { max-width: 9.5ch; margin: 0; font: 500 clamp(4.7rem, 12.6vw, 14rem)/.8 var(--serif); letter-spacing: -.09em; }
+    .hero h1 em { color: var(--signal); font-style: italic; }
+    .hero-sub { max-width: 30rem; margin: 3rem 0 0; font-size: clamp(1.05rem, 1.5vw, 1.24rem); letter-spacing: -.03em; }
+    .hero-side { align-self: end; padding-bottom: .3rem; }
+    .hero-side p { max-width: 18rem; margin: 0; font: 500 clamp(1.25rem, 2.1vw, 1.8rem)/1.08 var(--serif); letter-spacing: -.045em; }
+    .hero-side .side-note { margin-top: 2.4rem; padding-top: .7rem; border-top: 1px solid var(--line); font: 600 .67rem/1.35 var(--sans); letter-spacing: .11em; text-transform: uppercase; }
     .hero-bottom { grid-column: 1 / -1; display: flex; justify-content: space-between; gap: 2rem; align-items: end; padding-top: 1rem; border-top: 1px solid var(--line); }
-    .hero-bottom p { max-width: 38rem; margin: 0; font-size: clamp(1.15rem, 2vw, 1.7rem); letter-spacing: -.04em; }
-    .hero-bottom .label { text-align: right; }
+    .hero-bottom .eyebrow { max-width: 25rem; }
+    .hero-bottom .page-mark { font: 400 clamp(2.4rem, 5vw, 5rem)/.8 var(--serif); letter-spacing: -.08em; }
 
-    .section { padding: clamp(5rem, 11vw, 11rem) 0; }
-    .section-heading { display: grid; grid-template-columns: 1fr minmax(15rem, .55fr); gap: 2rem; align-items: end; margin-bottom: clamp(2.5rem, 5vw, 5rem); }
-    .section-heading h2 { max-width: 9ch; margin: .8rem 0 0; font-size: clamp(3.6rem, 8vw, 8rem); }
-    .section-heading p { max-width: 26rem; margin: 0; color: var(--muted); }
-    .section-kicker { color: var(--lime); font-weight: 600; }
+    .section { padding: clamp(6rem, 12vw, 13rem) 0; }
+    .section-head { display: grid; grid-template-columns: .6fr 1.4fr; gap: 2rem; align-items: start; padding-bottom: 1.1rem; border-bottom: 1px solid var(--line); }
+    .section-title { margin: 0; font: 500 clamp(3rem, 7vw, 7.5rem)/.84 var(--serif); letter-spacing: -.08em; }
+    .section-note { max-width: 28rem; margin: .35rem 0 0; font-size: .98rem; }
+    .section-note strong { font-weight: 600; }
+    .section-number { margin-bottom: .7rem; color: var(--signal); }
 
-    .project-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
-    .project-card { position: relative; display: flex; min-height: 30rem; flex-direction: column; padding: 1.25rem; border: 1px solid var(--line); border-radius: var(--radius-lg); background: var(--card); overflow: hidden; transition: transform .28s var(--ease), border-color .28s ease, background .28s ease; }
-    .project-card::before { content: ""; position: absolute; width: 9rem; height: 9rem; right: -4rem; bottom: -4rem; border-radius: 50%; background: var(--cobalt); opacity: .14; transition: transform .45s var(--ease), opacity .3s ease; }
-    .project-card:hover { transform: translateY(-.45rem) rotate(.15deg); border-color: rgba(216,255,63,.55); background: var(--card-hi); }
-    .project-card:hover::before { transform: scale(2.2); opacity: .25; }
-    .project-top, .project-bottom, .project-main { position: relative; z-index: 1; }
-    .project-top { display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
-    .project-top .label { font-size: .7rem; }
-    .project-main { display: flex; flex: 1; flex-direction: column; justify-content: space-between; padding: clamp(2.2rem, 4vw, 4rem) .45rem .4rem; }
-    .project-name { max-width: 8ch; margin: 0 0 1.2rem; font-size: clamp(3.1rem, 6vw, 6.4rem); font-weight: 700; }
-    .project-description { max-width: 34rem; margin: 0; font-size: 1.05rem; letter-spacing: -.02em; }
-    .evidence-row { display: flex; flex-wrap: wrap; gap: .45rem; margin-top: 1.4rem; }
-    .evidence { padding: .46rem .64rem; border-radius: 999px; color: var(--muted); background: var(--night); font-size: .74rem; }
-    .evidence strong { color: var(--ink); font-weight: 600; }
-    .project-bottom { display: flex; justify-content: space-between; align-items: end; gap: 1rem; margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--line); }
-    .stack { max-width: 22rem; color: var(--muted); font-size: .76rem; line-height: 1.5; }
-    .launch { display: inline-flex; align-items: center; gap: .45rem; padding: .7rem .85rem; border-radius: 999px; color: var(--night); background: var(--lime); text-decoration: none; font-size: .76rem; font-weight: 700; white-space: nowrap; transition: transform .2s var(--ease), background .2s ease; }
-    .launch:hover { background: var(--ink); color: var(--night); transform: translateY(-2px); }
-    .project-note { margin: .65rem 0 0; max-width: 18rem; color: var(--muted); font-size: .75rem; }
+    .projects { border-bottom: 1px solid var(--line); }
+    .project-entry { display: grid; grid-template-columns: .6fr 1fr 1fr; gap: clamp(1.2rem, 3vw, 3.6rem); padding: clamp(2.8rem, 6vw, 6.8rem) 0; border-bottom: 1px solid var(--line-soft); }
+    .project-entry:last-child { border-bottom: 0; }
+    .project-index { align-self: start; font: 500 clamp(2.5rem, 5vw, 5rem)/.85 var(--serif); letter-spacing: -.08em; }
+    .project-index span { display: block; margin-top: .7rem; font: 600 .66rem/1.2 var(--sans); letter-spacing: .12em; text-transform: uppercase; }
+    .project-copy h3 { margin: 0; font: 500 clamp(3.3rem, 7vw, 8rem)/.78 var(--serif); letter-spacing: -.095em; }
+    .project-copy h3 em { color: var(--signal); font-style: italic; }
+    .project-description { max-width: 29rem; margin: 1.7rem 0 0; font-size: clamp(1rem, 1.4vw, 1.18rem); letter-spacing: -.025em; }
+    .project-evidence { align-self: end; }
+    .evidence-list { margin: 0; padding: .65rem 0 0; border-top: 1px solid var(--line); list-style: none; }
+    .evidence-list li { display: flex; justify-content: space-between; gap: 1rem; padding: .45rem 0; border-bottom: 1px solid var(--line-soft); font-size: .78rem; }
+    .evidence-list li strong { font-weight: 700; }
+    .project-meta { margin-top: 1.5rem; font: 600 .67rem/1.4 var(--sans); letter-spacing: .09em; text-transform: uppercase; }
+    .project-meta span + span::before { content: " · "; color: var(--signal); }
+    .project-link { display: inline-block; margin-top: 1.5rem; color: var(--ink); font: 700 .7rem var(--sans); letter-spacing: .12em; text-decoration: none; text-transform: uppercase; }
+    .project-link span { display: inline-block; margin-left: .35rem; color: var(--signal); transition: transform .35s var(--ease); }
+    .project-link:hover { color: var(--signal); }
+    .project-link:hover span { transform: translateX(.35rem); }
+    .project-note { max-width: 22rem; margin: .7rem 0 0; color: var(--quiet); font-size: .76rem; }
 
-    .readout { display: grid; grid-template-columns: minmax(12rem, .7fr) minmax(0, 1.3fr); gap: clamp(2rem, 8vw, 8rem); align-items: start; padding: clamp(4rem, 9vw, 9rem) 0; }
-    .readout h2 { margin: 0; font-size: clamp(3.6rem, 8vw, 8rem); }
-    .readout-copy p { max-width: 40rem; margin: 0; font-size: clamp(1.2rem, 2vw, 1.7rem); letter-spacing: -.04em; }
-    .readout-copy p + p { margin-top: 1.5rem; color: var(--muted); font-size: 1rem; letter-spacing: 0; }
+    .statement { display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(2rem, 8vw, 9rem); align-items: start; }
+    .statement h2 { max-width: 8ch; margin: 0; font: 500 clamp(3.5rem, 8vw, 9rem)/.79 var(--serif); letter-spacing: -.09em; }
+    .statement-copy p { max-width: 38rem; margin: 0; font: 500 clamp(1.35rem, 2.4vw, 2rem)/1.05 var(--serif); letter-spacing: -.045em; }
+    .statement-copy p + p { margin-top: 2rem; color: var(--quiet); font: 400 1rem/1.5 var(--sans); letter-spacing: 0; }
 
-    .experience-layout { display: grid; grid-template-columns: .7fr 1.3fr; gap: clamp(2rem, 8vw, 8rem); }
-    .experience-intro p { max-width: 25rem; margin: 0; font-size: clamp(1.2rem, 2vw, 1.6rem); letter-spacing: -.04em; }
-    .experience-intro p + p { margin-top: 1.2rem; color: var(--muted); font-size: 1rem; letter-spacing: 0; }
-    .timeline { display: grid; gap: .8rem; }
-    .role { padding: 1.4rem 1.5rem 1.7rem; border-radius: var(--radius-md); background: var(--card); }
-    .role-meta { display: flex; justify-content: space-between; gap: 1rem; color: var(--muted); font-size: .78rem; }
-    .role h3 { margin: 1rem 0 .8rem; font-size: clamp(1.45rem, 2.5vw, 2.2rem); line-height: 1; letter-spacing: -.055em; }
-    .role p { max-width: 44rem; margin: 0; color: var(--muted); }
+    .experience { border-top: 1px solid var(--line); }
+    .experience-row { display: grid; grid-template-columns: .6fr 1.4fr; gap: clamp(2rem, 7vw, 8rem); padding: clamp(2.5rem, 5vw, 5rem) 0; border-bottom: 1px solid var(--line-soft); }
+    .role-date { font: 600 .68rem/1.4 var(--sans); letter-spacing: .1em; text-transform: uppercase; }
+    .role h3 { max-width: 25rem; margin: 0; font: 500 clamp(2rem, 4vw, 4.5rem)/.88 var(--serif); letter-spacing: -.08em; }
+    .role h3 span { color: var(--quiet); font-size: .52em; letter-spacing: -.04em; }
+    .role p { max-width: 44rem; margin: 1.4rem 0 0; color: var(--quiet); }
 
-    .skills { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .8rem; }
-    .skill { min-height: 10.5rem; padding: 1.3rem 1.4rem; border-radius: var(--radius-md); background: var(--card); }
-    .skill h3 { margin: 0 0 .9rem; color: var(--lime); font-size: .95rem; font-weight: 600; }
-    .skill p { margin: 0; color: var(--muted); font-size: .94rem; line-height: 1.7; }
+    .skills { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+    .skill { min-height: 11rem; padding: 1rem; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .skill h3 { margin: 0 0 1.4rem; font: 600 .68rem var(--sans); letter-spacing: .12em; text-transform: uppercase; }
+    .skill p { margin: 0; color: var(--quiet); font-size: .92rem; line-height: 1.75; }
 
-    .contact { padding: clamp(5rem, 11vw, 11rem) 0 1.5rem; background: var(--cobalt-soft); }
-    .contact-top { display: flex; justify-content: space-between; gap: 1rem; }
-    .contact h2 { max-width: 9ch; margin: 3rem 0 clamp(4rem, 8vw, 8rem); font-size: clamp(4rem, 10vw, 10rem); }
+    .education { display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(2rem, 8vw, 9rem); }
+    .education-lead { max-width: 20rem; margin: 0; font: 500 clamp(1.5rem, 2.6vw, 2.3rem)/1 var(--serif); letter-spacing: -.05em; }
+    .education-lead small { display: block; margin-top: 1.4rem; color: var(--quiet); font: 400 .87rem/1.5 var(--sans); letter-spacing: 0; }
+    .education-item { padding: 1.2rem 0; border-top: 1px solid var(--line); }
+    .education-item:last-child { border-bottom: 1px solid var(--line); }
+    .education-item h3 { margin: 0; font: 500 clamp(1.7rem, 3.3vw, 3.3rem)/.9 var(--serif); letter-spacing: -.07em; }
+    .education-item p { margin: .85rem 0 0; color: var(--quiet); font-size: .9rem; }
+
+    .contact { padding: clamp(6rem, 12vw, 13rem) 0 1.5rem; background: var(--ink); color: var(--paper); }
+    .contact .section-number, .contact .signal { color: #ff705d; }
+    .contact-top { display: flex; justify-content: space-between; gap: 1rem; padding-bottom: .8rem; border-bottom: 1px solid rgba(238,233,223,.28); }
+    .contact h2 { max-width: 10ch; margin: 4rem 0 clamp(5rem, 10vw, 10rem); font: 500 clamp(4rem, 11vw, 12rem)/.78 var(--serif); letter-spacing: -.09em; }
     .contact h2 a { text-decoration: none; }
-    .contact h2 a:hover { color: var(--lime); }
-    .contact-grid { display: grid; grid-template-columns: .7fr 1.3fr; gap: 1rem; padding-top: 1rem; border-top: 1px solid var(--line); }
+    .contact h2 a:hover { color: #ff705d; }
+    .contact-grid { display: grid; grid-template-columns: .6fr 1.4fr; gap: 1rem; padding-top: 1rem; border-top: 1px solid rgba(238,233,223,.28); }
     .contact-grid p { margin: 0; }
-    .contact-grid a { text-decoration-thickness: .08em; text-underline-offset: .18em; }
-    .contact-grid a:hover { color: var(--lime); }
-    .contact-actions { display: flex; flex-wrap: wrap; gap: .55rem; }
-    .contact-actions a { display: inline-block; padding: .68rem .8rem; border: 1px solid var(--line); border-radius: 999px; text-decoration: none; transition: border-color .2s ease, background .2s ease; }
-    .contact-actions a:hover { border-color: var(--lime); background: rgba(216,255,63,.1); }
-    .footer-meta { display: flex; justify-content: space-between; gap: 1rem; margin-top: clamp(5rem, 11vw, 10rem); padding-top: 1rem; border-top: 1px solid var(--line); color: var(--muted); font-size: .75rem; }
+    .contact-grid a { text-decoration-thickness: 1px; text-underline-offset: .25em; }
+    .contact-grid a:hover { color: #ff705d; }
+    .footer-meta { display: flex; justify-content: space-between; gap: 1rem; margin-top: clamp(5rem, 10vw, 10rem); padding-top: .9rem; border-top: 1px solid rgba(238,233,223,.28); color: rgba(238,233,223,.6); font: 600 .66rem var(--sans); letter-spacing: .1em; text-transform: uppercase; }
 
-    .reveal { opacity: 0; transform: translateY(1.2rem) scale(.985); transition: opacity .7s var(--ease), transform .7s var(--ease); }
-    .reveal.visible { opacity: 1; transform: translateY(0) scale(1); }
-    .delay-1 { transition-delay: .08s; }
-    .delay-2 { transition-delay: .16s; }
-    .delay-3 { transition-delay: .24s; }
+    .reveal { opacity: 0; clip-path: inset(0 0 100% 0); transform: translateY(1.2rem); transition: opacity .8s var(--ease), clip-path .9s var(--ease), transform .9s var(--ease); }
+    .reveal.visible { opacity: 1; clip-path: inset(0); transform: translateY(0); }
+    .delay-1 { transition-delay: .1s; }
+    .delay-2 { transition-delay: .2s; }
+    .delay-3 { transition-delay: .3s; }
+    .rule-draw { transform: scaleX(0); transform-origin: left; transition: transform 1s var(--ease); }
+    .rule-draw.visible { transform: scaleX(1); }
 
     @media (max-width: 820px) {
-      .nav { min-height: 4rem; }
-      .nav-links { position: absolute; top: 100%; left: 0; right: 0; display: grid; gap: 0; padding: 0 var(--gutter); background: var(--night); border-bottom: 1px solid var(--line); opacity: 0; pointer-events: none; transform: translateY(-.7rem); transition: opacity .2s ease, transform .2s var(--ease); }
+      .nav { min-height: 4.2rem; }
+      .nav-links { position: absolute; top: 100%; left: 0; right: 0; display: grid; gap: 0; padding: 0 var(--gutter); background: var(--paper); border-bottom: 1px solid var(--line); opacity: 0; pointer-events: none; transform: translateY(-.7rem); transition: opacity .2s ease, transform .25s var(--ease); }
       .nav-links.open { opacity: 1; pointer-events: auto; transform: translateY(0); }
-      .nav-links a { padding: 1rem 0; border-bottom: 1px solid var(--line); }
-      .nav-links .resume-link { margin: 1rem 0; padding: .9rem; border: 0; text-align: center; }
+      .nav-links a { padding: 1rem 0; border-bottom: 1px solid var(--line-soft); }
+      .nav-links .resume-link { margin: 1rem 0; padding: .5rem 0; text-align: left; }
       .menu-toggle { display: block; }
-      .hero { grid-template-columns: 1fr; padding-top: 7.2rem; }
-      .hero h1 { max-width: 8ch; font-size: clamp(4.4rem, 19vw, 8rem); }
-      .signal-stack { max-width: 34rem; }
+      .hero { grid-template-columns: 1fr; padding-top: 7.4rem; align-items: start; }
+      .hero h1 { max-width: 8ch; font-size: clamp(4.5rem, 20vw, 9rem); }
+      .hero-side { max-width: 24rem; }
       .hero-bottom { display: block; }
-      .hero-bottom .label { display: block; margin-top: 1.3rem; text-align: left; }
-      .section-heading, .readout, .experience-layout, .contact-grid { grid-template-columns: 1fr; }
-      .project-grid { grid-template-columns: 1fr; }
-      .project-card { min-height: 27rem; }
-      .skills { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .hero-bottom .page-mark { display: block; margin-top: 1.5rem; }
+      .section-head, .statement, .experience-row, .education, .contact-grid { grid-template-columns: 1fr; }
+      .project-entry { grid-template-columns: 5rem 1fr; gap: 1.2rem; }
+      .project-index { font-size: 3rem; }
+      .project-copy { grid-column: 2; }
+      .project-evidence { grid-column: 2; }
+      .skills { grid-template-columns: repeat(2, 1fr); }
     }
     @media (max-width: 520px) {
-      .project-bottom { display: block; }
-      .launch { margin-top: 1rem; }
-      .role-meta { display: block; }
-      .role-meta span + span { display: block; margin-top: .4rem; }
+      .avatar { width: 1.8rem; height: 1.8rem; }
+      .brand { font-size: .7rem; }
+      .project-entry { grid-template-columns: 1fr; gap: 1.3rem; }
+      .project-copy, .project-evidence { grid-column: 1; }
+      .project-index { display: flex; justify-content: space-between; align-items: baseline; font-size: 2.6rem; }
+      .project-index span { margin: 0; }
       .skills { grid-template-columns: 1fr; }
+      .role-date { margin-bottom: 1rem; }
       .footer-meta { display: block; }
-      .footer-meta span + span { display: block; margin-top: .45rem; }
+      .footer-meta span + span { display: block; margin-top: .5rem; }
     }
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; }
-      .reveal { opacity: 1; transform: none; }
+      .reveal, .rule-draw { opacity: 1; clip-path: none; transform: none; }
     }
   </style>
 </head>
 <body>
-  <a class="skip-link label" href="#main">Skip to content</a>
+  <a class="skip-link eyebrow" href="#main">Skip to content</a>
   <header class="site-header">
     <nav class="nav wrap" aria-label="Primary navigation">
-      <a class="brand" href="#top" aria-label="Shaik Sohel home"><span class="brand-orbit" aria-hidden="true"></span><span>SHAIK SOHEL</span></a>
+      <a class="brand" href="#top" aria-label="Shaik Sohel home"><img class="avatar" src="avatar.png" alt="Shaik Sohel"><span>SHAIK SOHEL</span></a>
       <div class="nav-links" id="nav-links">
-        <a class="label" href="#systems">Systems</a>
-        <a class="label" href="#experience">Experience</a>
-        <a class="label" href="#contact">Contact</a>
-        <a class="resume-link label" href="shaik-sohel-resume.pdf" download>Download résumé</a>
+        <a href="#systems">Systems</a><a href="#experience">Experience</a><a href="#contact">Contact</a><a class="resume-link" href="shaik-sohel-resume.pdf" download>Download résumé</a>
       </div>
-      <button class="menu-toggle label" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
     </nav>
   </header>
 
   <main id="main">
     <section class="hero wrap" id="top" aria-labelledby="hero-title">
-      <div class="hero-main">
-        <div class="hero-intro reveal"><span class="pill live">System online</span><span class="label muted">Full-stack developer</span></div>
-        <h1 id="hero-title" class="display reveal delay-1">I build <span>real products</span> and ship them.</h1>
-        <p class="hero-copy reveal delay-2">Software Engineer — final-year B.Tech CSE student and full-stack developer building deployed, secure, data-intensive systems.</p>
+      <div>
+        <div class="hero-kicker eyebrow signal reveal">Full-stack developer / build log</div>
+        <h1 id="hero-title" class="reveal delay-1">I build <em>real products</em> and ship them.</h1>
+        <p class="hero-sub reveal delay-2">Software Engineer — final-year B.Tech CSE student and full-stack developer building deployed, secure, data-intensive systems.</p>
       </div>
-      <aside class="signal-stack reveal delay-2" aria-label="Profile telemetry">
-        <div class="stack-top"><span class="label">Profile signal</span><strong class="lime">Nominal</strong></div>
-        <div class="stack-list">
-          <div class="stack-item"><span class="label">Based</span><strong>Hyderabad, India</strong></div>
-          <div class="stack-item"><span class="label">Batch</span><strong>Final-year CS · 2027</strong></div>
-          <div class="stack-item"><span class="label">Focus</span><div><strong>Product systems</strong><div class="meter" aria-hidden="true"><span style="width: 88%"></span></div></div></div>
-          <div class="stack-item"><span class="label">Core</span><strong>TypeScript · React · Node.js · PostgreSQL</strong></div>
-        </div>
-        <div class="stack-bottom"><span class="label">Last readout</span><strong>Healthy</strong></div>
-      </aside>
-      <div class="hero-bottom"><p class="reveal delay-2">From schema design and SQL queries to automated testing, CI/CD pipelines, and production observability.</p><span class="label muted reveal delay-3">Hyderabad / India</span></div>
+      <aside class="hero-side reveal delay-2"><p>From schema design and SQL queries to automated testing, CI/CD pipelines, and production observability.</p><p class="side-note">Based in Hyderabad, India<br>Final-year CSE · 2027</p></aside>
+      <div class="hero-bottom"><span class="eyebrow quiet reveal delay-2">The work lives at the seam between product behavior and infrastructure detail.</span><span class="page-mark serif reveal delay-3">01 / 06</span></div>
     </section>
 
-    <section class="section wrap" id="systems" aria-labelledby="systems-title">
-      <div class="section-heading"><div><span class="section-kicker label">Selected systems</span><h2 id="systems-title" class="display reveal">Built to hold up.</h2></div><p class="reveal delay-1">Four projects, four kinds of engineering evidence: market data, money-state transitions, low-resource speech, and route computation.</p></div>
-      <div class="project-grid">
-        <article class="project-card reveal">
-          <div class="project-top"><span class="pill live">Live system</span><span class="label muted">Klar</span></div>
-          <div class="project-main"><div><h3 class="project-name display">Klar</h3><p class="project-description">A full-stack analytics platform ingesting job data from two independent APIs and surfacing skill-demand rankings, salary insights, and hiring trends.</p><div class="evidence-row"><span class="evidence">550+ daily postings</span><span class="evidence">1,300+ active</span><span class="evidence">45 skills</span><span class="evidence">4,200+ snapshots</span></div></div><div class="project-bottom"><div><div class="stack">React · Node.js · Express · MongoDB · Tailwind CSS</div><p class="project-note">First load may take up to a minute on the free-tier service.</p></div><a class="launch label" href="https://klar-dev.onrender.com/" target="_blank" rel="noopener noreferrer">Launch ↗</a></div></div>
-        </article>
+    <section class="section wrap projects" id="systems" aria-labelledby="systems-title">
+      <div class="section-head"><div><div class="section-number eyebrow">Selected systems</div><h2 id="systems-title" class="section-title reveal">Built to hold up.</h2></div><p class="section-note reveal delay-1">Four projects, four kinds of engineering evidence: market data, money-state transitions, route computation, and low-resource speech.</p></div>
 
-        <article class="project-card reveal delay-1">
-          <div class="project-top"><span class="pill blue">Live system</span><span class="label muted">Pakka</span></div>
-          <div class="project-main"><div><h3 class="project-name display">Pakka</h3><p class="project-description">A milestone escrow reference implementation where money-state transitions are server-enforced in PostgreSQL.</p><div class="evidence-row"><span class="evidence">37 migrations</span><span class="evidence">13+ RLS policies</span><span class="evidence">8 ADRs</span><span class="evidence">Zero-sum ledger</span></div></div><div class="project-bottom"><div class="stack">Next.js 15 · TypeScript strict · Supabase · PostgreSQL</div><a class="launch label" href="https://mypakka.vercel.app/login" target="_blank" rel="noopener noreferrer">Launch ↗</a></div></div>
-        </article>
+      <article class="project-entry reveal">
+        <div class="project-index serif">01<span>Klar</span></div>
+        <div class="project-copy"><h3>Klar<span class="signal">.</span></h3><p class="project-description">A full-stack analytics platform ingesting job data from two independent APIs and surfacing skill-demand rankings, salary insights, and hiring trends.</p><div class="project-meta"><span>Live system</span><span>Open source</span></div><p class="project-note">First load may take up to a minute on the free-tier service.</p><a class="project-link" href="https://klar-dev.onrender.com/" target="_blank" rel="noopener noreferrer">Launch system <span>↗</span></a></div>
+        <div class="project-evidence"><ul class="evidence-list"><li><span>Daily postings</span><strong>550+</strong></li><li><span>Active corpus</span><strong>1,300+</strong></li><li><span>Skills tracked</span><strong>45</strong></li><li><span>Time-series snapshots</span><strong>4,200+</strong></li></ul><div class="project-meta quiet">React · Node.js · Express · MongoDB · Tailwind CSS</div></div>
+      </article>
 
-        <article class="project-card reveal delay-2">
-          <div class="project-top"><span class="pill">Team lead</span><span class="label muted">Bhasha Seva</span></div>
-          <div class="project-main"><div><h3 class="project-name display">Bhasha Seva</h3><p class="project-description">A multilingual voice-corpus collection tool with AI speech-to-text transcription review across four Indian languages.</p><div class="evidence-row"><span class="evidence">4 Indian languages</span><span class="evidence">TRL 4</span><span class="evidence">Yukti repository</span></div></div><div class="project-bottom"><div class="stack">Python · Streamlit · WebRTC · Ollama · PocketPal</div><span class="launch label">Yukti / TRL 4</span></div></div>
-        </article>
+      <article class="project-entry reveal delay-1">
+        <div class="project-index serif">02<span>Pakka</span></div>
+        <div class="project-copy"><h3>Pakka<span class="signal">.</span></h3><p class="project-description">A milestone escrow reference implementation where money-state transitions are server-enforced in PostgreSQL.</p><div class="project-meta"><span>Live system</span><span>MIT</span></div><a class="project-link" href="https://mypakka.vercel.app/login" target="_blank" rel="noopener noreferrer">Launch system <span>↗</span></a></div>
+        <div class="project-evidence"><ul class="evidence-list"><li><span>Migrations</span><strong>37</strong></li><li><span>RLS policies</span><strong>13+</strong></li><li><span>Architecture decisions</span><strong>8 ADRs</strong></li><li><span>Ledger model</span><strong>Zero-sum</strong></li></ul><div class="project-meta quiet">Next.js 15 · TypeScript strict · Supabase · PostgreSQL</div></div>
+      </article>
 
-        <article class="project-card reveal delay-3">
-          <div class="project-top"><span class="pill blue">Live system</span><span class="label muted">Hyderabad Metro Go</span></div>
-          <div class="project-main"><div><h3 class="project-name display">Metro Go</h3><p class="project-description">A client-side Hyderabad route planner modelling three metro lines and computing fewest-stop paths with a deque-based 0-1 BFS.</p><div class="evidence-row"><span class="evidence">59 stations</span><span class="evidence">3 interchanges</span><span class="evidence">10 fare slabs</span><span class="evidence">LocalStorage trips</span></div></div><div class="project-bottom"><div class="stack">Vanilla JavaScript · HTML5 · CSS3 · Bootstrap 5</div><a class="launch label" href="https://shaiksohelll.github.io/Hyderabad-Metro-Go/" target="_blank" rel="noopener noreferrer">Launch ↗</a></div></div>
-        </article>
-      </div>
+      <article class="project-entry reveal delay-2">
+        <div class="project-index serif">03<span>Metro Go</span></div>
+        <div class="project-copy"><h3>Hyderabad Metro Go<span class="signal">.</span></h3><p class="project-description">A client-side Hyderabad route planner modelling three metro lines and computing fewest-stop paths with a deque-based 0-1 BFS.</p><div class="project-meta"><span>Live system</span><span>GitHub Pages</span></div><a class="project-link" href="https://shaiksohelll.github.io/Hyderabad-Metro-Go/" target="_blank" rel="noopener noreferrer">Launch system <span>↗</span></a></div>
+        <div class="project-evidence"><ul class="evidence-list"><li><span>Stations modelled</span><strong>59</strong></li><li><span>Interchange nodes</span><strong>3</strong></li><li><span>Fare slabs</span><strong>10</strong></li><li><span>Recent trips</span><strong>LocalStorage</strong></li></ul><div class="project-meta quiet">Vanilla JavaScript · HTML5 · CSS3 · Bootstrap 5</div></div>
+      </article>
+
+      <article class="project-entry reveal delay-3">
+        <div class="project-index serif">04<span>Bhasha Seva</span></div>
+        <div class="project-copy"><h3>Bhasha Seva<span class="signal">.</span></h3><p class="project-description">A multilingual voice-corpus collection tool with AI speech-to-text transcription review across four Indian languages.</p><div class="project-meta"><span>Team lead</span><span>TRL 4</span><span>Yukti repository</span></div><a class="project-link" href="yukti-certificate.pdf" download>Certificate <span>↓</span></a></div>
+        <div class="project-evidence"><ul class="evidence-list"><li><span>Languages</span><strong>4 Indian languages</strong></li><li><span>Recognition</span><strong>Yukti / TRL 4</strong></li><li><span>Inference</span><strong>Fully offline</strong></li></ul><div class="project-meta quiet">Python · Streamlit · WebRTC · Ollama · PocketPal</div></div>
+      </article>
     </section>
 
-    <section class="readout wrap" aria-label="Engineering statement"><div><span class="section-kicker label">System readout</span><h2 class="display reveal">No black boxes.</h2></div><div class="readout-copy"><p class="reveal delay-1">I like systems you can inspect: a state machine with explicit transitions, an ingest job that fails safely, a test suite that catches the regression.</p><p class="reveal delay-2">The work lives at the seam between product behavior and infrastructure detail.</p></div></section>
+    <section class="section wrap statement" aria-label="Engineering statement"><div><div class="section-number eyebrow">System readout</div><h2 class="reveal">No black boxes.</h2></div><div class="statement-copy"><p class="reveal delay-1">I like systems you can inspect: a state machine with explicit transitions, an ingest job that fails safely, a test suite that catches the regression.</p><p class="reveal delay-2">The work lives at the seam between product behavior and infrastructure detail.</p></div></section>
 
-    <section class="section wrap" id="experience" aria-labelledby="experience-title">
-      <div class="section-heading"><div><span class="section-kicker label">Field record</span><h2 id="experience-title" class="display reveal">Teams I shipped with.</h2></div><p class="reveal delay-1">Production modules, strict-mode migrations, voice-corpus tooling, and the discipline of a four-person Agile team.</p></div>
-      <div class="experience-layout"><div class="experience-intro reveal"><p>Two internships across edtech and open-source AI work.</p><p>Scope, dates, and employers are recorded below.</p></div><div class="timeline"><article class="role reveal delay-1"><div class="role-meta"><span>Full Stack Developer Intern</span><span>Aug 2025 — Jan 2026</span></div><h3>Student Tribe <span class="muted">/ edtech / Hyderabad</span></h3><p>Shipped a MERN-stack service request management platform with Role-Based Access Control end to end, from schema design to production deployment, as part of a 4-person team. Migrated core frontend modules from JavaScript to TypeScript strict mode with Next.js App Router, and delivered real-time React and Tailwind CSS admin dashboards for live service metrics and request analytics.</p></article><article class="role reveal delay-2"><div class="role-meta"><span>AI Developer Intern</span><span>May 2025 — Jul 2025</span></div><h3>Swecha Telangana <span class="muted">/ VISWAM.AI / Hyderabad</span></h3><p>Co-built Bhasha Seva, a multilingual voice-corpus collection tool using Python, Streamlit, and WebRTC, with AI speech-to-text transcription review across 4 Indian languages. Curated and cleaned datasets for model fine-tuning, integrated Ollama and PocketPal for fully offline AI inference, and delivered sprint-committed features in a 4-person Agile team.</p></article></div></div>
-    </section>
+    <section class="section wrap experience" id="experience" aria-labelledby="experience-title"><div class="section-head"><div><div class="section-number eyebrow">Field record</div><h2 id="experience-title" class="section-title reveal">Teams I shipped with.</h2></div><p class="section-note reveal delay-1">Production modules, strict-mode migrations, voice-corpus tooling, and the discipline of a four-person Agile team.</p></div><article class="experience-row reveal"><div class="role-date">Aug 2025 — Jan 2026</div><div class="role"><h3>Full Stack Developer Intern <span>/ Student Tribe / edtech / Hyderabad</span></h3><p>Shipped a MERN-stack service request management platform with Role-Based Access Control end to end, from schema design to production deployment, as part of a 4-person team. Migrated core frontend modules from JavaScript to TypeScript strict mode with Next.js App Router, and delivered real-time React and Tailwind CSS admin dashboards for live service metrics and request analytics.</p></div></article><article class="experience-row reveal delay-1"><div class="role-date">May 2025 — Jul 2025</div><div class="role"><h3>AI Developer Intern <span>/ Swecha Telangana / VISWAM.AI / Hyderabad</span></h3><p>Co-built Bhasha Seva, a multilingual voice-corpus collection tool using Python, Streamlit, and WebRTC, with AI speech-to-text transcription review across 4 Indian languages. Curated and cleaned datasets for model fine-tuning, integrated Ollama and PocketPal for fully offline AI inference, and delivered sprint-committed features in a 4-person Agile team.</p></div></article></section>
 
-    <section class="section wrap" aria-labelledby="stack-title"><div class="section-heading"><div><span class="section-kicker label">Working toolchain</span><h2 id="stack-title" class="display reveal">The parts I use.</h2></div><p class="reveal delay-1">A practical stack for building, testing, shipping, and observing full-stack systems.</p></div><div class="skills"><div class="skill reveal"><h3>Languages</h3><p>Python<br>JavaScript (ES6+)<br>TypeScript (strict mode)<br>SQL (PL/pgSQL)<br>HTML5 · CSS3</p></div><div class="skill reveal delay-1"><h3>Backend</h3><p>Node.js · Express.js<br>RESTful API Design<br>JWT & OAuth Authentication<br>Rate Limiting · Helmet · CORS</p></div><div class="skill reveal delay-2"><h3>Frontend</h3><p>React.js · Next.js App Router<br>Vite · Tailwind CSS<br>Framer Motion · Zustand<br>TanStack Query</p></div><div class="skill reveal"><h3>Data</h3><p>PostgreSQL<br>Row-Level Security · triggers · functions<br>MongoDB · Mongoose<br>MySQL</p></div><div class="skill reveal delay-1"><h3>Cloud</h3><p>Render web services + cron jobs<br>Vercel · MongoDB Atlas<br>Supabase Auth · Realtime · Edge Functions</p></div><div class="skill reveal delay-2"><h3>Quality</h3><p>Vitest · Playwright<br>ESLint · GitHub Actions<br>CodeQL · Gitleaks<br>Sentry · PostHog</p></div></div></section>
+    <section class="section wrap" aria-labelledby="stack-title"><div class="section-head"><div><div class="section-number eyebrow">Working toolchain</div><h2 id="stack-title" class="section-title reveal">The parts I use.</h2></div><p class="section-note reveal delay-1">A practical stack for building, testing, shipping, and observing full-stack systems.</p></div><div class="skills"><div class="skill reveal"><h3>Languages</h3><p>Python<br>JavaScript (ES6+)<br>TypeScript (strict mode)<br>SQL (PL/pgSQL)<br>HTML5 · CSS3</p></div><div class="skill reveal delay-1"><h3>Backend</h3><p>Node.js · Express.js<br>RESTful API Design<br>JWT & OAuth Authentication<br>Rate Limiting · Helmet · CORS</p></div><div class="skill reveal delay-2"><h3>Frontend</h3><p>React.js · Next.js App Router<br>Vite · Tailwind CSS<br>Framer Motion · Zustand<br>TanStack Query</p></div><div class="skill reveal"><h3>Data</h3><p>PostgreSQL<br>Row-Level Security · triggers · functions<br>MongoDB · Mongoose<br>MySQL</p></div><div class="skill reveal delay-1"><h3>Cloud</h3><p>Render web services + cron jobs<br>Vercel · MongoDB Atlas<br>Supabase Auth · Realtime · Edge Functions</p></div><div class="skill reveal delay-2"><h3>Quality</h3><p>Vitest · Playwright<br>ESLint · GitHub Actions<br>CodeQL · Gitleaks<br>Sentry · PostHog</p></div></div></section>
 
-    <section class="section wrap" aria-labelledby="education-title"><div class="section-heading"><div><span class="section-kicker label">Base layer</span><h2 id="education-title" class="display reveal">Still in the lab.</h2></div><p class="reveal delay-1">Computer science foundations, applied product work, and one national innovation recognition.</p></div><div class="experience-layout"><div class="experience-intro reveal"><p>Bachelor of Technology in Computer Science & Engineering.</p><p>Malla Reddy Institute of Technology & Science, Hyderabad · 2023 — 2027 · Expected May 2027</p></div><div class="timeline"><article class="role reveal delay-1"><div class="role-meta"><span>Relevant coursework</span><span>2023 — 2027</span></div><h3>Data Structures & Algorithms / DBMS / Operating Systems</h3><p>Coursework listed on the resume.</p></article><article class="role reveal delay-2"><div class="role-meta"><span>Government of India recognition</span><span>2024 — 2025</span></div><h3>MoE’s Innovation Cell <span class="muted">/ IIC</span></h3><p>Team Lead of a 5-person team for an Integrated Student Data Management System selected for the Yukti National Innovation Repository at TRL 4.</p></article></div></div></section>
+    <section class="section wrap education" aria-labelledby="education-title"><div><div class="section-number eyebrow">Base layer</div><h2 id="education-title" class="section-title reveal">Still in the lab.</h2><p class="education-lead reveal delay-1">Bachelor of Technology in Computer Science & Engineering.<small>Malla Reddy Institute of Technology & Science, Hyderabad · 2023 — 2027 · Expected May 2027</small></p></div><div><article class="education-item reveal"><div class="eyebrow quiet">Relevant coursework / 2023 — 2027</div><h3>Data Structures & Algorithms / DBMS / Operating Systems</h3><p>Coursework listed on the resume.</p></article><article class="education-item reveal delay-1"><div class="eyebrow quiet">Government of India recognition / 2024 — 2025</div><h3>MoE’s Innovation Cell / IIC</h3><p>Team Lead of a 5-person team for an Integrated Student Data Management System selected for the Yukti National Innovation Repository at TRL 4.</p></article></div></section>
   </main>
 
-  <footer class="contact" id="contact" aria-labelledby="contact-title"><div class="wrap"><div class="contact-top"><span class="pill live">Contact open</span><span class="label muted">Hyderabad, India — 500081</span></div><h2 id="contact-title" class="display reveal"><a href="mailto:shaiksohelll05@gmail.com">Let’s build<br>the next one.</a></h2><div class="contact-grid reveal delay-1"><p class="label muted">Direct line</p><p><a href="mailto:shaiksohelll05@gmail.com">shaiksohelll05@gmail.com</a><br><a href="tel:+918639673777">+91 8639673777</a></p><p class="label muted">Links</p><div class="contact-actions"><a href="https://github.com/shaiksohelll" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="https://www.linkedin.com/in/shaiksohellll" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="shaik-sohel-resume.pdf" download>Download résumé ↓</a></div></div><div class="footer-meta"><span>Shaik Sohel / Full-Stack Developer</span><span>© 2026 / Built on GitHub Pages</span></div></div></footer>
+  <footer class="contact" id="contact" aria-labelledby="contact-title"><div class="wrap"><div class="contact-top"><span class="eyebrow signal">Contact / open channel</span><span class="eyebrow" style="color:rgba(238,233,223,.6)">Hyderabad, India — 500081</span></div><h2 id="contact-title" class="reveal"><a href="mailto:shaiksohelll05@gmail.com">Let’s build<br>the next one.</a></h2><div class="contact-grid reveal delay-1"><p class="eyebrow" style="color:rgba(238,233,223,.6)">Direct line</p><p><a href="mailto:shaiksohelll05@gmail.com">shaiksohelll05@gmail.com</a><br><a href="tel:+918639673777">+91 8639673777</a></p><p class="eyebrow" style="color:rgba(238,233,223,.6)">Links</p><p><a href="https://github.com/shaiksohelll" target="_blank" rel="noopener noreferrer">GitHub ↗</a><br><a href="https://www.linkedin.com/in/shaiksohellll" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><br><a href="shaik-sohel-resume.pdf" download>Download résumé ↓</a></p></div><div class="footer-meta"><span>Shaik Sohel / Full-Stack Developer</span><span>© 2026 / Built on GitHub Pages</span></div></div></footer>
 
   <script>
     const toggle = document.querySelector('.menu-toggle');
