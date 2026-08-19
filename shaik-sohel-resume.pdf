@@ -110,7 +110,7 @@ endobj
 endobj
 17 0 obj
 <<
-/Author (Shaik Sohel) /CreationDate (D:20260819144038+00'00') /Creator (Shaik Sohel) /Keywords () /ModDate (D:20260819144038+00'00') /Producer (Shaik Sohel) 
+/Author (Shaik Sohel) /CreationDate (D:20260819174547+00'00') /Creator (Shaik Sohel) /Keywords () /ModDate (D:20260819174547+00'00') /Producer (Shaik Sohel) 
   /Subject (\(unspecified\)) /Title (Shaik Sohel - Full-Stack Developer) /Trapped /False
 >>
 endobj
@@ -121,7 +121,7 @@ endobj
 endobj
 19 0 obj
 <<
-/Length 14452
+/Length 14430
 >>
 stream
 1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
@@ -174,7 +174,7 @@ q
 1 0 0 1 38.4 686.62 cm
 q
 .101961 .101961 .101961 rg
-BT 1 0 0 1 0 32.8 Tm /F1 8.4 Tf 10.3 TL (Software Engineer - final-year B.Tech CSE student and full-stack developer with two internships, building deployed, secure, data-intensive) Tj T* (systems in TypeScript, React, Node.js, and PostgreSQL - from database schema design, SQL queries, and RLS-enforced authorisation to) Tj T* (automated testing, CI/CD pipelines, and production observability. Collaborative Agile teamwork and clear written communication \(8) Tj T* (Architecture Decision Records\). English \(Professional\).) Tj T* ET
+BT 1 0 0 1 0 32.8 Tm /F1 8.4 Tf 10.3 TL (Full-Stack Developer - final-year B.Tech CSE student with two internships, building deployed, secure, data-intensive systems in TypeScript,) Tj T* (React, Node.js, and PostgreSQL - from database schema design, SQL queries, and RLS-enforced authorisation to automated testing,) Tj T* (CI/CD pipelines, and production observability. Collaborative Agile teamwork and clear written communication \(8 Architecture Decision) Tj T* (Records\). English \(Professional\).) Tj T* ET
 Q
 Q
 q
@@ -621,7 +621,7 @@ xref
 trailer
 <<
 /ID 
-[<d4bbc28bbffc28abfc92d09db810aa3c><d4bbc28bbffc28abfc92d09db810aa3c>]
+[<9090f2ba96e530bd89ff2eb6f1dbca90><9090f2ba96e530bd89ff2eb6f1dbca90>]
 % ReportLab generated PDF document -- digest (opensource)
 
 /Info 17 0 R
@@ -629,5 +629,5 @@ trailer
 /Size 20
 >>
 startxref
-17541
+17519
 %%EOF
