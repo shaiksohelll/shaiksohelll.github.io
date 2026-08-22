@@ -16,6 +16,9 @@
   <meta name="twitter:description" content="I build real products and ship them.">
   <meta name="twitter:image" content="https://shaiksohelll.github.io/avatar.png">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%2318181a'/%3E%3Ctext x='30' y='45' font-family='Georgia,serif' font-size='38' fill='%23eee9df' text-anchor='middle'%3ES%3C/text%3E%3Ccircle cx='47' cy='47' r='6' fill='%23ee4c35'/%3E%3C/svg%3E">
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600;6..96,700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
@@ -80,7 +83,8 @@
 
     .hero { min-height: 100svh; padding-top: 9rem; padding-bottom: 2rem; display: grid; grid-template-columns: minmax(0, 1.65fr) minmax(15rem, .55fr); gap: clamp(2rem, 7vw, 8rem); align-items: end; }
     .hero-kicker { display: flex; align-items: center; gap: .7rem; margin-bottom: 2.4rem; }
-    .hero-kicker::before { content: ""; display: block; width: 2.8rem; height: 1px; background: var(--signal); }
+    .hero-kicker::before { content: none; }
+    .intro-dash { display: block; width: 2.8rem; height: 1px; flex: 0 0 auto; background: var(--signal); transform-origin: left center; }
     .hero h1 { max-width: 9.5ch; margin: 0; font: 500 clamp(4.7rem, 12.6vw, 14rem)/.84 var(--serif); letter-spacing: -.09em; }
     .hero h1 em { color: var(--signal); font-style: italic; }
     .hero-sub { max-width: 30rem; margin: 3rem 0 0; font-size: clamp(1.05rem, 1.5vw, 1.24rem); letter-spacing: -.03em; }
@@ -159,6 +163,11 @@
     .reveal { opacity: 1; clip-path: none; transform: none; transition: opacity .8s var(--ease), clip-path .9s var(--ease), transform .9s var(--ease); }
     .js .reveal { opacity: 0; clip-path: inset(0 0 100% 0); transform: translateY(1.2rem); }
     .reveal.visible { opacity: 1; clip-path: none; transform: translateY(0); }
+    .gsap-title { opacity: 1; }
+    .gsap-title .line { display: block; overflow: hidden; }
+    .anime-rule-host { position: relative; }
+    .anime-rule-host > svg { position: absolute; top: -1px; left: 0; width: 100%; height: 2px; pointer-events: none; overflow: visible; }
+    .anime-rule-host.section-head > svg, .anime-rule-host.contact-top > svg { top: auto; bottom: -1px; }
     .delay-1 { transition-delay: .1s; }
     .delay-2 { transition-delay: .2s; }
     .delay-3 { transition-delay: .3s; }
@@ -219,54 +228,53 @@
   <main id="main">
     <section class="hero wrap" id="top" aria-labelledby="hero-title">
       <div>
-        <div class="hero-kicker eyebrow signal reveal">The build record of Shaik Sohel</div>
-        <h1 id="hero-title" class="reveal delay-1">I build <em>real products</em> and ship them.</h1>
+        <div class="hero-kicker eyebrow signal"><span class="intro-dash" aria-hidden="true"></span>The build record of Shaik Sohel</div>
+        <h1 id="hero-title" class="gsap-title">I build <em>real products</em> and ship them.</h1>
         <p class="hero-sub reveal delay-2">Full-Stack Developer — final-year B.Tech CSE student building deployed, secure, data-intensive systems.</p>
       </div>
       <aside class="hero-side reveal delay-2"><p>From schema design and SQL queries to automated testing, CI/CD pipelines, and production observability.</p><p class="side-note">Based in Hyderabad, India<br>Final-year CSE · 2027</p></aside>
-      <div class="hero-bottom"><span class="eyebrow quiet reveal delay-2">The work lives at the seam between product behavior and infrastructure detail.</span><span class="page-mark serif reveal delay-3">01 / 06</span></div>
+      <div class="hero-bottom anime-rule-host"><span class="eyebrow quiet reveal delay-2">The work lives at the seam between product behavior and infrastructure detail.</span><span class="page-mark serif reveal delay-3">01 / 06</span></div>
     </section>
 
     <section class="section wrap projects" id="systems" aria-labelledby="systems-title">
-      <div class="section-head"><div><div class="section-number eyebrow">Selected systems</div><h2 id="systems-title" class="section-title reveal">Built to hold up.</h2></div><p class="section-note reveal delay-1">Four projects, four kinds of engineering evidence: market data, money-state transitions, route computation, and low-resource speech.</p></div>
+      <div class="section-head anime-rule-host"><div><div class="section-number eyebrow">Selected systems</div><h2 id="systems-title" class="section-title gsap-title">Built to hold up.</h2></div><p class="section-note reveal delay-1">Four projects, four kinds of engineering evidence: market data, money-state transitions, route computation, and low-resource speech.</p></div>
 
       <article class="project-entry reveal">
         <div class="project-index serif">01<span>Klar</span></div>
         <div class="project-copy"><h3>Klar<span class="signal">.</span></h3><p class="project-description">A full-stack analytics platform ingesting job data from two independent APIs and surfacing skill-demand rankings, salary insights, and hiring trends.</p><div class="project-meta"><span>Live system</span><span>Open source</span></div><p class="project-note">First load may take up to a minute on the free-tier service.</p><a class="project-link" href="https://klar-dev.onrender.com/" target="_blank" rel="noopener noreferrer">Launch system <span>↗</span></a></div>
-        <div class="project-evidence"><ul class="evidence-list"><li><span>Daily postings</span><strong>550+</strong></li><li><span>Active corpus</span><strong>1,300+</strong></li><li><span>Skills tracked</span><strong>45</strong></li><li><span>Time-series snapshots</span><strong>4,200+</strong></li></ul><div class="project-meta quiet">React · Node.js · Express · MongoDB · Tailwind CSS</div></div>
+        <div class="project-evidence"><ul class="evidence-list anime-rule-host"><li><span>Daily postings</span><strong data-count="550" data-suffix="+">550+</strong></li><li><span>Active corpus</span><strong data-count="1300" data-suffix="+">1,300+</strong></li><li><span>Skills tracked</span><strong data-count="45">45</strong></li><li><span>Time-series snapshots</span><strong data-count="4200" data-suffix="+">4,200+</strong></li></ul><div class="project-meta quiet">React · Node.js · Express · MongoDB · Tailwind CSS</div></div>
       </article>
 
       <article class="project-entry reveal delay-1">
         <div class="project-index serif">02<span>Pakka</span></div>
         <div class="project-copy"><h3>Pakka<span class="signal">.</span></h3><p class="project-description">A milestone escrow reference implementation where money-state transitions are server-enforced in PostgreSQL.</p><div class="project-meta"><span>Live system</span><span>MIT</span></div><a class="project-link" href="https://mypakka.vercel.app/login" target="_blank" rel="noopener noreferrer">Launch system <span>↗</span></a></div>
-        <div class="project-evidence"><ul class="evidence-list"><li><span>Migrations</span><strong>37</strong></li><li><span>RLS policies</span><strong>13+</strong></li><li><span>Architecture decisions</span><strong>8 ADRs</strong></li><li><span>Ledger model</span><strong>Zero-sum</strong></li></ul><div class="project-meta quiet">Next.js 15 · TypeScript strict · Supabase · PostgreSQL</div></div>
+        <div class="project-evidence"><ul class="evidence-list anime-rule-host"><li><span>Migrations</span><strong data-count="37">37</strong></li><li><span>RLS policies</span><strong data-count="13" data-suffix="+">13+</strong></li><li><span>Architecture decisions</span><strong data-count="8" data-suffix=" ADRs">8 ADRs</strong></li><li><span>Ledger model</span><strong>Zero-sum</strong></li></ul><div class="project-meta quiet">Next.js 15 · TypeScript strict · Supabase · PostgreSQL</div></div>
       </article>
 
       <article class="project-entry reveal delay-2">
         <div class="project-index serif">03<span>Metro Go</span></div>
         <div class="project-copy"><h3>Hyderabad Metro Go<span class="signal">.</span></h3><p class="project-description">A client-side Hyderabad route planner modelling three metro lines and computing fewest-stop paths with a deque-based 0-1 BFS.</p><div class="project-meta"><span>Live system</span><span>GitHub Pages</span></div><a class="project-link" href="https://shaiksohelll.github.io/Hyderabad-Metro-Go/" target="_blank" rel="noopener noreferrer">Launch system <span>↗</span></a></div>
-        <div class="project-evidence"><ul class="evidence-list"><li><span>Stations modelled</span><strong>59</strong></li><li><span>Interchange nodes</span><strong>3</strong></li><li><span>Fare slabs</span><strong>10</strong></li><li><span>Recent trips</span><strong>LocalStorage</strong></li></ul><div class="project-meta quiet">Vanilla JavaScript · HTML5 · CSS3 · Bootstrap 5</div></div>
+        <div class="project-evidence"><ul class="evidence-list anime-rule-host"><li><span>Stations modelled</span><strong data-count="59">59</strong></li><li><span>Interchange nodes</span><strong data-count="3">3</strong></li><li><span>Fare slabs</span><strong data-count="10">10</strong></li><li><span>Recent trips</span><strong>LocalStorage</strong></li></ul><div class="project-meta quiet">Vanilla JavaScript · HTML5 · CSS3 · Bootstrap 5</div></div>
       </article>
 
       <article class="project-entry reveal delay-3">
         <div class="project-index serif">04<span>Bhasha Seva</span></div>
         <div class="project-copy"><h3>Bhasha Seva<span class="signal">.</span></h3><p class="project-description">A multilingual voice-corpus collection tool with AI speech-to-text transcription review across four Indian languages.</p><div class="project-meta"><span>Team lead</span><span>TRL 4</span><span>Yukti repository</span></div><a class="project-link" href="yukti-certificate.pdf" download>Certificate <span>↓</span></a></div>
-        <div class="project-evidence"><ul class="evidence-list"><li><span>Languages</span><strong>4 Indian languages</strong></li><li><span>Recognition</span><strong>Yukti / TRL 4</strong></li><li><span>Inference</span><strong>Fully offline</strong></li></ul><div class="project-meta quiet">Python · Streamlit · WebRTC · Ollama · PocketPal</div></div>
+        <div class="project-evidence"><ul class="evidence-list anime-rule-host"><li><span>Languages</span><strong>4 Indian languages</strong></li><li><span>Recognition</span><strong>Yukti / TRL 4</strong></li><li><span>Inference</span><strong>Fully offline</strong></li></ul><div class="project-meta quiet">Python · Streamlit · WebRTC · Ollama · PocketPal</div></div>
       </article>
     </section>
 
-    <section class="section wrap statement" aria-label="Engineering statement"><div><div class="section-number eyebrow">System readout</div><h2 class="reveal">No black boxes.</h2></div><div class="statement-copy"><p class="reveal delay-1">I like systems you can inspect: a state machine with explicit transitions, an ingest job that fails safely, a test suite that catches the regression.</p><p class="reveal delay-2">The work lives at the seam between product behavior and infrastructure detail.</p></div></section>
+    <section class="section wrap statement" aria-label="Engineering statement"><div><div class="section-number eyebrow">System readout</div><h2 class="gsap-title">No black boxes.</h2></div><div class="statement-copy"><p class="reveal delay-1">I like systems you can inspect: a state machine with explicit transitions, an ingest job that fails safely, a test suite that catches the regression.</p><p class="reveal delay-2">The work lives at the seam between product behavior and infrastructure detail.</p></div></section>
 
-    <section class="section wrap experience" id="experience" aria-labelledby="experience-title"><div class="section-head"><div><div class="section-number eyebrow">Field record</div><h2 id="experience-title" class="section-title reveal">Teams I shipped with.</h2></div><p class="section-note reveal delay-1">Production modules, strict-mode migrations, voice-corpus tooling, and the discipline of a four-person Agile team.</p></div><article class="experience-row reveal"><div class="role-date">Aug 2025 — Jan 2026</div><div class="role"><h3>Full Stack Developer Intern <span>/ Student Tribe / edtech / Hyderabad</span></h3><p>Shipped a MERN-stack service request management platform with Role-Based Access Control end to end, from schema design to production deployment, as part of a 4-person team. Migrated core frontend modules from JavaScript to TypeScript strict mode with Next.js App Router, and delivered real-time React and Tailwind CSS admin dashboards for live service metrics and request analytics.</p></div></article><article class="experience-row reveal delay-1"><div class="role-date">May 2025 — Jul 2025</div><div class="role"><h3>AI Developer Intern <span>/ Swecha Telangana / VISWAM.AI / Hyderabad</span></h3><p>Co-built Bhasha Seva, a multilingual voice-corpus collection tool using Python, Streamlit, and WebRTC, with AI speech-to-text transcription review across 4 Indian languages. Curated and cleaned datasets for model fine-tuning, integrated Ollama and PocketPal for fully offline AI inference, and delivered sprint-committed features in a 4-person Agile team.</p></div></article></section>
+    <section class="section wrap experience" id="experience" aria-labelledby="experience-title"><div class="section-head anime-rule-host"><div><div class="section-number eyebrow">Field record</div><h2 id="experience-title" class="section-title gsap-title">Teams I shipped with.</h2></div><p class="section-note reveal delay-1">Production modules, strict-mode migrations, voice-corpus tooling, and the discipline of a four-person Agile team.</p></div><article class="experience-row reveal"><div class="role-date">Aug 2025 — Jan 2026</div><div class="role"><h3>Full Stack Developer Intern <span>/ Student Tribe / edtech / Hyderabad</span></h3><p>Shipped a MERN-stack service request management platform with Role-Based Access Control end to end, from schema design to production deployment, as part of a 4-person team. Migrated core frontend modules from JavaScript to TypeScript strict mode with Next.js App Router, and delivered real-time React and Tailwind CSS admin dashboards for live service metrics and request analytics.</p></div></article><article class="experience-row reveal delay-1"><div class="role-date">May 2025 — Jul 2025</div><div class="role"><h3>AI Developer Intern <span>/ Swecha Telangana / VISWAM.AI / Hyderabad</span></h3><p>Co-built Bhasha Seva, a multilingual voice-corpus collection tool using Python, Streamlit, and WebRTC, with AI speech-to-text transcription review across 4 Indian languages. Curated and cleaned datasets for model fine-tuning, integrated Ollama and PocketPal for fully offline AI inference, and delivered sprint-committed features in a 4-person Agile team.</p></div></article></section>
 
-    <section class="section wrap" aria-labelledby="stack-title"><div class="section-head"><div><div class="section-number eyebrow">Working toolchain</div><h2 id="stack-title" class="section-title reveal">The parts I use.</h2></div><p class="section-note reveal delay-1">A practical stack for building, testing, shipping, and observing full-stack systems.</p></div><div class="skills"><div class="skill reveal"><h3>Languages</h3><p>Python<br>JavaScript (ES6+)<br>TypeScript (strict mode)<br>SQL (PL/pgSQL)<br>HTML5 · CSS3</p></div><div class="skill reveal delay-1"><h3>Backend</h3><p>Node.js · Express.js<br>RESTful API Design<br>JWT & OAuth Authentication<br>Rate Limiting · Helmet · CORS</p></div><div class="skill reveal delay-2"><h3>Frontend</h3><p>React.js · Next.js App Router<br>Vite · Tailwind CSS<br>Framer Motion · Zustand<br>TanStack Query</p></div><div class="skill reveal"><h3>Data</h3><p>PostgreSQL<br>Row-Level Security · triggers · functions<br>MongoDB · Mongoose<br>MySQL</p></div><div class="skill reveal delay-1"><h3>Cloud</h3><p>Render web services + cron jobs<br>Vercel · MongoDB Atlas<br>Supabase Auth · Realtime · Edge Functions</p></div><div class="skill reveal delay-2"><h3>Quality</h3><p>Vitest · Playwright<br>ESLint · GitHub Actions<br>CodeQL · Gitleaks<br>Sentry · PostHog</p></div></div></section>
+    <section class="section wrap" aria-labelledby="stack-title"><div class="section-head anime-rule-host"><div><div class="section-number eyebrow">Working toolchain</div><h2 id="stack-title" class="section-title gsap-title">The parts I use.</h2></div><p class="section-note reveal delay-1">A practical stack for building, testing, shipping, and observing full-stack systems.</p></div><div class="skills"><div class="skill reveal"><h3>Languages</h3><p>Python<br>JavaScript (ES6+)<br>TypeScript (strict mode)<br>SQL (PL/pgSQL)<br>HTML5 · CSS3</p></div><div class="skill reveal delay-1"><h3>Backend</h3><p>Node.js · Express.js<br>RESTful API Design<br>JWT & OAuth Authentication<br>Rate Limiting · Helmet · CORS</p></div><div class="skill reveal delay-2"><h3>Frontend</h3><p>React.js · Next.js App Router<br>Vite · Tailwind CSS<br>Framer Motion · Zustand<br>TanStack Query</p></div><div class="skill reveal"><h3>Data</h3><p>PostgreSQL<br>Row-Level Security · triggers · functions<br>MongoDB · Mongoose<br>MySQL</p></div><div class="skill reveal delay-1"><h3>Cloud</h3><p>Render web services + cron jobs<br>Vercel · MongoDB Atlas<br>Supabase Auth · Realtime · Edge Functions</p></div><div class="skill reveal delay-2"><h3>Quality</h3><p>Vitest · Playwright<br>ESLint · GitHub Actions<br>CodeQL · Gitleaks<br>Sentry · PostHog</p></div></div></section>
 
-    <section class="section wrap education" aria-labelledby="education-title"><div><div class="section-number eyebrow">Base layer</div><h2 id="education-title" class="section-title reveal">Still in the lab.</h2><p class="education-lead reveal delay-1">Bachelor of Technology in Computer Science & Engineering.<small>Malla Reddy Institute of Technology & Science, Hyderabad · 2023 — 2027 · Expected May 2027</small></p></div><div><article class="education-item reveal"><div class="eyebrow quiet">Relevant coursework / 2023 — 2027</div><h3>Data Structures & Algorithms / DBMS / Operating Systems</h3><p>Coursework listed on the resume.</p></article><article class="education-item reveal delay-1"><div class="eyebrow quiet">Government of India recognition / 2024 — 2025</div><h3>MoE’s Innovation Cell / IIC</h3><p>Team Lead of a 5-person team for an Integrated Student Data Management System selected for the Yukti National Innovation Repository at TRL 4.</p></article></div></section>
+    <section class="section wrap education" aria-labelledby="education-title"><div><div class="section-number eyebrow">Base layer</div><h2 id="education-title" class="section-title gsap-title">Still in the lab.</h2><p class="education-lead reveal delay-1">Bachelor of Technology in Computer Science & Engineering.<small>Malla Reddy Institute of Technology & Science, Hyderabad · 2023 — 2027 · Expected May 2027</small></p></div><div><article class="education-item reveal"><div class="eyebrow quiet">Relevant coursework / 2023 — 2027</div><h3>Data Structures & Algorithms / DBMS / Operating Systems</h3><p>Coursework listed on the resume.</p></article><article class="education-item reveal delay-1"><div class="eyebrow quiet">Government of India recognition / 2024 — 2025</div><h3>MoE’s Innovation Cell / IIC</h3><p>Team Lead of a 5-person team for an Integrated Student Data Management System selected for the Yukti National Innovation Repository at TRL 4.</p></article></div></section>
   </main>
 
-  <footer class="contact" id="contact" aria-labelledby="contact-title"><div class="wrap"><div class="contact-top"><span class="eyebrow signal">Contact / open channel</span><span class="eyebrow" style="color:rgba(238,233,223,.6)">Hyderabad, India — 500081</span></div><h2 id="contact-title" class="reveal"><a href="mailto:shaiksohelll05@gmail.com">Let’s build<br>the next one.</a></h2><div class="contact-grid reveal delay-1"><p class="eyebrow" style="color:rgba(238,233,223,.6)">Direct line</p><p><a href="mailto:shaiksohelll05@gmail.com">shaiksohelll05@gmail.com</a><br><a href="tel:+918639673777">+91 8639673777</a></p><p class="eyebrow" style="color:rgba(238,233,223,.6)">Links</p><p><a href="https://github.com/shaiksohelll" target="_blank" rel="noopener noreferrer">GitHub ↗</a><br><a href="https://www.linkedin.com/in/shaiksohellll" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><br><a href="shaik-sohel-resume.pdf" download>Download resume ↓</a></p></div><div class="footer-meta"><span>Shaik Sohel / Full-Stack Developer</span><span>© 2026 / Built on GitHub Pages</span></div></div></footer>
+  <footer class="contact" id="contact" aria-labelledby="contact-title"><div class="wrap"><div class="contact-top anime-rule-host"><span class="eyebrow signal">Contact / open channel</span><span class="eyebrow" style="color:rgba(238,233,223,.6)">Hyderabad, India — 500081</span></div><h2 id="contact-title" class="gsap-title"><a href="mailto:shaiksohelll05@gmail.com">Let’s build<br>the next one.</a></h2><div class="contact-grid reveal delay-1 anime-rule-host"><p class="eyebrow" style="color:rgba(238,233,223,.6)">Direct line</p><p><a href="mailto:shaiksohelll05@gmail.com">shaiksohelll05@gmail.com</a><br><a href="tel:+918639673777">+91 8639673777</a></p><p class="eyebrow" style="color:rgba(238,233,223,.6)">Links</p><p><a href="https://github.com/shaiksohelll" target="_blank" rel="noopener noreferrer">GitHub ↗</a><br><a href="https://www.linkedin.com/in/shaiksohellll" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><br><a href="shaik-sohel-resume.pdf" download>Download resume ↓</a></p></div><div class="footer-meta"><span>Shaik Sohel / Full-Stack Developer</span><span>© 2026 / Built on GitHub Pages</span></div></div></footer>
 
-  <script defer src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>
   <script>
     const toggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
@@ -282,7 +290,6 @@
     }));
     const items = document.querySelectorAll('.reveal');
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-    const finePointer = window.matchMedia('(pointer: fine)');
     if ('IntersectionObserver' in window && !reduceMotion.matches) {
       const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
@@ -300,41 +307,6 @@
       document.querySelectorAll('.reveal').forEach((item) => item.classList.add('visible'));
     }, 1500);
 
-    let lenis = null;
-    function initLenis() {
-      if (lenis || !window.Lenis || reduceMotion.matches) return;
-      lenis = new Lenis({ lerp: .11, smoothWheel: true });
-      const raf = (t) => { lenis.raf(t); requestAnimationFrame(raf); };
-      requestAnimationFrame(raf);
-    }
-    initLenis();
-    window.addEventListener('load', initLenis);
-
-    const ruleBar = document.querySelector('.scroll-rule span');
-    const parallaxItems = document.querySelectorAll('.project-index');
-    const allowParallax = finePointer.matches && window.matchMedia('(min-width: 821px)').matches;
-    let ticking = false;
-    function onScroll() {
-      if (ticking) return;
-      ticking = true;
-      requestAnimationFrame(() => {
-        const doc = document.documentElement;
-        const max = doc.scrollHeight - window.innerHeight;
-        if (ruleBar) ruleBar.style.transform = 'scaleX(' + (max > 0 ? Math.min(1, window.scrollY / max) : 0) + ')';
-        if (allowParallax && !reduceMotion.matches) {
-          const vh = window.innerHeight;
-          parallaxItems.forEach((el) => {
-            const r = el.getBoundingClientRect();
-            const delta = (r.top + r.height / 2 - vh / 2) * -0.06;
-            el.style.transform = 'translateY(' + delta.toFixed(1) + 'px)';
-          });
-        }
-        ticking = false;
-      });
-    }
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
-
     let scrollIdleTimer = null;
     window.addEventListener('scroll', () => {
       const root = document.documentElement;
@@ -351,18 +323,10 @@
         });
       }, { threshold: 0.05 }).observe(contactSection);
     }
-
-    if (finePointer.matches && !reduceMotion.matches) {
-      document.querySelectorAll('.project-link, .nav-links a, .resume-link').forEach((el) => {
-        el.addEventListener('mousemove', (e) => {
-          const r = el.getBoundingClientRect();
-          const x = (e.clientX - r.left - r.width / 2) / (r.width / 2);
-          const y = (e.clientY - r.top - r.height / 2) / (r.height / 2);
-          el.style.transform = 'translate(' + (x * 6).toFixed(1) + 'px,' + (y * 4).toFixed(1) + 'px)';
-        });
-        el.addEventListener('mouseleave', () => { el.style.transform = ''; });
-      });
-    }
   </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/lenis@1.3.11/dist/lenis.min.js"></script>
+  <script type="module" src="gsap-layer.js"></script>
+  <script type="module" src="motion-layer.js"></script>
+  <script type="module" src="anime-layer.js"></script>
 </body>
 </html>
