@@ -1,41 +1,76 @@
-# Portfolio
+# Shaik Sohel — Portfolio
 
 **Live → [shaiksohelll.github.io](https://shaiksohelll.github.io)**
 
-Personal portfolio of **Shaik Sohel** — full-stack developer, Hyderabad.
-Typography-led editorial design (Bodoni Moda + DM Sans, paper / ink / signal red),
-built as a single static file with no build step.
+Personal portfolio of **Shaik Sohel** — full-stack developer, Hyderabad. The site is a typography-led editorial portfolio with four source-backed project case studies and static GitHub Pages delivery.
 
-## Featured systems
+## Architecture
 
-| Project | What it is | Stack | Link |
-| --- | --- | --- | --- |
-| **Klar** | Job-market analytics platform ingesting from two independent APIs | React · Node.js · Express · MongoDB | [Live](https://klar-dev.onrender.com/) |
-| **Pakka** | Milestone escrow reference implementation with server-enforced money-state transitions | Next.js 15 · TypeScript strict · Supabase · PostgreSQL | [Live](https://mypakka.vercel.app/login) |
-| **Hyderabad Metro Go** | Client-side route planner — deque-based 0-1 BFS over 59 stations, 3 interchanges, 10 fare slabs | Vanilla JavaScript · Bootstrap 5 | [Live](https://shaiksohelll.github.io/Hyderabad-Metro-Go/) |
-| **Bhasha Seva** | Multilingual voice-corpus collection with offline AI transcription review — Yukti National Innovation Repository, TRL 4 | Python · Streamlit · WebRTC · Ollama | [Certificate](https://shaiksohelll.github.io/yukti-certificate.pdf) |
+This is a build-free static site. There is no framework, bundler, npm install, or runtime server in production. GitHub Pages serves the HTML, stylesheet, local assets, and pinned CDN enhancements directly. `.nojekyll` remains in the repository root to preserve passthrough behavior.
 
-## Engineering decisions
+The homepage and four project routes are real static documents:
 
-- **Static by default.** One self-contained `index.html` — markup, styles, and interaction. No framework, no bundler, no build. GitHub Pages serves it as-is; `.nojekyll` disables Jekyll processing.
-- **Progressive enhancement.** Content is never gated behind JavaScript. Reveal animations apply only under a `.js` class set by an inline bootstrap, backed by a 1.5 s fail-open watchdog and a `prefers-reduced-motion` override. If scripts fail, the page is still fully readable.
-- **Local assets.** Avatar, resume PDF, and certificate PDF ship from the repository root. The only third-party dependency is Google Fonts, with system-font fallbacks.
-- **Accessible.** Semantic landmarks, skip link, visible focus states, ARIA-labeled sections, keyboard-operable navigation.
+```text
+index.html
+404.html
+styles.css
+site-core.js
+barba-layer.js
+gsap-layer.js
+motion-layer.js
+anime-layer.js
+work/klar/index.html
+work/pakka/index.html
+work/hyderabad-metro-go/index.html
+work/bhasha-seva/index.html
+avatar.png
+shaik-sohel-resume.pdf
+yukti-certificate.pdf
+.nojekyll
+```
 
-## Repository layout
+The persistent global shell contains only the header/navigation, skip link, transition overlay, scroll rule, and live region. Every page-specific title, content, footer, case-study navigation, and project evidence lives inside one replaceable `data-barba="container"` with a namespace.
 
-- `index.html` — the entire site
-- `avatar.png` — header portrait
-- `shaik-sohel-resume.pdf` — downloadable resume
-- `yukti-certificate.pdf` — IIC / Yukti recognition certificate
-- `.nojekyll` — GitHub Pages passthrough
+## Barba namespaces
+
+| Route | Namespace | Purpose |
+| --- | --- | --- |
+| `/` | `home` | Portfolio homepage and complete work/experience/education story |
+| `/work/klar/` | `project-klar` | Klar case study |
+| `/work/pakka/` | `project-pakka` | Pakka case study |
+| `/work/hyderabad-metro-go/` | `project-metro` | Hyderabad Metro Go case study |
+| `/work/bhasha-seva/` | `project-bhasha` | Bhasha Seva case study |
+
+Each project route is directly refreshable, uses root-safe asset paths, provides previous/next project links, and retains its separate live-system or certificate action. External links, mail links, telephone links, downloads, new-tab links, and same-document hash links are intentionally left to native browser behavior.
+
+## Lifecycle and motion ownership
+
+`barba-layer.js` owns route replacement, namespace-aware transitions, metadata updates, announcements, focus handoff, hash scrolling, and scroll restoration. `site-core.js` owns the singleton global shell, one optional Lenis instance, page reveal setup, and explicit cleanup registration.
+
+GSAP owns SplitText, ScrollTrigger, and restrained project-index movement. Anime.js owns page-scoped SVG rule drawing, evidence counts, and the homepage intro dash. Motion owns page-scoped hover springs and the global scroll rule. Every page module returns cleanup handles; generated SVG nodes, observers, timers, split instances, hover subscriptions, tweens, and ScrollTriggers are released before the next container is initialized.
+
+The transition overlay has a fail-open timeout. If Barba, a CDN module, or a transition callback fails, native browser navigation remains available and content is not hidden behind JavaScript. Content is visible by default; `.js` only opts into enhancement styles. A document-level watchdog and page-level watchdog reveal content after 1.5 seconds. `prefers-reduced-motion: reduce` disables smooth scrolling, transition travel, counters, parallax, and reveal hiding.
+
+## Content truth
+
+Project copy is limited to evidence present in the verified portfolio record and source repositories. Klar claims are grounded in its React/Vite client, Express/MongoDB server, Adzuna/JSearch ingestion, rate-aware requests, day-bucketed skill history, and analytics routes. Pakka claims are grounded in its Next.js/TypeScript/Supabase/PostgreSQL stack and SQL RPC migration; idempotency wording is operation-specific rather than a blanket universal claim. Hyderabad Metro Go claims are grounded in the actual vanilla JavaScript route engine, deque-based 0-1 BFS, three line maps, 59 stations, three interchange nodes, ten fare slabs, facilities, parking, and five-item recent-trip localStorage. Bhasha Seva uses only resume/certificate-backed facts and has no deployed launch link.
 
 ## Local preview
 
-Open `index.html` in a browser. No server, no install.
+Barba needs an HTTP origin to exercise route interception. Run any static server from the repository root, for example:
+
+```bash
+npx serve -l 4173 .
+```
+
+Opening `index.html` directly still provides fully readable content and native links, but `file://` is not a valid test of Barba transitions.
 
 ## Deployment
 
-Push to `main` → GitHub Pages deploys automatically.
+Push the feature branch and open a pull request against `main`. After review, merging to `main` allows GitHub Pages to deploy automatically. Do not add a build step or convert the project to a framework without revisiting the static fallback and direct-route assumptions.
+
+## Accessibility and performance
+
+The site uses semantic landmarks, one heading hierarchy per route, real anchors, visible focus states, a skip link, an `aria-live` page announcement, an aria-hidden transition layer, mobile navigation, reduced-motion behavior, and no-JavaScript readability. It uses root-safe local assets, waits for critical layout images before page-specific motion, avoids aggressive prefetching on save-data connections, and keeps motion on transform/opacity/clip-path rather than layout properties.
 
 © 2026 Shaik Sohel
