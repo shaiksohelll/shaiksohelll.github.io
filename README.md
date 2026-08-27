@@ -29,7 +29,7 @@ yukti-certificate.pdf
 .nojekyll
 ```
 
-The persistent global shell contains only the header/navigation, skip link, transition overlay, scroll rule, and live region. Every page-specific title, content, footer, case-study navigation, and project evidence lives inside one replaceable `data-barba="container"` with a namespace.
+The persistent global shell contains only the header/navigation, skip link, transition overlay, and live region. The homepage-only scroll rule is inside the homepage container. Every page-specific title, content, footer, case-study navigation, and project evidence lives inside one replaceable `data-barba="container"` with a namespace.
 
 ## Barba namespaces
 
@@ -47,13 +47,13 @@ Each project route is directly refreshable, uses root-safe asset paths, provides
 
 `barba-layer.js` owns route replacement, namespace-aware transitions, metadata updates, announcements, focus handoff, hash scrolling, and scroll restoration. `site-core.js` owns the singleton global shell, one optional Lenis instance, page reveal setup, and explicit cleanup registration.
 
-GSAP owns SplitText, ScrollTrigger, and restrained project-index movement. Anime.js owns page-scoped SVG rule drawing, evidence counts, and the homepage intro dash. Motion owns page-scoped hover springs and the global scroll rule. Every page module returns cleanup handles; generated SVG nodes, observers, timers, split instances, hover subscriptions, tweens, and ScrollTriggers are released before the next container is initialized.
+GSAP owns SplitText, ScrollTrigger, and restrained project-index movement. Anime.js owns page-scoped SVG rule drawing, evidence counts, and the homepage intro dash. Motion owns page-scoped hover springs and the homepage-only scroll rule. Every page module returns cleanup handles; generated SVG nodes, observers, timers, split instances, hover subscriptions, tweens, and ScrollTriggers are released before the next container is initialized.
 
 The transition overlay has a fail-open timeout. If Barba, a CDN module, or a transition callback fails, native browser navigation remains available and content is not hidden behind JavaScript. Content is visible by default; `.js` only opts into enhancement styles. A document-level watchdog and page-level watchdog reveal content after 1.5 seconds. `prefers-reduced-motion: reduce` disables smooth scrolling, transition travel, counters, parallax, and reveal hiding.
 
 ## Content truth
 
-Project copy is limited to evidence present in the verified portfolio record and source repositories. Klar claims are grounded in its React/Vite client, Express/MongoDB server, Adzuna/JSearch ingestion, rate-aware requests, day-bucketed skill history, and analytics routes. Pakka claims are grounded in its Next.js/TypeScript/Supabase/PostgreSQL stack and SQL RPC migration; idempotency wording is operation-specific rather than a blanket universal claim. Hyderabad Metro Go claims are grounded in the actual vanilla JavaScript route engine, deque-based 0-1 BFS, three line maps, 59 stations, three interchange nodes, ten fare slabs, facilities, parking, and five-item recent-trip localStorage. Bhasha Seva uses only resume/certificate-backed facts and has no deployed launch link.
+Project copy is limited to evidence present in the verified portfolio record and source repositories. Klar claims are grounded in its React/Vite client, Express/MongoDB server, Adzuna/JSearch ingestion, rate-aware requests, day-bucketed skill history, and analytics routes. Pakka claims are grounded in its Next.js/React/Supabase/PostgreSQL stack, authenticated transition RPCs, explicit authorization and state checks, ordered row locking, numeric monetary fields, partial unique indexes, operation-specific duplicate protection, and paired transfer paths. The detailed Pakka case study labels its approved aggregate counts as “Deployed schema audit snapshot — 27 August 2026”: 4 transition RPCs, 38 deployed migration records, and 45 deployed public RLS policies. It makes no product-traction or verified lifecycle-instrumentation claim and uses a concise measurement boundary instead. Hyderabad Metro Go claims are grounded in the actual vanilla JavaScript route engine, deque-based 0-1 BFS, three line maps, 59 stations, three interchange nodes, ten fare slabs, facilities, parking, and five-item recent-trip localStorage. Bhasha Seva uses only resume/certificate-backed facts and has no deployed launch link.
 
 ## Local preview
 

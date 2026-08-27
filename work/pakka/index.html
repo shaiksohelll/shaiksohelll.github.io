@@ -4,17 +4,18 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Pakka — Shaik Sohel</title>
-  <meta name="description" content="Pakka is a milestone escrow reference implementation with PostgreSQL-enforced state transitions.">
+  <meta name="description" content="Pakka is a milestone escrow reference implementation where PostgreSQL becomes the enforcement boundary for money-state transitions.">
   <link rel="canonical" href="https://shaiksohelll.github.io/work/pakka/">
   <meta property="og:title" content="Pakka — Shaik Sohel">
-  <meta property="og:description" content="Pakka is a milestone escrow reference implementation with PostgreSQL-enforced state transitions.">
+  <meta property="og:description" content="A milestone escrow reference implementation built around database-enforced state transitions.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://shaiksohelll.github.io/work/pakka/">
-  <meta property="og:image" content="https://shaiksohelll.github.io/avatar.png">
-  <meta name="twitter:card" content="summary">
+  <meta property="og:image" content="https://shaiksohelll.github.io/assets/pakka-og.jpg">
+  <meta property="og:image:alt" content="Pakka — the database is the enforcement boundary">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Pakka — Shaik Sohel">
-  <meta name="twitter:description" content="Pakka is a milestone escrow reference implementation with PostgreSQL-enforced state transitions.">
-  <meta name="twitter:image" content="https://shaiksohelll.github.io/avatar.png">
+  <meta name="twitter:description" content="A milestone escrow reference implementation built around database-enforced state transitions.">
+  <meta name="twitter:image" content="https://shaiksohelll.github.io/assets/pakka-og.jpg">
   <meta name="theme-color" content="#eee9df">
   <script>document.documentElement.classList.add('js'); window.setTimeout(() => document.querySelectorAll('.reveal').forEach((item) => item.classList.add('visible')), 1500);</script>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%2318181a'/%3E%3Ctext x='30' y='45' font-family='Georgia,serif' font-size='38' fill='%23eee9df' text-anchor='middle'%3ES%3C/text%3E%3Ccircle cx='47' cy='47' r='6' fill='%23ee4c35'/%3E%3C/svg%3E">
@@ -23,7 +24,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600;6..96,700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles.css">
 </head>
-<body class="case-page">
+<body class="case-page pakka-page">
   <a class="skip-link" href="#main">Skip to content</a>
   <div class="transition-wash" aria-hidden="true"><span class="transition-index"></span></div>
   <p class="sr-only" id="page-announcement" aria-live="polite" aria-atomic="true"></p>
@@ -38,30 +39,227 @@
   </header>
 
   <div data-barba="wrapper" id="page-wrapper">
-    <main data-barba="container" data-barba-namespace="project-pakka" data-page-title="Pakka — Shaik Sohel" data-page-description="Pakka is a milestone escrow reference implementation with PostgreSQL-enforced state transitions." data-page-url="https://shaiksohelll.github.io/work/pakka/" id="main" class="barba-container">
-      <section class="case-hero wrap" id="case-top" aria-labelledby="case-title">
-        <div>
-          <p class="case-kicker eyebrow reveal"><span class="case-index">02</span>Selected system</p>
+    <main data-barba="container" data-barba-namespace="project-pakka" data-page-title="Pakka — Shaik Sohel" data-page-description="Pakka is a milestone escrow reference implementation where PostgreSQL becomes the enforcement boundary for money-state transitions." data-page-url="https://shaiksohelll.github.io/work/pakka/" id="main" class="barba-container">
+      <section class="pakka-hero wrap" id="case-top" aria-labelledby="case-title">
+        <div class="pakka-hero-main">
+          <p class="case-kicker eyebrow reveal"><span class="case-index">02</span>Flagship case study <span class="pakka-slash" aria-hidden="true">/</span> money-state systems</p>
           <h1 id="case-title" data-page-heading data-project-title class="gsap-title">Pakka<span class="signal">.</span></h1>
-          <p class="case-intro reveal delay-1">A milestone escrow reference implementation where balances and money-state transitions are enforced at the database boundary.</p>
+          <p class="pakka-position reveal delay-1">Pakka turns an agreement into a database-enforced sequence of accountable state transitions.</p>
+          <p class="pakka-hero-note reveal delay-2">A milestone escrow reference implementation designed so authorization, balances, disputes, and release rules are enforced at the PostgreSQL boundary—not trusted to browser state.</p>
         </div>
-        <aside class="case-side reveal delay-2"><p class="eyebrow signal">Live system · MIT</p><p>Next.js 15 · Supabase · PostgreSQL</p></aside>
+        <aside class="pakka-hero-rail reveal delay-3" aria-label="Pakka project summary">
+          <div class="pakka-rail-mark"><span class="eyebrow">System 02</span><span class="pakka-status"><i aria-hidden="true"></i> Reference implementation</span></div>
+          <dl class="pakka-facts">
+            <div><dt>Role</dt><dd>Full-stack developer</dd></div>
+            <div><dt>Stack</dt><dd>Next.js 15 · React 19 · TypeScript · Supabase · PostgreSQL</dd></div>
+            <div><dt>Focus</dt><dd>Authorization · state · balances · ledger</dd></div>
+            <div><dt>Proof</dt><dd>Four authenticated transition RPCs</dd></div>
+          </dl>
+          <a class="project-link pakka-live-link" href="https://mypakka.vercel.app/login" target="_blank" rel="noopener noreferrer">Open live system <span>↗</span></a>
+        </aside>
+        <div class="pakka-hero-bottom anime-rule-host">
+          <span class="eyebrow quiet reveal delay-2">The difficult part is not storing money. It is making an invalid transition hard to express.</span>
+          <span class="page-mark serif reveal delay-3">02 / 06</span>
+        </div>
       </section>
 
-      <section class="case-body wrap" aria-labelledby="definition-title">
-        <div class="case-block"><p class="section-number eyebrow">Definition</p><h2 id="definition-title" class="gsap-title">The ledger has rules.</h2></div>
-        <div class="case-block case-copy"><p class="reveal">The SQL source recreates four SECURITY DEFINER escrow RPCs with authorization and milestone-state guards. Partial unique indexes protect fund/release ledger rows and one open dispute per milestone; the source also uses row locks and transaction rollback as money-mutation safeguards.</p><p class="reveal delay-1">Idempotency is operation-specific rather than one universal key: funding uses the caller-supplied key, while submit/approve/dispute rely on status, milestone, ledger, or open-dispute guards. This page keeps that distinction explicit.</p></div>
+      <section class="pakka-proof wrap" aria-labelledby="proof-title">
+        <div class="pakka-section-intro">
+          <p class="section-number eyebrow">Ten-second proof</p>
+          <h2 id="proof-title" class="gsap-title">The database carries the brief.</h2>
+        </div>
+        <div class="pakka-proof-ledger">
+          <div class="pakka-evidence-head anime-rule-host"><span class="eyebrow">Deployed schema audit snapshot — 27 August 2026</span><span class="eyebrow quiet">Architecture evidence, not user scale</span></div>
+          <div class="pakka-evidence-grid">
+            <article class="pakka-evidence reveal"><span class="pakka-evidence-number serif" data-count="4">4</span><h3>Transition RPCs</h3><p>Fund, submit, approve/release, and dispute paths exposed to authenticated callers.</p></article>
+            <article class="pakka-evidence reveal delay-1"><span class="pakka-evidence-number serif" data-count="38">38</span><h3>Deployed migrations</h3><p>Migration records in the connected deployment snapshot; the source checkout contains 37 SQL files.</p></article>
+            <article class="pakka-evidence reveal delay-2"><span class="pakka-evidence-number serif" data-count="45">45</span><h3>Public RLS policies</h3><p>Owner, participant, administrator, and service-role boundaries layered across the deployed public schema.</p></article>
+            <article class="pakka-evidence pakka-evidence-text reveal delay-3"><span class="pakka-evidence-symbol signal">↔</span><h3>Paired transfer paths</h3><p>Typed ledger traces accompany the reference money flows; no universal global balancing guarantee is claimed.</p></article>
+          </div>
+          <p class="pakka-footnote eyebrow quiet">* Snapshot counts are point-in-time schema evidence. They are not live counters, product traction, or permanent system scale.</p>
+        </div>
       </section>
 
-      <section class="case-body wrap" aria-labelledby="evidence-title">
-        <div class="case-block"><p class="section-number eyebrow">Evidence ledger</p><h2 id="evidence-title" class="gsap-title">What holds.</h2></div>
-        <div class="case-block case-copy"><ul class="case-ledger reveal"><li><span>Migrations</span><strong>37</strong></li><li><span>RLS / policy sources</span><strong>13+</strong></li><li><span>Architecture decisions</span><strong>8 ADRs</strong></li><li><span>Ledger model</span><strong>Zero-sum</strong></li></ul><div class="case-stack reveal delay-1"><span>Next.js 15</span><span>TypeScript strict</span><span>Supabase</span><span>PostgreSQL</span></div><div class="case-actions reveal delay-2"><a class="project-link" href="https://mypakka.vercel.app/login" target="_blank" rel="noopener noreferrer">Launch system <span>↗</span></a></div></div>
+      <section class="pakka-hard-problem wrap" aria-labelledby="hard-problem-title">
+        <div class="pakka-section-intro">
+          <p class="section-number eyebrow">01 / The hard problem</p>
+          <h2 id="hard-problem-title" class="gsap-title">Escrow is not CRUD.</h2>
+        </div>
+        <div class="pakka-hard-copy">
+          <p class="pakka-lede reveal">Two actors can ask the same system to move through a sensitive state at almost the same time. The system must decide who is allowed, which state is real, which balance is available, what gets recorded, and what survives a failure halfway through.</p>
+          <div class="pakka-hard-notes">
+            <p class="reveal delay-1"><span class="eyebrow signal">The design question</span> How do you keep a browser retry, a concurrent request, or a disputed milestone from becoming two different truths?</p>
+            <p class="reveal delay-2"><span class="eyebrow signal">The answer here</span> Make the transition a named database operation with explicit actor checks, state guards, locks, constraints, and a ledger trace.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="pakka-architecture-section wrap" aria-labelledby="architecture-title">
+        <div class="pakka-section-intro">
+          <p class="section-number eyebrow">02 / System architecture</p>
+          <h2 id="architecture-title" class="gsap-title">One request.<br><em>Four boundaries.</em></h2>
+        </div>
+        <div class="pakka-architecture-wrap reveal">
+          <figure class="pakka-architecture" aria-labelledby="architecture-caption">
+            <svg class="pakka-architecture-svg anime-draw" viewBox="0 0 1200 520" role="img" aria-labelledby="architecture-svg-title architecture-svg-desc">
+              <title id="architecture-svg-title">Pakka request, authorization, money-state, and measurement paths</title>
+              <desc id="architecture-svg-desc">A client request moves through Next.js server actions, Supabase Auth, an RLS and RPC boundary, and a PostgreSQL transaction that updates state, balances, the typed ledger, and disputes. A separate future measurement path is marked as a boundary, not verified instrumentation.</desc>
+              <defs>
+                <marker id="pakka-arrow-ink" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#eee9df" /></marker>
+                <marker id="pakka-arrow-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#ff705d" /></marker>
+                <marker id="pakka-arrow-muted" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#aaa29a" /></marker>
+              </defs>
+              <path class="pakka-flow-path" d="M132 156H264M356 156H488M584 156H716M812 156H944" marker-end="url(#pakka-arrow-ink)" />
+              <path class="pakka-flow-path pakka-flow-auth" d="M536 220V360H304" marker-end="url(#pakka-arrow-red)" />
+              <path class="pakka-flow-path pakka-flow-money" d="M1010 220V360H790" marker-end="url(#pakka-arrow-red)" />
+              <path class="pakka-flow-path pakka-flow-measure" d="M1010 220V448H842" marker-end="url(#pakka-arrow-muted)" />
+              <g class="pakka-svg-node">
+                <rect x="32" y="112" width="100" height="88" rx="0" /><text x="82" y="146" text-anchor="middle">USER</text><text x="82" y="169" text-anchor="middle" class="node-sub">client / worker</text>
+              </g>
+              <g class="pakka-svg-node">
+                <rect x="264" y="112" width="92" height="88" rx="0" /><text x="310" y="146" text-anchor="middle">NEXT.JS</text><text x="310" y="169" text-anchor="middle" class="node-sub">server action</text>
+              </g>
+              <g class="pakka-svg-node pakka-svg-node-red">
+                <rect x="488" y="112" width="96" height="88" rx="0" /><text x="536" y="146" text-anchor="middle">AUTH</text><text x="536" y="169" text-anchor="middle" class="node-sub">Supabase</text>
+              </g>
+              <g class="pakka-svg-node pakka-svg-node-red">
+                <rect x="716" y="112" width="96" height="88" rx="0" /><text x="764" y="146" text-anchor="middle">RLS + RPC</text><text x="764" y="169" text-anchor="middle" class="node-sub">actor / state</text>
+              </g>
+              <g class="pakka-svg-node pakka-svg-node-red">
+                <rect x="944" y="112" width="132" height="108" rx="0" /><text x="1010" y="151" text-anchor="middle">POSTGRESQL</text><text x="1010" y="174" text-anchor="middle" class="node-sub">transaction</text><text x="1010" y="195" text-anchor="middle" class="node-sub">rollback</text>
+              </g>
+              <g class="pakka-svg-group-label"><text x="304" y="337" text-anchor="middle">AUTHORIZATION PATH</text><text x="304" y="382" text-anchor="middle" class="group-sub">RLS + in-function checks</text></g>
+              <g class="pakka-svg-group-label"><text x="790" y="337" text-anchor="middle">MONEY-STATE PATH</text><text x="790" y="382" text-anchor="middle" class="group-sub">ordered locks + ledger trace</text></g>
+              <g class="pakka-svg-group-label pakka-svg-group-muted"><text x="842" y="429" text-anchor="middle">MEASUREMENT BOUNDARY</text><text x="842" y="474" text-anchor="middle" class="group-sub">next layer — not verified in current audit</text></g>
+            </svg>
+            <figcaption id="architecture-caption">A verified reference architecture: request handling and auth lead into the RLS/RPC boundary; money-state mutation happens inside PostgreSQL. The measurement path is deliberately marked as future work.</figcaption>
+          </figure>
+          <details class="pakka-diagram-fallback">
+            <summary>Read the architecture as text</summary>
+            <p>User/client or worker → Next.js authenticated server action → Supabase Auth → RLS and RPC authorization → PostgreSQL transaction → milestone state, wallet balances, typed ledger, disputes and notifications.</p>
+            <p class="quiet">Measurement boundary: a future typed event model; no current Pakka-specific lifecycle instrumentation is claimed.</p>
+          </details>
+        </div>
+      </section>
+
+      <section class="pakka-state-section wrap" aria-labelledby="state-title">
+        <div class="pakka-section-intro">
+          <p class="section-number eyebrow">03 / State machine</p>
+          <h2 id="state-title" class="gsap-title">State is a decision.</h2>
+        </div>
+        <div class="pakka-state-content">
+          <p class="pakka-lede reveal">Every sensitive transition starts from a named state, belongs to an authorized actor, and leaves a different kind of trace.</p>
+          <ol class="pakka-state-rail" aria-label="Pakka milestone lifecycle">
+            <li class="pakka-state-node reveal"><span class="state-dot" aria-hidden="true"></span><div class="state-main"><span class="eyebrow">01 · Client</span><h3>Contract → milestone</h3><p>A job owns an ordered milestone with a positive numeric amount.</p></div><dl><div><dt>Guard</dt><dd>Client ownership</dd></div><div><dt>Result</dt><dd>Pending</dd></div><div><dt>Ledger</dt><dd>None</dd></div></dl></li>
+            <li class="pakka-state-node reveal delay-1"><span class="state-dot" aria-hidden="true"></span><div class="state-main"><span class="eyebrow">02 · Client / admin</span><h3>Pending → funded</h3><p>Available balance moves into locked balance for the milestone.</p></div><dl><div><dt>Guard</dt><dd>Fund RPC + balance</dd></div><div><dt>Result</dt><dd>Funded</dd></div><div><dt>Ledger</dt><dd>Fund trace</dd></div></dl></li>
+            <li class="pakka-state-node reveal delay-2"><span class="state-dot" aria-hidden="true"></span><div class="state-main"><span class="eyebrow">03 · Worker / admin</span><h3>Funded → submitted</h3><p>The assigned worker submits work; no balance moves yet.</p></div><dl><div><dt>Guard</dt><dd>Worker + state</dd></div><div><dt>Result</dt><dd>Submitted</dd></div><div><dt>Ledger</dt><dd>None</dd></div></dl></li>
+            <li class="pakka-state-node reveal delay-3"><span class="state-dot state-dot-signal" aria-hidden="true"></span><div class="state-main"><span class="eyebrow signal">04 · Client / admin</span><h3>Submitted → released</h3><p>Locked client balance is credited to the assigned worker.</p></div><dl><div><dt>Guard</dt><dd>Approve RPC + locks</dd></div><div><dt>Result</dt><dd>Released</dd></div><div><dt>Ledger</dt><dd>Release trace</dd></div></dl></li>
+            <li class="pakka-state-node pakka-state-dispute reveal"><span class="state-dot state-dot-signal" aria-hidden="true"></span><div class="state-main"><span class="eyebrow signal">Alternate path · participant / admin</span><h3>Unsettled → disputed → resolved</h3><p>An unsettled milestone can open one dispute; money is not moved by the opening step.</p></div><dl><div><dt>Guard</dt><dd>Participant + reason</dd></div><div><dt>Result</dt><dd>Disputed</dd></div><div><dt>Ledger</dt><dd>None at open</dd></div></dl></li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="pakka-core-section" aria-labelledby="core-title">
+        <div class="wrap">
+          <div class="pakka-section-intro pakka-dark-intro">
+            <p class="section-number eyebrow">04 / Database intelligence</p>
+            <h2 id="core-title" class="gsap-title">The database is not storage.<br><em>It is the enforcement boundary.</em></h2>
+          </div>
+          <div class="pakka-core-grid">
+            <article class="pakka-core-lede reveal"><p>Client state can describe an intention. It cannot be the final authority for a money-state transition.</p><p class="quiet-dark">Pakka moves sensitive decisions into named PostgreSQL functions, then layers RLS over the tables those functions touch.</p></article>
+            <div class="pakka-core-rules">
+              <article class="pakka-core-rule reveal"><span class="eyebrow">01 / Permission</span><h3>RLS narrows the room.</h3><p>Owners and participants see and write only the records their relationship permits; administrator and service-role paths are separate.</p></article>
+              <article class="pakka-core-rule reveal delay-1"><span class="eyebrow">02 / Function</span><h3>RPCs name the move.</h3><p>Four authenticated functions make fund, submit, approve/release, and dispute explicit operations with actor and state checks inside the boundary.</p></article>
+              <article class="pakka-core-rule reveal delay-2"><span class="eyebrow">03 / Constraint</span><h3>Indexes reject echoes.</h3><p>Partial unique indexes guard one open dispute and operation-specific fund/release references, complementing—but not replacing—the function checks.</p></article>
+              <article class="pakka-core-rule reveal delay-3"><span class="eyebrow">04 / Atomicity</span><h3>Failure unwinds.</h3><p>Wallet mutation, state change, and ledger insertion share a transaction boundary; later failure rolls back earlier statements.</p></article>
+            </div>
+          </div>
+          <div class="pakka-core-foot reveal"><span class="eyebrow">Guarantee boundary</span><p>Local invariants are visible in the schema. A universal global balancing constraint, regulated custody, and production operational readiness are not claimed.</p></div>
+        </div>
+      </section>
+
+      <section class="pakka-ledger-section wrap" aria-labelledby="ledger-title">
+        <div class="pakka-section-intro">
+          <p class="section-number eyebrow">05 / Ledger walkthrough</p>
+          <h2 id="ledger-title" class="gsap-title">Balance the story.</h2>
+        </div>
+        <div class="pakka-ledger-content">
+          <p class="pakka-lede reveal">A fictional walkthrough makes the paired transfer shape visible without exposing a production record.</p>
+          <p class="pakka-example-label eyebrow signal reveal delay-1">Illustrative only · fictional value · not a production record</p>
+          <div class="pakka-ledger-grid">
+            <article class="pakka-ledger-card reveal"><div class="ledger-card-top"><span class="eyebrow">01 / Funding</span><span class="ledger-arrow signal" aria-hidden="true">→</span></div><h3>Lock the commitment.</h3><dl><div><dt>Client available</dt><dd>− ₹10,000</dd></div><div><dt>Client locked</dt><dd>+ ₹10,000</dd></div><div class="ledger-net"><dt>Net ledger movement</dt><dd>₹0</dd></div></dl><p>The fund path changes where the client’s balance sits; it does not invent a second balance.</p></article>
+            <article class="pakka-ledger-card reveal delay-1"><div class="ledger-card-top"><span class="eyebrow">02 / Release</span><span class="ledger-arrow signal" aria-hidden="true">→</span></div><h3>Pay the accepted work.</h3><dl><div><dt>Client locked</dt><dd>− ₹10,000</dd></div><div><dt>Worker available</dt><dd>+ ₹10,000</dd></div><div class="ledger-net"><dt>Net ledger movement</dt><dd>₹0</dd></div></dl><p>The release path pairs a debit with a credit and records a typed release trace.</p></article>
+          </div>
+          <p class="pakka-footnote eyebrow quiet">The example illustrates the paired transfer behavior implemented by the reference flows. It is not a claim of a universal global ledger constraint.</p>
+        </div>
+      </section>
+
+      <section class="pakka-failure-section wrap" aria-labelledby="failure-title">
+        <div class="pakka-section-intro">
+          <p class="section-number eyebrow">06 / Failure modes</p>
+          <h2 id="failure-title" class="gsap-title">What the system refuses.</h2>
+        </div>
+        <div class="pakka-failure-content">
+          <p class="pakka-lede reveal">The credibility is in the remaining risk column. A safeguard is not a declaration of perfection.</p>
+          <div class="pakka-failure-table-wrap reveal delay-1">
+            <table class="pakka-failure-table">
+              <caption class="sr-only">Pakka failure modes, structural safeguards, and remaining risks</caption>
+              <thead><tr><th scope="col">Failure mode</th><th scope="col">Structural safeguard</th><th scope="col">Remaining risk</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Duplicate funding</th><td>UUID key-backed fund reference plus partial unique index.</td><td>Key misuse and upstream retry policy still need explicit operational handling.</td></tr>
+                <tr><th scope="row">Double release</th><td>Existing release lookup, milestone reference, partial unique index, and ordered locks.</td><td>Needs load and concurrency testing under real contention.</td></tr>
+                <tr><th scope="row">Unauthorized approval</th><td>Client/admin actor check plus RLS and participant relationships.</td><td>Not a substitute for penetration testing.</td></tr>
+                <tr><th scope="row">Negative balance</th><td>Non-negative wallet checks plus balance-before-debit checks.</td><td>Guarantee is scoped to the audited paths, not every future code path.</td></tr>
+                <tr><th scope="row">Conflicting dispute</th><td>At most one open dispute per milestone; race loser is handled before money moves.</td><td>Resolution policy and service operations remain product concerns.</td></tr>
+                <tr><th scope="row">Invalid state transition</th><td>Milestone status guards inside the transition functions.</td><td>State-machine coverage still benefits from exhaustive tests.</td></tr>
+                <tr><th scope="row">Partial write</th><td>PostgreSQL transaction rollback; auto-release isolates each milestone.</td><td>Fault injection and observability are future hardening work.</td></tr>
+                <tr><th scope="row">Concurrent mutation</th><td>Milestone/job locks, consistent wallet ordering, and `SKIP LOCKED` for auto-release.</td><td>Production throughput and contention limits are not measured here.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="pakka-decisions-section wrap" aria-labelledby="decisions-title">
+        <div class="pakka-section-intro">
+          <p class="section-number eyebrow">07 / Decisions</p>
+          <h2 id="decisions-title" class="gsap-title">The tradeoffs are the work.</h2>
+        </div>
+        <div class="pakka-decisions-list">
+          <article class="pakka-decision reveal"><span class="decision-number serif">01</span><div><h3>Database enforcement over client trust</h3><dl><div><dt>Context</dt><dd>Browsers can retry, race, or hold stale state.</dd></div><div><dt>Decision</dt><dd>Put sensitive transitions behind PostgreSQL functions and constraints.</dd></div><div><dt>Why</dt><dd>The authority lives beside the rows it changes.</dd></div><div><dt>Tradeoff</dt><dd>More database logic to version, test, and explain.</dd></div><div><dt>Result</dt><dd>Invalid state is harder to express from the UI alone.</dd></div></dl></div></article>
+          <article class="pakka-decision reveal delay-1"><span class="decision-number serif">02</span><div><h3>RLS plus explicit function authorization</h3><dl><div><dt>Context</dt><dd>Table visibility and money movement are related but distinct decisions.</dd></div><div><dt>Decision</dt><dd>Use RLS for table access and in-function checks for transition authority.</dd></div><div><dt>Why</dt><dd>Two boundaries make the relationship legible.</dd></div><div><dt>Tradeoff</dt><dd>Policies and RPC checks must stay synchronized.</dd></div><div><dt>Result</dt><dd>Owners, participants, admins, and service paths remain explicit.</dd></div></dl></div></article>
+          <article class="pakka-decision reveal delay-2"><span class="decision-number serif">03</span><div><h3>Operation-specific duplicate protection</h3><dl><div><dt>Context</dt><dd>Funding, submission, release, and dispute have different retry shapes.</dd></div><div><dt>Decision</dt><dd>Use the guard that matches each operation instead of one universal idempotency slogan.</dd></div><div><dt>Why</dt><dd>Precision is more useful than a blanket claim.</dd></div><div><dt>Tradeoff</dt><dd>Each path needs its own test and failure explanation.</dd></div><div><dt>Result</dt><dd>Duplicate behavior is visible at the operation boundary.</dd></div></dl></div></article>
+          <article class="pakka-decision reveal delay-3"><span class="decision-number serif">04</span><div><h3>Measure the product state, not just the click</h3><dl><div><dt>Context</dt><dd>A click does not prove a funded, submitted, released, or disputed state.</dd></div><div><dt>Decision</dt><dd>Define a typed lifecycle event model before claiming product analytics.</dd></div><div><dt>Why</dt><dd>Engineering decisions should connect behavior to state.</dd></div><div><dt>Tradeoff</dt><dd>Instrumentation is an explicit next layer, not decorative telemetry.</dd></div><div><dt>Result</dt><dd>No unsupported traction story is presented.</dd></div></dl></div></article>
+        </div>
+      </section>
+
+      <section class="pakka-measurement wrap" aria-labelledby="measurement-title">
+        <div class="pakka-measurement-mark" aria-hidden="true">↗</div>
+        <div><p class="eyebrow signal">Measurement boundary</p><h2 id="measurement-title" class="gsap-title">Observed, not guessed.</h2><p class="reveal">This case study makes no product-traction claims because a Pakka-specific lifecycle event taxonomy was not verified at the 27 August 2026 audit snapshot. The next measurement layer is a typed event model covering contract creation, milestones, funding, submission, approval, release, disputes and failure paths.</p></div>
+      </section>
+
+      <section class="pakka-readiness-section wrap" aria-labelledby="readiness-title">
+        <div class="pakka-section-intro">
+          <p class="section-number eyebrow">08 / Production boundary</p>
+          <h2 id="readiness-title" class="gsap-title">What I would harden before real money.</h2>
+        </div>
+        <div class="pakka-readiness-content">
+          <p class="pakka-lede reveal">This is a reference implementation, not a regulated payment or custody platform. The next step is operational certainty—not more surface polish.</p>
+          <ul class="pakka-readiness-list">
+            <li class="reveal"><span>01</span><strong>Payment boundary</strong><p>Integrate a regulated provider with verified webhooks and reconciliation.</p></li>
+            <li class="reveal delay-1"><span>02</span><strong>Trust boundary</strong><p>Formalize KYC/AML, custody, fraud, and risk controls with the right compliance owner.</p></li>
+            <li class="reveal delay-2"><span>03</span><strong>Evidence boundary</strong><p>Add stronger audit logging, disaster recovery, penetration testing, and fault-injection coverage.</p></li>
+            <li class="reveal delay-3"><span>04</span><strong>Operations boundary</strong><p>Load-test contention, add monitoring and incident response, and define reconciliation runbooks.</p></li>
+          </ul>
+        </div>
       </section>
 
       <footer class="contact case-footer" aria-labelledby="next-title">
         <div class="wrap">
           <div class="contact-top"><span class="eyebrow signal">Case study / 02</span><span class="eyebrow" style="color:rgba(238,233,223,.6)">Shaik Sohel / Hyderabad</span></div>
-          <h2 id="next-title" class="reveal"><a href="/#systems">Back to selected systems.</a></h2>
+          <h2 id="next-title" class="reveal"><a href="/#systems">A database that can explain itself.</a></h2>
+          <p class="pakka-close reveal">Pakka proves that backend and database reasoning can become product clarity: model the state, name the boundary, test the failure, and keep the claim honest.</p>
+          <div class="case-actions reveal delay-1"><a class="project-link" href="https://mypakka.vercel.app/login" target="_blank" rel="noopener noreferrer">Open live system <span>↗</span></a></div>
           <nav class="case-nav" aria-label="Project navigation">
             <a href="/work/klar/"><span class="eyebrow">Previous</span><strong>Klar</strong></a>
             <a href="/work/hyderabad-metro-go/"><span class="eyebrow">Next</span><strong>Hyderabad Metro Go</strong></a>
