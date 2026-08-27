@@ -70,6 +70,13 @@
     if (root.global.initialized) return;
     root.global.initialized = true;
 
+    if (!document.querySelector('link[href="/visual-fixes.css"]')) {
+      const fixSheet = document.createElement('link');
+      fixSheet.rel = 'stylesheet';
+      fixSheet.href = '/visual-fixes.css';
+      document.head.appendChild(fixSheet);
+    }
+
     const toggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
     const closeMenu = () => {
