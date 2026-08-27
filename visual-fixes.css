@@ -1,0 +1,62 @@
+/* Visual QA overrides for Klar actions/facts and Bodoni glyph crop. */
+.case-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.85rem 1.6rem;
+}
+.case-actions .project-link,
+.case-actions .text-link {
+  margin-top: 0;
+  line-height: 1;
+}
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  color: var(--ink);
+  font: 700 .7rem/1 var(--sans);
+  letter-spacing: .12em;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding-bottom: .12rem;
+  border-bottom: 1px solid var(--ink);
+  transition: color .2s ease, border-color .2s ease, transform .3s var(--ease);
+}
+.text-link span {
+  display: inline-block;
+  margin-left: .35rem;
+  color: var(--signal);
+  transition: transform .35s var(--ease);
+}
+.text-link:hover {
+  color: var(--signal);
+  border-color: var(--signal);
+}
+.text-link:hover span {
+  transform: translateX(.35rem);
+}
+.case-facts > div {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  column-gap: 1.25rem;
+  align-items: baseline;
+}
+.case-facts dt {
+  min-width: 0;
+}
+.case-facts dd {
+  margin: 0;
+  justify-self: end;
+  text-align: right;
+}
+.gsap-title .line {
+  overflow: hidden;
+  padding: 0.16em 0.1em 0.28em;
+  margin: -0.08em -0.06em -0.16em;
+}
+.case-hero h1 {
+  line-height: 0.94;
+  letter-spacing: -0.06em;
+  overflow: visible;
+  padding-block: 0.1em 0.2em;
+}

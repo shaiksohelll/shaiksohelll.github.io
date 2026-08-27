@@ -16,7 +16,6 @@
         const isHero = element.id === 'case-title' || element.id === 'hero-title';
         const split = SplitText.create(element, {
           type: 'words, lines',
-          mask: 'lines',
           autoSplit: true,
           aria: 'auto',
           onSplit(self) {
