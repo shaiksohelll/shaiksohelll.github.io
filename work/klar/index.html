@@ -4,17 +4,18 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Klar — Shaik Sohel</title>
-  <meta name="description" content="Klar is a full-stack job-market analytics platform using source-backed ingestion and day-bucketed skill history.">
+  <meta name="description" content="Klar turns active job postings into descriptive, timestamped signals about developer demand, skills, salary disclosure, and opportunity geography.">
   <link rel="canonical" href="https://shaiksohelll.github.io/work/klar/">
   <meta property="og:title" content="Klar — Shaik Sohel">
-  <meta property="og:description" content="Klar is a full-stack job-market analytics platform using source-backed ingestion and day-bucketed skill history.">
+  <meta property="og:description" content="A source-backed job-market analytics system built around normalization, count-time dedupe, day-bucketed history, and honest freshness metadata.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://shaiksohelll.github.io/work/klar/">
-  <meta property="og:image" content="https://shaiksohelll.github.io/avatar.png">
-  <meta name="twitter:card" content="summary">
+  <meta property="og:image" content="https://shaiksohelll.github.io/assets/klar-og.jpg">
+  <meta property="og:image:alt" content="Editorial diagram of Klar’s job-market signal pipeline">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Klar — Shaik Sohel">
-  <meta name="twitter:description" content="Klar is a full-stack job-market analytics platform using source-backed ingestion and day-bucketed skill history.">
-  <meta name="twitter:image" content="https://shaiksohelll.github.io/avatar.png">
+  <meta name="twitter:description" content="A source-backed job-market analytics system built around normalization, count-time dedupe, day-bucketed history, and honest freshness metadata.">
+  <meta name="twitter:image" content="https://shaiksohelll.github.io/assets/klar-og.jpg">
   <meta name="theme-color" content="#eee9df">
   <script>document.documentElement.classList.add('js'); window.setTimeout(() => document.querySelectorAll('.reveal').forEach((item) => item.classList.add('visible')), 1500);</script>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%2318181a'/%3E%3Ctext x='30' y='45' font-family='Georgia,serif' font-size='38' fill='%23eee9df' text-anchor='middle'%3ES%3C/text%3E%3Ccircle cx='47' cy='47' r='6' fill='%23ee4c35'/%3E%3C/svg%3E">
@@ -23,7 +24,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600;6..96,700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles.css">
 </head>
-<body class="case-page">
+<body class="case-page klar-case-page">
   <a class="skip-link" href="#main">Skip to content</a>
   <div class="transition-wash" aria-hidden="true"><span class="transition-index"></span></div>
   <p class="sr-only" id="page-announcement" aria-live="polite" aria-atomic="true"></p>
@@ -38,24 +39,123 @@
   </header>
 
   <div data-barba="wrapper" id="page-wrapper">
-    <main data-barba="container" data-barba-namespace="project-klar" data-page-title="Klar — Shaik Sohel" data-page-description="Klar is a full-stack job-market analytics platform using source-backed ingestion and day-bucketed skill history." data-page-url="https://shaiksohelll.github.io/work/klar/" id="main" class="barba-container">
-      <section class="case-hero wrap" id="case-top" aria-labelledby="case-title">
-        <div>
-          <p class="case-kicker eyebrow reveal"><span class="case-index">01</span>Selected system</p>
+    <main data-barba="container" data-barba-namespace="project-klar" data-page-title="Klar — Shaik Sohel" data-page-description="Klar turns active job postings into descriptive, timestamped signals about developer demand, skills, salary disclosure, and opportunity geography." data-page-url="https://shaiksohelll.github.io/work/klar/" id="main" class="barba-container" aria-labelledby="case-title">
+      <section class="case-hero wrap klar-hero" id="case-top" aria-labelledby="case-title">
+        <div class="klar-hero-copy">
+          <p class="case-kicker eyebrow reveal"><span class="case-index">01</span>Selected system / flagship study</p>
           <h1 id="case-title" data-page-heading data-project-title class="gsap-title">Klar<span class="signal">.</span></h1>
-          <p class="case-intro reveal delay-1">A job-market analytics platform ingesting from Adzuna and JSearch, then surfacing skills, salary, company, and trend views.</p>
+          <p class="case-intro reveal delay-1">How do you keep a noisy, multi-source market legible? Klar turns active job postings into descriptive signals about developer demand, skills, salary disclosure, and opportunity geography.</p>
+          <div class="case-actions reveal delay-2">
+            <a class="project-link" href="https://klar-dev.onrender.com/" target="_blank" rel="noopener noreferrer">Launch system <span>↗</span></a>
+            <a class="text-link" href="https://github.com/shaiksohelll/Klar" target="_blank" rel="noopener noreferrer">Read source <span>↗</span></a>
+          </div>
         </div>
-        <aside class="case-side reveal delay-2"><p class="eyebrow signal">Live system · Open source</p><p>React client · Express server · MongoDB</p></aside>
+        <aside class="case-side klar-hero-side reveal delay-2" aria-label="Klar system summary">
+          <p class="eyebrow signal">Live system · MIT-licensed source</p>
+          <p class="klar-side-title">A descriptive market instrument, not a prediction engine.</p>
+          <dl class="case-facts">
+            <div><dt>Client</dt><dd>React / Vite</dd></div>
+            <div><dt>API</dt><dd>Express</dd></div>
+            <div><dt>Persistence</dt><dd>MongoDB</dd></div>
+          </dl>
+        </aside>
       </section>
 
-      <section class="case-body wrap" aria-labelledby="definition-title">
-        <div class="case-block"><p class="section-number eyebrow">Definition</p><h2 id="definition-title" class="gsap-title">The system collects signal.</h2></div>
-        <div class="case-block case-copy"><p class="reveal">The active server wires Express with Helmet, CORS, rate limiting, Clerk, Sentry, and separate Adzuna/JSearch ingestion modules. JSearch is swept across six role queries with a 1.2-second inter-request delay and a 10-second abort timeout; writes are bulk-upserted and partial snapshots are guarded from destructive pruning.</p><p class="reveal delay-1">The history layer records day-bucketed skill-flow rows. The earlier capturedAt momentum path is legacy and is not presented here as active.</p></div>
+      <section class="klar-snapshot wrap" aria-labelledby="snapshot-title">
+        <div class="section-rule"><span class="eyebrow">Public API snapshot</span><span class="eyebrow">26 August 2026</span></div>
+        <div class="klar-snapshot-heading">
+          <div><p class="section-number eyebrow">Evidence / 01</p><h2 id="snapshot-title" class="gsap-title">The denominator is the story.</h2></div>
+          <p class="klar-snapshot-asof">dataset asOf<br><strong>2026-08-26<br>05:40:13.293Z</strong></p>
+        </div>
+        <div class="klar-ledger reveal">
+          <div class="klar-ledger-item"><strong>270</strong><span>deduplicated<br>12-month postings</span></div>
+          <div class="klar-ledger-item"><strong>43 / 46</strong><span>skills observed<br>vs canonical taxonomy</span></div>
+          <div class="klar-ledger-item"><strong>2</strong><span>independent<br>ingest sources</span></div>
+          <div class="klar-ledger-item"><strong>Daily</strong><span>day-bucketed<br>skill-flow history</span></div>
+        </div>
+        <p class="klar-footnote">* Public API snapshot, 26 August 2026. A point-in-time aggregate, not user scale, traction, or a live counter.</p>
       </section>
 
-      <section class="case-body wrap" aria-labelledby="evidence-title">
-        <div class="case-block"><p class="section-number eyebrow">Evidence ledger</p><h2 id="evidence-title" class="gsap-title">What holds.</h2></div>
-        <div class="case-block case-copy"><ul class="case-ledger reveal"><li><span>Daily postings</span><strong>550+</strong></li><li><span>Active corpus</span><strong>1,300+</strong></li><li><span>Skills tracked</span><strong>45</strong></li><li><span>Time-series snapshots</span><strong>4,200+</strong></li></ul><div class="case-stack reveal delay-1"><span>React</span><span>Node.js</span><span>Express</span><span>MongoDB</span><span>Tailwind CSS</span></div><div class="case-actions reveal delay-2"><a class="project-link" href="https://klar-dev.onrender.com/" target="_blank" rel="noopener noreferrer">Launch system <span>↗</span></a></div></div>
+      <section class="case-body wrap klar-architecture" aria-labelledby="architecture-title">
+        <div class="case-block"><p class="section-number eyebrow">Architecture / 02</p><h2 id="architecture-title" class="gsap-title">From feed noise<br>to usable signal.</h2><p class="section-dek reveal">Two source adapters enter separately. The product only speaks once the data has been normalized, deduplicated, and mapped to a stable vocabulary.</p></div>
+        <div class="case-block case-copy">
+          <div class="klar-pipeline reveal" aria-label="Klar data pipeline: source feeds flow through normalization, count-time deduplication, taxonomy mapping, and descriptive aggregates.">
+            <svg class="klar-pipeline-svg" viewBox="0 0 760 224" role="img" aria-labelledby="pipeline-title pipeline-desc" focusable="false">
+              <defs><marker id="klar-arrow" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0 0L6 3L0 6Z" fill="currentColor" /></marker></defs>
+              <title id="pipeline-title">Klar data pipeline</title>
+              <desc id="pipeline-desc">Adzuna and JSearch flow into normalization, then count-time company-title-city dedupe, then a curated taxonomy, then public descriptive aggregates.</desc>
+              <path class="pipeline-line" d="M108 63H171M108 161H171M257 112H322M408 112H473M559 112H652" />
+              <circle class="pipeline-node source-node" cx="70" cy="63" r="38"/><circle class="pipeline-node source-node" cx="70" cy="161" r="38"/>
+              <rect class="pipeline-node-box" x="171" y="72" width="86" height="80" rx="0"/><rect class="pipeline-node-box" x="322" y="72" width="86" height="80" rx="0"/><rect class="pipeline-node-box" x="473" y="72" width="86" height="80" rx="0"/><rect class="pipeline-node-box accent-node" x="652" y="72" width="86" height="80" rx="0"/>
+              <text x="70" y="58" text-anchor="middle">ADZUNA</text><text x="70" y="163" text-anchor="middle">JSEARCH</text>
+              <text x="214" y="106" text-anchor="middle">MAP</text><text x="214" y="126" text-anchor="middle">SHAPE</text>
+              <text x="365" y="106" text-anchor="middle">DEDUPE</text><text x="365" y="126" text-anchor="middle">AT COUNT</text>
+              <text x="516" y="106" text-anchor="middle">CANONICAL</text><text x="516" y="126" text-anchor="middle">TAXONOMY</text>
+              <text x="695" y="106" text-anchor="middle">PUBLIC</text><text x="695" y="126" text-anchor="middle">SIGNAL</text>
+              <text class="pipeline-caption" x="214" y="181" text-anchor="middle">shared fields</text><text class="pipeline-caption" x="365" y="181" text-anchor="middle">company / title / city</text><text class="pipeline-caption" x="516" y="181" text-anchor="middle">46 source entries</text><text class="pipeline-caption" x="695" y="181" text-anchor="middle">descriptive views</text>
+            </svg>
+            <p class="klar-diagram-fallback">Adzuna + JSearch → shared shape → count-time company/title/city dedupe → curated taxonomy → descriptive views.</p>
+          </div>
+          <div class="klar-prose-grid reveal delay-1">
+            <p><strong>Normalization is the hinge.</strong> Both providers are mapped to a common job shape with role, skills, remote status, location, posting date, and salary-disclosure fields. A curated taxonomy resolves common aliases into canonical labels; role titles settle into practical buckets.</p>
+            <p><strong>Dedupe is deliberately count-time.</strong> Source documents stay separate, while aggregate views collapse twins through normalized company, title, and city. Blank-company postings remain standalone rather than being guessed together.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-body wrap klar-data-model" aria-labelledby="model-title">
+        <div class="case-block"><p class="section-number eyebrow">Data model / 03</p><h2 id="model-title" class="gsap-title">The model carries<br>the ambiguity.</h2></div>
+        <div class="case-block case-copy">
+          <div class="klar-model-card reveal">
+            <div class="klar-model-top"><span class="eyebrow">Source model / Job</span><span class="eyebrow signal">MongoDB persistence</span></div>
+            <div class="klar-field-grid">
+              <span>source identity</span><span>normalized role</span><span>required skills</span><span>remote status</span><span>salary disclosure</span><span>posting date</span><span>geo confidence</span><span>dedupe key</span>
+            </div>
+            <div class="klar-model-index"><span class="index-mark">∪</span><p><strong>Unique (source, externalId)</strong><br>Supporting access paths for role/time, posting time, and verified geodata.</p></div>
+          </div>
+          <p class="model-note reveal delay-1">This is source-backed model architecture, not a claim about live-cluster index counts or schema parity. The public case study keeps the implementation visible and the deployment boundary honest.</p>
+        </div>
+      </section>
+
+      <section class="case-body wrap klar-failure-section" aria-labelledby="failure-title">
+        <div class="case-block"><p class="section-number eyebrow">Failure modes / 04</p><h2 id="failure-title" class="gsap-title">A partial feed <br>stays partial.</h2><p class="section-dek reveal">The safest pipeline is not the one that never fails. It is the one that refuses to turn a partial view into destructive certainty.</p></div>
+        <div class="case-block case-copy">
+          <div class="klar-failure-table reveal" role="table" aria-label="Klar failure modes and safeguards">
+            <div class="klar-table-row klar-table-head" role="row"><span role="columnheader">When</span><span role="columnheader">Risk</span><span role="columnheader">Safeguard</span></div>
+            <div class="klar-table-row" role="row"><span role="cell">Provider request fails</span><span role="cell">Incomplete snapshot looks complete</span><strong role="cell">Keep the run partial; skip stale-row pruning</strong></div>
+            <div class="klar-table-row" role="row"><span role="cell">Batch write partially lands</span><span role="cell">A false total failure hides useful writes</span><strong role="cell">Surface partial success and continue safely</strong></div>
+            <div class="klar-table-row" role="row"><span role="cell">Two sources show one posting</span><span role="cell">Demand and salary counts inflate</span><strong role="cell">Deduplicate at aggregate time</strong></div>
+            <div class="klar-table-row" role="row"><span role="cell">Freshness is uncertain</span><span role="cell">UI implies a finished market</span><strong role="cell">Expose timestamp and source status</strong></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-body wrap klar-freshness" aria-labelledby="freshness-title">
+        <div class="case-block"><p class="section-number eyebrow">Freshness / 05</p><h2 id="freshness-title" class="gsap-title">The status is<br>part of the product.</h2></div>
+        <div class="case-block case-copy">
+          <div class="klar-status-strip reveal"><span class="status-dot" aria-hidden="true"></span><span>Public dataset status exposed</span><strong>timestamped / source-aware</strong></div>
+          <p class="klar-quote reveal delay-1">Freshness is not completeness. At the 26 August 2026 snapshot the public dataset was timestamped and JSearch had succeeded; Adzuna was partial. Klar exposes that status instead of implying a finished market.</p>
+          <p class="reveal delay-2">Read-heavy aggregate views use bounded in-process caches and are invalidated after ingest. This is application-level caching, not a claim about a MongoDB cache. Salary views remain disclosure-aware: predicted or estimated pay is not presented as employer-disclosed evidence.</p>
+        </div>
+      </section>
+
+      <section class="case-body wrap klar-boundary" aria-labelledby="boundary-title">
+        <div class="case-block"><p class="section-number eyebrow">Boundary / 06</p><h2 id="boundary-title" class="gsap-title">Public signal.<br>Private utility.</h2></div>
+        <div class="case-block case-copy">
+          <div class="klar-boundary-grid reveal">
+            <div><span class="eyebrow signal">Public snapshot</span><p>Demand, Trends, Foresight, Atlas, Relocate, Compare, Hiring, and descriptive salary surfaces.</p></div>
+            <div><span class="eyebrow">Authenticated utility</span><p>Watchlist, Skill Gap, and Resume Gap remain user-specific and outside this public evidence layer.</p></div>
+          </div>
+          <p class="reveal delay-1">The system describes observed demand. It does not promise a salary outcome or tell a developer what they must learn. The next production step is broader source coverage—not stronger language than the evidence can support.</p>
+        </div>
+      </section>
+
+      <section class="case-body wrap klar-next" aria-labelledby="next-build-title">
+        <div class="case-block"><p class="section-number eyebrow">Next / 07</p><h2 id="next-build-title" class="gsap-title">More coverage, <br>same honesty.</h2></div>
+        <div class="case-block case-copy">
+          <div class="klar-next-note reveal"><span class="next-mark">→</span><p>Future source work would add coverage only when normalization, disclosure handling, dedupe, and freshness can stay legible. The bar is not a bigger number. The bar is a number that can explain itself.</p></div>
+          <div class="case-actions reveal delay-1"><a class="project-link" href="https://klar-dev.onrender.com/" target="_blank" rel="noopener noreferrer">Launch system <span>↗</span></a><a class="text-link" href="https://github.com/shaiksohelll/Klar" target="_blank" rel="noopener noreferrer">Read source <span>↗</span></a></div>
+        </div>
       </section>
 
       <footer class="contact case-footer" aria-labelledby="next-title">
