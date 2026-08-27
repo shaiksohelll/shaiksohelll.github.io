@@ -50,9 +50,11 @@
   text-align: right;
 }
 .gsap-title .line {
-  overflow: hidden;
+  display: block;
+  overflow: visible;
   padding: 0.16em 0.1em 0.28em;
   margin: -0.08em -0.06em -0.16em;
+  will-change: transform, opacity;
 }
 .case-hero h1 {
   line-height: 0.94;
