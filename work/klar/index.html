@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Klar — Shaik Sohel</title>
+  <meta name="description" content="Klar is a full-stack job-market analytics platform using source-backed ingestion and day-bucketed skill history.">
+  <link rel="canonical" href="https://shaiksohelll.github.io/work/klar/">
+  <meta property="og:title" content="Klar — Shaik Sohel">
+  <meta property="og:description" content="Klar is a full-stack job-market analytics platform using source-backed ingestion and day-bucketed skill history.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://shaiksohelll.github.io/work/klar/">
+  <meta property="og:image" content="https://shaiksohelll.github.io/avatar.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Klar — Shaik Sohel">
+  <meta name="twitter:description" content="Klar is a full-stack job-market analytics platform using source-backed ingestion and day-bucketed skill history.">
+  <meta name="twitter:image" content="https://shaiksohelll.github.io/avatar.png">
+  <meta name="theme-color" content="#eee9df">
+  <script>document.documentElement.classList.add('js'); window.setTimeout(() => document.querySelectorAll('.reveal').forEach((item) => item.classList.add('visible')), 1500);</script>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%2318181a'/%3E%3Ctext x='30' y='45' font-family='Georgia,serif' font-size='38' fill='%23eee9df' text-anchor='middle'%3ES%3C/text%3E%3Ccircle cx='47' cy='47' r='6' fill='%23ee4c35'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600;6..96,700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body class="case-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="transition-wash" aria-hidden="true"><span class="transition-index"></span></div>
+  <p class="sr-only" id="page-announcement" aria-live="polite" aria-atomic="true"></p>
+  <header class="site-header">
+    <nav class="nav wrap" aria-label="Primary navigation">
+      <a class="brand" href="/" aria-label="Shaik Sohel home"><img class="avatar" src="/avatar.png" alt="Shaik Sohel"><span>SHAIK SOHEL</span></a>
+      <div class="nav-links" id="nav-links">
+        <a href="/#systems">Systems</a><a href="/#experience">Experience</a><a href="/#contact">Contact</a><a class="resume-link" href="/shaik-sohel-resume.pdf" download>Download resume</a>
+      </div>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
+    </nav>
+  </header>
+
+  <div data-barba="wrapper" id="page-wrapper">
+    <main data-barba="container" data-barba-namespace="project-klar" data-page-title="Klar — Shaik Sohel" data-page-description="Klar is a full-stack job-market analytics platform using source-backed ingestion and day-bucketed skill history." data-page-url="https://shaiksohelll.github.io/work/klar/" id="main" class="barba-container">
+      <section class="case-hero wrap" id="case-top" aria-labelledby="case-title">
+        <div>
+          <p class="case-kicker eyebrow reveal"><span class="case-index">01</span>Selected system</p>
+          <h1 id="case-title" data-page-heading data-project-title class="gsap-title">Klar<span class="signal">.</span></h1>
+          <p class="case-intro reveal delay-1">A job-market analytics platform ingesting from Adzuna and JSearch, then surfacing skills, salary, company, and trend views.</p>
+        </div>
+        <aside class="case-side reveal delay-2"><p class="eyebrow signal">Live system · Open source</p><p>React client · Express server · MongoDB</p></aside>
+      </section>
+
+      <section class="case-body wrap" aria-labelledby="definition-title">
+        <div class="case-block"><p class="section-number eyebrow">Definition</p><h2 id="definition-title" class="gsap-title">The system collects signal.</h2></div>
+        <div class="case-block case-copy"><p class="reveal">The active server wires Express with Helmet, CORS, rate limiting, Clerk, Sentry, and separate Adzuna/JSearch ingestion modules. JSearch is swept across six role queries with a 1.2-second inter-request delay and a 10-second abort timeout; writes are bulk-upserted and partial snapshots are guarded from destructive pruning.</p><p class="reveal delay-1">The history layer records day-bucketed skill-flow rows. The earlier capturedAt momentum path is legacy and is not presented here as active.</p></div>
+      </section>
+
+      <section class="case-body wrap" aria-labelledby="evidence-title">
+        <div class="case-block"><p class="section-number eyebrow">Evidence ledger</p><h2 id="evidence-title" class="gsap-title">What holds.</h2></div>
+        <div class="case-block case-copy"><ul class="case-ledger reveal"><li><span>Daily postings</span><strong>550+</strong></li><li><span>Active corpus</span><strong>1,300+</strong></li><li><span>Skills tracked</span><strong>45</strong></li><li><span>Time-series snapshots</span><strong>4,200+</strong></li></ul><div class="case-stack reveal delay-1"><span>React</span><span>Node.js</span><span>Express</span><span>MongoDB</span><span>Tailwind CSS</span></div><div class="case-actions reveal delay-2"><a class="project-link" href="https://klar-dev.onrender.com/" target="_blank" rel="noopener noreferrer">Launch system <span>↗</span></a></div></div>
+      </section>
+
+      <footer class="contact case-footer" aria-labelledby="next-title">
+        <div class="wrap">
+          <div class="contact-top"><span class="eyebrow signal">Case study / 01</span><span class="eyebrow" style="color:rgba(238,233,223,.6)">Shaik Sohel / Hyderabad</span></div>
+          <h2 id="next-title" class="reveal"><a href="/#systems">Back to selected systems.</a></h2>
+          <nav class="case-nav" aria-label="Project navigation">
+            <a href="/#systems"><span class="eyebrow">Previous</span><strong>Selected systems</strong></a>
+            <a href="/work/pakka/"><span class="eyebrow">Next</span><strong>Pakka</strong></a>
+          </nav>
+          <div class="footer-meta"><span>Shaik Sohel / Full-Stack Developer</span><span><a href="/shaik-sohel-resume.pdf" download>Download resume</a></span></div>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <script defer src="https://cdn.jsdelivr.net/npm/barba.js@2.9.7/dist/barba.umd.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/lenis@1.3.11/dist/lenis.min.js"></script>
+  <script defer src="/site-core.js"></script>
+  <script defer src="/gsap-layer.js"></script>
+  <script type="module" src="/motion-layer.js"></script>
+  <script type="module" src="/anime-layer.js"></script>
+  <script defer src="/barba-layer.js"></script>
+</body>
+</html>
