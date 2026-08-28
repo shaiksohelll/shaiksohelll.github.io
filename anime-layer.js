@@ -60,7 +60,11 @@ import { animate, createTimeline, onScroll, stagger, svg } from 'https://cdn.jsd
         }));
       });
 
-      if (namespace === 'home') {
+      if (namespace === 'home' && portfolio.page.skipHomeIntro) {
+        container.querySelector('.intro-curtain')?.remove();
+      }
+
+      if (namespace === 'home' && !portfolio.page.skipHomeIntro) {
         const intro = createTimeline({ autoplay: false });
         intro
           .add(container.querySelector('.intro-dash'), { scaleX: [0, 1], duration: 650, ease: 'outExpo' })
