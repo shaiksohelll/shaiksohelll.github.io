@@ -15,27 +15,33 @@
       const makeTitleTween = (element) => {
         const isHero = element.id === 'case-title' || element.id === 'hero-title';
         const split = SplitText.create(element, {
-          type: 'words, lines',
-          mask: 'lines',
+          type: 'lines',
+          linesClass: 'line',
           autoSplit: true,
           aria: 'auto',
           onSplit(self) {
-            const tween = gsap.from(self.lines, {
-              yPercent: 110,
-              opacity: 1,
-              duration: 1,
-              stagger: 0.08,
-              ease: 'power3.out',
-              delay: isHero ? 0.18 : 0,
-              scrollTrigger: isHero ? undefined : {
-                trigger: element,
-                start: 'top 80%',
-                once: true
-              },
-              onComplete: () => {
-                if (!disposed) gsap.delayedCall(0.05, () => self.revert?.());
+            if (disposed) return;
+            const lines = Array.from(self.lines || []);
+            if (!lines.length) return;
+            const tween = gsap.fromTo(lines,
+              { yPercent: 72, opacity: 0 },
+              {
+                yPercent: 0,
+                opacity: 1,
+                duration: isHero ? 0.92 : 0.78,
+                stagger: isHero ? 0.095 : 0.07,
+                delay: isHero ? 0.16 : 0,
+                ease: 'power3.out',
+                scrollTrigger: isHero ? undefined : {
+                  trigger: element,
+                  start: 'top 82%',
+                  once: true
+                },
+                onComplete: () => {
+                  if (!disposed) gsap.set(lines, { clearProps: 'transform,opacity' });
+                }
               }
-            });
+            );
             tweens.push(tween);
             return tween;
           }
